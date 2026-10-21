@@ -1,14 +1,16 @@
-"""Reanalyse the V5 source-data workbook without fitting vision models.
+"""Reanalyse the public source tables or V5 workbook without fitting vision models.
 
 Procedures are the resampling/exchange units. No clip-independent tests are used.
 """
 import argparse
+import sys
 import hashlib
 import json
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
 from scipy import stats
-from openpyxl import load_workbook
+from data.source_data_io import read_public_tables, read_workbook_tables
 
 LABEL = {'novice': 0, 'intermediate': 1, 'expert': 2}
 
@@ -171,8 +173,13 @@ def hospital_exact(rows):
 
 
 def main(a):
-    wb=load_workbook(a.xlsx,read_only=True,data_only=True)
-    rows=table(wb,'All Predictions'); splits=table(wb,'Data Split')
+    if getattr(a,'data',None):
+        inputs, manifest = read_public_tables(a.data)
+        source_digest = manifest['source_workbook_sha256']
+    else:
+        inputs = read_workbook_tables(a.xlsx)
+        source_digest = hashlib.sha256(Path(a.xlsx).read_bytes()).hexdigest()
+    rows=inputs['procedure_predictions']; splits=inputs['data_split']
     if len(splits)!=196 or len({r['video_id'] for r in splits})!=196: raise ValueError('Expected 196 unique procedures')
     split_by={r['video_id']:r['dataset_split'] for r in splits}
     by_model={}
@@ -183,11 +190,13 @@ def main(a):
         if len(records)!=196 or len({r['video_id'] for r in records})!=196: raise ValueError(f'Incomplete model: {model}')
     if a.bootstrap<2 or a.permutations<1: raise ValueError('Positive resampling counts required')
     rng=np.random.default_rng(a.seed)
-    report=dict(source_sha256=hashlib.sha256(Path(a.xlsx).read_bytes()).hexdigest(),
+    report=dict(source_sha256=source_digest,
                 analysis_seed=a.seed,bootstrap_samples=a.bootstrap,random_swaps=a.permutations,
                 split_counts={s:sum(r['dataset_split']==s for r in splits) for s in ['train','val','test']},models={})
     for model,records in by_model.items():
-        report['models'][model]={split:summary([r for r in records if split=='all' or r['split']==split],rng,a.bootstrap) for split in ['test','all']}
+        report['models'][model]={split:summary([r for r in records if split=='all' or r['split']==split],rng,a.bootstrap,score=None if model=='SAIS' else 'pred_grs') for split in ['test','all']}
+        if model=='SAIS':
+            report['models'][model]['regression_status']='Source score fields retained for audit; not reported as manuscript comparator endpoints.'
     main_rows={r['video_id']:r for r in by_model['ArthroSkill-MC'] if r['split']=='test'}
     comparisons=[]
     for model,records in by_model.items():
@@ -203,34 +212,30 @@ def main(a):
         comparisons.append(dict(comparator=model,main_only=b,comparator_only=c,gain=float(d.mean()),ci=interval(d[ix].mean(1)),p_raw=float(stats.binomtest(b,b+c,.5).pvalue) if b+c else 1.))
     for c,pv in zip(comparisons,holm([c['p_raw'] for c in comparisons])): c['p_holm']=pv
     report['paired_test_comparisons']=comparisons
-    # Rater table has a title row followed by an English ID header.
-    rating=table(wb,'原始评分表'); data=np.array([[r['评分者1_总分'],r['评分者2_总分']] for r in rating],float)
+    rating=inputs['rater_scores']; data=np.array([[r['rater_1_total'],r['rater_2_total']] for r in rating],float)
     for r in rating:
         for k in [1,2]:
-            if sum(r[f'评分者{k}_维度{d}'] for d in range(1,7))!=r[f'评分者{k}_总分']: raise ValueError('Rater total mismatch')
-        if (r['评分者1_总分']+r['评分者2_总分'])/2!=r['共识GRS(均值)']: raise ValueError('Consensus mismatch')
+            if sum(r[f'rater_{k}_dimension_{d}'] for d in range(1,7))!=r[f'rater_{k}_total']: raise ValueError('Rater total mismatch')
+        if (r['rater_1_total']+r['rater_2_total'])/2!=r['consensus_grs']: raise ValueError('Consensus mismatch')
     rrng=np.random.default_rng(a.seed)
     report['rater_agreement']=dict(icc_a1=float(icc(data)),ci=interval([icc(data[i]) for i in rrng.integers(len(data),size=(a.bootstrap,len(data)))]),review_count=int((np.abs(data[:,0]-data[:,1])>=6).sum()))
-    loso=table(wb,'LOSO逐视频预测')
-    report['loso']={site:summary([r for r in loso if site=='pooled' or r['hospital(=test_site)']==site],rng,a.bootstrap,pred='loso_pred_class',score='loso_pred_grs',truth='real_label',true_score='real_grs') for site in ['Centre A','Centre B','Centre C','pooled']}
-    annotations=table(wb,'可见性标注表'); clips=table(wb,'逐切片预测明细')
+    loso=inputs['loso_predictions']
+    report['loso']={site:summary([r for r in loso if site=='pooled' or r['hospital']==site],rng,a.bootstrap) for site in ['Centre A','Centre B','Centre C','pooled']}
+    annotations=inputs['visibility_annotations']; clips=inputs['clip_predictions']
     if {r['video_id'] for r in annotations} != set(main_rows): raise ValueError('Visibility annotations must cover the fixed test procedures')
     if len(annotations)!=1527: raise ValueError('Expected 1527 annotated test clips')
     report['annotation_agreement']=annotation_agreement(annotations,a.bootstrap)
     report['hospital_exact']=hospital_exact(list(main_rows.values()))
     report['visibility']=visibility(annotations,clips,rng,a.bootstrap,a.permutations)
     report['visibility_annotator_b']=visibility(annotations,clips,rng,a.bootstrap,a.permutations,'annotator_b_severity')
-    repeat=list(wb['种子重复训练'].values)[1:]; current=None; runs=[]
-    for row in repeat:
-        if row[0]: current=row[0]
-        if row[1] in [3407,3433,2025]: runs.append(dict(model=current,seed=int(row[1]),validation_accuracy=row[2],test_accuracy=row[3],mae=row[4],rmse=row[5],pearson_r=row[6]))
+    runs=[{key:value for key,value in r.items() if key!='run_role'} for r in inputs['training_runs']]
     report['training_repeats']=dict(runs=runs,summary={m:dict(mean=float(np.mean([r['test_accuracy'] for r in runs if r['model']==m])),sample_sd=float(np.std([r['test_accuracy'] for r in runs if r['model']==m],ddof=1))) for m in sorted({r['model'] for r in runs})})
-    out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(report,indent=2,allow_nan=False));wb.close()
+    out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(report,indent=2,allow_nan=False))
     print(json.dumps(dict(split_counts=report['split_counts'],test=report['models']['ArthroSkill-MC']['test'],rater=report['rater_agreement']),indent=2))
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--xlsx',required=True);p.add_argument('--output',required=True)
+    group=p.add_mutually_exclusive_group(required=True);group.add_argument('--xlsx');group.add_argument('--data',help='Public English source-data directory');p.add_argument('--output',required=True)
     p.add_argument('--seed',type=int,default=20261020);p.add_argument('--bootstrap',type=int,default=20000);p.add_argument('--permutations',type=int,default=99999)
     main(p.parse_args())

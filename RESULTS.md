@@ -1,19 +1,21 @@
 # Results
 
-Results below are computed from the V5 source-data workbook. They describe its recorded predictions and are not newly trained model results. The full aggregate reanalysis is in [source_data_summary.json](docs/source_data_summary.json).
+Results below are computed from the [public English V5 source tables](data/source_data/README.md), which preserve the source workbook's numerical records. They describe its recorded predictions and are not newly trained model results. The full aggregate reanalysis is in [source_data_summary.json](docs/source_data_summary.json).
 
 ## Fixed test partition (40 procedures)
 
 | Model | Correct | Accuracy | GRS MAE |
 | --- | ---: | ---: | ---: |
 | ArthroSkill-MC | 35/40 | 87.50% | 1.537 |
-| SAIS | 25/40 | 62.50% | 2.380 |
+| SAIS | 25/40 | 62.50% | Not reported |
 | Video Swin-T | 26/40 | 65.00% | 2.639 |
 | 3D-ResNet-18 | 24/40 | 60.00% | 2.468 |
 | Appearance only | 28/40 | 70.00% | 1.954 |
 | Motion only | 25/40 | 62.50% | 2.206 |
 | Naive concat | 27/40 | 67.50% | 2.019 |
 | Unmasked fusion | 26/40 | 65.00% | 2.211 |
+
+SAIS regression fields present in the source workbook are retained in the public data for audit, but are not treated as validated comparator endpoints in the manuscript-facing analysis.
 
 The complete model has Pearson r = 0.960, RMSE = 1.765 GRS points, and a Wilson accuracy interval of 73.9–94.5%. All five test errors involve adjacent grades. Full-cohort accuracy is 162/196 (82.65%) and includes training cases.
 

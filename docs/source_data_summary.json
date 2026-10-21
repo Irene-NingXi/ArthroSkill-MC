@@ -128,26 +128,6 @@
         "mean_grade_distance_ci": [
           0.225,
           0.525
-        ],
-        "mae": 2.380225,
-        "rmse": 2.9359364988023837,
-        "bias": -0.2514750000000001,
-        "mae_ci": [
-          1.859176875,
-          2.9365056249999997
-        ],
-        "rmse_ci": [
-          2.331424100074127,
-          3.5088295036338852
-        ],
-        "bias_ci": [
-          -1.1594725,
-          0.6339556249999971
-        ],
-        "pearson_r": 0.9011149854794347,
-        "pearson_r_ci": [
-          0.8197001857563359,
-          0.9468407099573977
         ]
       },
       "all": {
@@ -174,28 +154,9 @@
         "mean_grade_distance_ci": [
           0.20408163265306123,
           0.32653061224489793
-        ],
-        "mae": 2.3884030612244898,
-        "rmse": 3.048654655611828,
-        "bias": -0.15124999999999997,
-        "mae_ci": [
-          2.1253812499999998,
-          2.658959693877551
-        ],
-        "rmse_ci": [
-          2.722472143394095,
-          3.3762430894571476
-        ],
-        "bias_ci": [
-          -0.5733817602040816,
-          0.27824528061224485
-        ],
-        "pearson_r": 0.9070126173005416,
-        "pearson_r_ci": [
-          0.878540188299467,
-          0.9290626226328763
         ]
-      }
+      },
+      "regression_status": "Source score fields retained for audit; not reported as manuscript comparator endpoints."
     },
     "Video Swin-T": {
       "test": {
@@ -1472,27 +1433,27 @@
         "seed": 3407,
         "validation_accuracy": 0.6923,
         "test_accuracy": 0.625,
-        "mae": "-",
-        "rmse": "-",
-        "pearson_r": "-"
+        "mae": null,
+        "rmse": null,
+        "pearson_r": null
       },
       {
         "model": "SAIS",
         "seed": 3433,
         "validation_accuracy": 0.641,
         "test_accuracy": 0.6,
-        "mae": "-",
-        "rmse": "-",
-        "pearson_r": "-"
+        "mae": null,
+        "rmse": null,
+        "pearson_r": null
       },
       {
         "model": "SAIS",
         "seed": 2025,
         "validation_accuracy": 0.7179,
         "test_accuracy": 0.675,
-        "mae": "-",
-        "rmse": "-",
-        "pearson_r": "-"
+        "mae": null,
+        "rmse": null,
+        "pearson_r": null
       }
     ],
     "summary": {
@@ -1511,5 +1472,9 @@
     "numpy": "2.3.5",
     "scipy": "1.18.1",
     "openpyxl": "3.1.5"
+  },
+  "public_source_data": {
+    "release_version": "v5-public-1",
+    "manifest_sha256": "2c7f7058fd1ad13abaab45a330ed65f54f7bd8453c959717ef226a1aa9229587"
   }
 }

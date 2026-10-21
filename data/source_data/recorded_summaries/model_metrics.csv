@@ -1,0 +1,25 @@
+model,split,n,accuracy,mae,rmse,pearson_r
+ArthroSkill-MC,train,117,0.7949,1.413,1.763,0.967
+ArthroSkill-MC,val,39,0.8718,1.505,1.755,0.967
+ArthroSkill-MC,test,40,0.875,1.537,1.765,0.96
+SAIS,train,117,0.7863,2.37,3.009,0.915
+SAIS,val,39,0.6923,2.454,3.273,0.885
+SAIS,test,40,0.625,2.38,2.936,0.901
+Video Swin-T,train,117,0.6923,2.515,3.206,0.908
+Video Swin-T,val,39,0.6923,2.939,3.502,0.88
+Video Swin-T,test,40,0.65,2.639,3.424,0.849
+3D-ResNet-18,train,117,0.7094,2.458,3.11,0.899
+3D-ResNet-18,val,39,0.6667,2.364,2.977,0.934
+3D-ResNet-18,test,40,0.6,2.468,3.249,0.909
+Appearance only,train,117,0.7521,1.911,2.462,0.935
+Appearance only,val,39,0.7692,1.988,2.381,0.941
+Appearance only,test,40,0.7,1.954,2.352,0.936
+Motion only,train,117,0.7094,2.112,2.595,0.928
+Motion only,val,39,0.641,2.201,2.632,0.92
+Motion only,test,40,0.625,2.206,2.664,0.914
+Naive concat,train,117,0.7521,2.126,2.786,0.915
+Naive concat,val,39,0.5641,1.777,2.25,0.959
+Naive concat,test,40,0.675,2.019,2.527,0.929
+Unmasked fusion,train,117,0.6581,2.01,2.599,0.926
+Unmasked fusion,val,39,0.7949,1.838,2.248,0.952
+Unmasked fusion,test,40,0.65,2.211,2.639,0.929

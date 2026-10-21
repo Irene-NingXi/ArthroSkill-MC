@@ -1,0 +1,27 @@
+source_row,field,value
+1,ArthroSkill-MC source-data package,
+2,Occlusion-aware multimodal surgical skill assessment in arthroscopy; n = 196 videos; 3 anonymised centres,
+4,The source package contains two components:,
+5,"All results for the updated stratified split: train 117, validation 39, test 40; split seed 20241012; including visibility strata and training-seed repeats.",
+6,"Annotation and LOSO component: original ratings, ICC, exclusions and three LOSO folds; the source workbook states that these protocols and data were retained.",
+7,"The source workbook states that earlier split predictions, statistical analyses, SAIS calibration and seed experiments were superseded and are not included.",
+9,Key metrics for the updated split,
+10,Test accuracy,87.50% (35/40)
+11,Full-cohort accuracy,82.65% (162/196)
+12,Test Pearson correlation for GRS,0.960
+13,Test GRS MAE / RMSE,1.537 / 1.765
+14,SAIS test accuracy,62.50% (25/40)
+15,SAIS full-cohort accuracy,73.47% (144/196)
+16,Pooled three-fold LOSO accuracy,64.3% (126/196)
+17,Pooled LOSO GRS MAE,4.38
+18,Visibility strata: good / mild / severe,"89.8% / 88.3% / 71.8% (1,527 annotated test clips)"
+19,"Inter-rater ICC(A,1)",0.823
+21,Public table index,
+22,"Experiment report, procedure predictions, data split, model metrics and statistical tests",procedure_predictions.csv; data_split.csv; recorded_summaries/experiment_report.csv; recorded_summaries/model_metrics.csv; recorded_summaries/statistical_tests.csv
+23,Test and validation procedure detail snapshots,recorded_summaries/test_details.csv; recorded_summaries/validation_details.csv
+24,"Visibility annotations, recorded tier summaries, agreement, degradation counts and clip predictions",visibility_annotations.csv; clip_predictions.csv; recorded_summaries/visibility_tier_metrics.csv; recorded_summaries/annotation_agreement.csv; recorded_summaries/degradation_counts.csv; recorded_summaries/clip_summary.csv
+25,"Independent rater scores, recorded ICC calculation and scoring protocol",rater_scores.csv; recorded_summaries/icc_calculation.csv; recorded_summaries/scoring_protocol.csv
+26,LOSO procedure predictions and recorded summaries,loso_predictions.csv; recorded_summaries/loso_summary.csv; recorded_summaries/loso_error_summary.csv
+27,"Excluded recording log: 200 acquired, 196 included",exclusions.csv
+28,Recorded cohort and performance summaries,recorded_summaries/cohort_summary.csv
+30,"The source workbook anonymises hospitals as Centre A, Centre B and Centre C.",

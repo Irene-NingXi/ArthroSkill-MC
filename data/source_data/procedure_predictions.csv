@@ -1,0 +1,1569 @@
+video_id,hospital,split,surgery_type,true_label,true_grs,model,pred_label,pred_grs,correct,abs_error,residual
+P040,Centre A,train,knee,novice,9.5,ArthroSkill-MC,novice,11.018,true,1.5178076578059,1.5178076578059
+P107,Centre C,train,knee,intermediate,18.5,ArthroSkill-MC,intermediate,21.263,true,2.76347643976254,2.76347643976254
+P101,Centre C,train,knee,expert,27,ArthroSkill-MC,expert,28.023,true,1.0233003311155,1.0233003311155
+P145,Centre B,train,shoulder,expert,24.5,ArthroSkill-MC,expert,23.144,true,1.35579400878384,-1.35579400878384
+P087,Centre A,train,shoulder,expert,29.5,ArthroSkill-MC,intermediate,26.921,false,2.5785522417923,-2.5785522417923
+P098,Centre B,train,knee,novice,7.5,ArthroSkill-MC,novice,9.323,true,1.82266645322075,1.82266645322075
+P057,Centre B,train,shoulder,expert,25.5,ArthroSkill-MC,expert,25.917,true,0.417291044950932,0.417291044950932
+P103,Centre A,train,knee,intermediate,17.5,ArthroSkill-MC,intermediate,20.886,true,3.38603852012496,3.38603852012496
+P185,Centre A,train,shoulder,intermediate,18,ArthroSkill-MC,intermediate,20.147,true,2.14710775798412,2.14710775798412
+P191,Centre B,train,shoulder,intermediate,21.5,ArthroSkill-MC,intermediate,20.794,true,0.706333524268036,-0.706333524268036
+P186,Centre A,train,knee,intermediate,21.5,ArthroSkill-MC,intermediate,24.035,true,2.53509631910993,2.53509631910993
+P154,Centre A,train,shoulder,intermediate,21.5,ArthroSkill-MC,intermediate,21.887,true,0.38741373660832,0.38741373660832
+P082,Centre A,train,knee,novice,8,ArthroSkill-MC,novice,5.089,true,2.91138858750918,-2.91138858750918
+P097,Centre C,train,shoulder,expert,25,ArthroSkill-MC,expert,24.491,true,0.508741061881373,-0.508741061881373
+P049,Centre C,train,shoulder,expert,27,ArthroSkill-MC,expert,25.596,true,1.40392180224531,-1.40392180224531
+P161,Centre C,train,shoulder,intermediate,17,ArthroSkill-MC,intermediate,13.469,true,3.53054329763328,-3.53054329763328
+P030,Centre C,train,knee,expert,29.5,ArthroSkill-MC,expert,30,true,0.5,0.5
+P128,Centre A,train,knee,intermediate,19,ArthroSkill-MC,intermediate,18.21,true,0.789803286639966,-0.789803286639966
+P034,Centre A,train,knee,intermediate,21,ArthroSkill-MC,intermediate,20.497,true,0.50277605801762,-0.50277605801762
+P039,Centre A,train,shoulder,intermediate,20,ArthroSkill-MC,novice,17.671,false,2.32874041058054,-2.32874041058054
+P118,Centre C,train,knee,expert,25.5,ArthroSkill-MC,expert,27.761,true,2.26110274194698,2.26110274194698
+P027,Centre C,train,shoulder,novice,11.5,ArthroSkill-MC,novice,11.229,true,0.270543400810189,-0.270543400810189
+P004,Centre C,train,shoulder,expert,27.5,ArthroSkill-MC,intermediate,26.907,false,0.593295612621603,-0.593295612621603
+P159,Centre B,train,knee,novice,12.5,ArthroSkill-MC,novice,13.35,true,0.849791380498107,0.849791380498107
+P146,Centre A,train,shoulder,intermediate,16.5,ArthroSkill-MC,intermediate,18.048,true,1.54805891582171,1.54805891582171
+P108,Centre B,train,knee,intermediate,19,ArthroSkill-MC,intermediate,17.456,true,1.54401087601929,-1.54401087601929
+P083,Centre A,train,knee,expert,24,ArthroSkill-MC,intermediate,23.16,false,0.839953068913662,-0.839953068913662
+P148,Centre A,train,knee,expert,28.5,ArthroSkill-MC,expert,30,true,1.5,1.5
+P193,Centre C,train,shoulder,intermediate,17,ArthroSkill-MC,intermediate,18.92,true,1.92039576793756,1.92039576793756
+P075,Centre A,train,shoulder,intermediate,19.5,ArthroSkill-MC,intermediate,19.961,true,0.460824837181093,0.460824837181093
+P102,Centre A,train,knee,intermediate,19.5,ArthroSkill-MC,intermediate,20.379,true,0.878720214806542,0.878720214806542
+P038,Centre B,train,knee,expert,26.5,ArthroSkill-MC,expert,29.03,true,2.53031643449636,2.53031643449636
+P160,Centre A,train,shoulder,intermediate,19,ArthroSkill-MC,intermediate,17.741,true,1.2592126494804,-1.2592126494804
+P029,Centre A,train,knee,intermediate,22,ArthroSkill-MC,intermediate,21.646,true,0.353877271765224,-0.353877271765224
+P007,Centre A,train,knee,expert,29.5,ArthroSkill-MC,expert,29.876,true,0.375559335554673,0.375559335554673
+P065,Centre A,train,shoulder,expert,26.5,ArthroSkill-MC,intermediate,24.314,false,2.18552064483237,-2.18552064483237
+P152,Centre C,train,knee,novice,14,ArthroSkill-MC,intermediate,11.591,false,2.40896473218624,-2.40896473218624
+P113,Centre A,train,shoulder,intermediate,19.5,ArthroSkill-MC,intermediate,15.929,true,3.57109256323271,-3.57109256323271
+P066,Centre B,train,shoulder,novice,7,ArthroSkill-MC,intermediate,5.856,false,1.14385784589639,-1.14385784589639
+P002,Centre B,train,shoulder,expert,24,ArthroSkill-MC,expert,21.801,true,2.19875419793576,-2.19875419793576
+P074,Centre B,train,shoulder,expert,27.5,ArthroSkill-MC,expert,27.336,true,0.164158789921963,-0.164158789921963
+P012,Centre A,train,knee,intermediate,16.5,ArthroSkill-MC,expert,16.346,false,0.154363432104002,-0.154363432104002
+P073,Centre B,train,shoulder,intermediate,18,ArthroSkill-MC,intermediate,18.045,true,0.0450561637741558,0.0450561637741558
+P158,Centre C,train,shoulder,intermediate,17.5,ArthroSkill-MC,novice,20.378,false,2.87792078894217,2.87792078894217
+P174,Centre C,train,knee,novice,11,ArthroSkill-MC,novice,10.031,true,0.968710949632175,-0.968710949632175
+P142,Centre B,train,knee,expert,29,ArthroSkill-MC,expert,29.538,true,0.537996014461584,0.537996014461584
+P165,Centre A,train,knee,intermediate,22.5,ArthroSkill-MC,expert,23.238,false,0.737703451855584,0.737703451855584
+P028,Centre B,train,knee,intermediate,15.5,ArthroSkill-MC,intermediate,16.311,true,0.810871136932214,0.810871136932214
+P150,Centre A,train,knee,novice,10.5,ArthroSkill-MC,novice,9.31,true,1.19015166243974,-1.19015166243974
+P176,Centre A,train,shoulder,novice,13,ArthroSkill-MC,novice,13.764,true,0.763836815160941,0.763836815160941
+P090,Centre B,train,knee,expert,26,ArthroSkill-MC,expert,25.413,true,0.587144952638681,-0.587144952638681
+P140,Centre A,train,shoulder,novice,12.5,ArthroSkill-MC,intermediate,10.937,false,1.56278510235625,-1.56278510235625
+P119,Centre B,train,knee,expert,24,ArthroSkill-MC,intermediate,26.58,false,2.58016469182655,2.58016469182655
+P094,Centre A,train,knee,intermediate,23,ArthroSkill-MC,expert,21.165,false,1.83490156465951,-1.83490156465951
+P182,Centre A,train,shoulder,intermediate,19.5,ArthroSkill-MC,intermediate,18.371,true,1.12872738597955,-1.12872738597955
+P169,Centre A,train,knee,novice,11.5,ArthroSkill-MC,novice,8.684,true,2.81603164457735,-2.81603164457735
+P079,Centre B,train,shoulder,expert,24.5,ArthroSkill-MC,expert,26.75,true,2.24986379514209,2.24986379514209
+P068,Centre A,train,shoulder,novice,11.5,ArthroSkill-MC,intermediate,10.82,false,0.679820350848104,-0.679820350848104
+P054,Centre B,train,knee,intermediate,17,ArthroSkill-MC,intermediate,14.897,true,2.10315690958522,-2.10315690958522
+P111,Centre B,train,shoulder,expert,27.5,ArthroSkill-MC,expert,27.733,true,0.233481348300536,0.233481348300536
+P112,Centre A,train,shoulder,intermediate,17.5,ArthroSkill-MC,intermediate,16.933,true,0.566647558240934,-0.566647558240934
+P196,Centre B,train,knee,intermediate,20,ArthroSkill-MC,intermediate,21.096,true,1.09595167548587,1.09595167548587
+P183,Centre B,train,knee,intermediate,21,ArthroSkill-MC,intermediate,25.211,true,4.21080632776405,4.21080632776405
+P062,Centre A,train,knee,expert,27,ArthroSkill-MC,expert,24.357,true,2.64330280778662,-2.64330280778662
+P181,Centre C,train,knee,expert,23.5,ArthroSkill-MC,expert,24.816,true,1.31599582579962,1.31599582579962
+P147,Centre C,train,knee,expert,24,ArthroSkill-MC,expert,26.734,true,2.73444490030969,2.73444490030969
+P144,Centre B,train,knee,expert,28.5,ArthroSkill-MC,expert,27.918,true,0.581563461810973,-0.581563461810973
+P041,Centre C,train,knee,novice,10,ArthroSkill-MC,novice,10.985,true,0.985224612106226,0.985224612106226
+P149,Centre A,train,knee,expert,27.5,ArthroSkill-MC,expert,28.191,true,0.691198084405336,0.691198084405336
+P017,Centre A,train,shoulder,novice,7,ArthroSkill-MC,novice,7.135,true,0.134734200660171,0.134734200660171
+P067,Centre A,train,knee,intermediate,19.5,ArthroSkill-MC,intermediate,16.386,true,3.11376150966151,-3.11376150966151
+P194,Centre A,train,shoulder,expert,28,ArthroSkill-MC,intermediate,27.104,false,0.89569194134878,-0.89569194134878
+P092,Centre B,train,shoulder,intermediate,16,ArthroSkill-MC,intermediate,16.416,true,0.415975848868865,0.415975848868865
+P048,Centre A,train,shoulder,novice,10.5,ArthroSkill-MC,novice,10.435,true,0.0650427895614474,-0.0650427895614474
+P072,Centre A,train,shoulder,novice,8.5,ArthroSkill-MC,novice,8.409,true,0.0911254970234818,-0.0911254970234818
+P046,Centre B,train,knee,expert,29.5,ArthroSkill-MC,expert,28.275,true,1.22548396522426,-1.22548396522426
+P192,Centre C,train,shoulder,novice,7.5,ArthroSkill-MC,novice,8.819,true,1.31882265310847,1.31882265310847
+P167,Centre C,train,shoulder,expert,24,ArthroSkill-MC,expert,21.456,true,2.54421486006233,-2.54421486006233
+P096,Centre B,train,knee,intermediate,21.5,ArthroSkill-MC,expert,22.009,false,0.509289545944434,0.509289545944434
+P015,Centre A,train,knee,expert,25,ArthroSkill-MC,expert,26.705,true,1.70460857834887,1.70460857834887
+P084,Centre B,train,shoulder,novice,7.5,ArthroSkill-MC,novice,7.378,true,0.121969446907749,-0.121969446907749
+P123,Centre C,train,shoulder,intermediate,21.5,ArthroSkill-MC,intermediate,21.215,true,0.284860055216061,-0.284860055216061
+P023,Centre C,train,knee,expert,26.5,ArthroSkill-MC,expert,25.243,true,1.25731549460019,-1.25731549460019
+P014,Centre B,train,knee,intermediate,16.5,ArthroSkill-MC,intermediate,19.544,true,3.04421697801457,3.04421697801457
+P052,Centre C,train,knee,novice,11,ArthroSkill-MC,novice,11.159,true,0.159169149991323,0.159169149991323
+P031,Centre C,train,knee,expert,23.5,ArthroSkill-MC,expert,25.013,true,1.5131990880493,1.5131990880493
+P061,Centre A,train,knee,novice,14,ArthroSkill-MC,novice,12.014,true,1.98579255283615,-1.98579255283615
+P051,Centre C,train,knee,novice,10,ArthroSkill-MC,novice,7.622,true,2.37808943317448,-2.37808943317448
+P036,Centre B,train,shoulder,intermediate,17,ArthroSkill-MC,intermediate,13.935,true,3.06458642521256,-3.06458642521256
+P136,Centre A,train,knee,expert,29.5,ArthroSkill-MC,expert,27.866,true,1.63441346235821,-1.63441346235821
+P135,Centre A,train,shoulder,expert,28,ArthroSkill-MC,intermediate,29.519,false,1.51916869798371,1.51916869798371
+P133,Centre C,train,shoulder,intermediate,22.5,ArthroSkill-MC,novice,23.331,false,0.831405557660435,0.831405557660435
+P143,Centre A,train,knee,expert,24,ArthroSkill-MC,expert,23.698,true,0.301705997092725,-0.301705997092725
+P035,Centre A,train,shoulder,novice,7.5,ArthroSkill-MC,novice,9.366,true,1.86598268958023,1.86598268958023
+P126,Centre A,train,knee,novice,13,ArthroSkill-MC,novice,14.838,true,1.83759632254096,1.83759632254096
+P099,Centre C,train,knee,novice,12,ArthroSkill-MC,novice,10.555,true,1.44486957407597,-1.44486957407597
+P100,Centre C,train,shoulder,expert,29.5,ArthroSkill-MC,intermediate,29.307,false,0.193290682181786,-0.193290682181786
+P085,Centre C,train,shoulder,expert,25,ArthroSkill-MC,intermediate,22.419,false,2.58104296488182,-2.58104296488182
+P177,Centre C,train,knee,intermediate,16.5,ArthroSkill-MC,intermediate,17.496,true,0.996082978665786,0.996082978665786
+P045,Centre A,train,shoulder,novice,12.5,ArthroSkill-MC,novice,10.497,true,2.0033266055571,-2.0033266055571
+P044,Centre C,train,knee,novice,8.5,ArthroSkill-MC,intermediate,10.283,false,1.7825157520895,1.7825157520895
+P050,Centre A,train,shoulder,expert,24,ArthroSkill-MC,expert,25.656,true,1.65581183662207,1.65581183662207
+P132,Centre A,train,shoulder,intermediate,21.5,ArthroSkill-MC,intermediate,23.169,true,1.66875022000237,1.66875022000237
+P173,Centre A,train,shoulder,expert,27.5,ArthroSkill-MC,intermediate,25.433,false,2.06748620547872,-2.06748620547872
+P180,Centre A,train,knee,intermediate,21,ArthroSkill-MC,intermediate,21.39,true,0.389681428769041,0.389681428769041
+P063,Centre A,train,knee,intermediate,20.5,ArthroSkill-MC,intermediate,19.797,true,0.702752957013171,-0.702752957013171
+P121,Centre A,train,shoulder,expert,30,ArthroSkill-MC,intermediate,30,false,0,0
+P003,Centre B,train,shoulder,intermediate,16,ArthroSkill-MC,intermediate,16.233,true,0.233146064574154,0.233146064574154
+P037,Centre B,train,shoulder,intermediate,18,ArthroSkill-MC,intermediate,18.77,true,0.770122520112917,0.770122520112917
+P109,Centre A,train,knee,novice,8,ArthroSkill-MC,novice,6.147,true,1.85278077652422,-1.85278077652422
+P199,Centre A,train,shoulder,novice,8.5,ArthroSkill-MC,novice,7.818,true,0.68201911219647,-0.68201911219647
+P006,Centre A,train,knee,intermediate,18,ArthroSkill-MC,intermediate,17.925,true,0.0749459595450546,-0.0749459595450546
+P184,Centre A,train,knee,expert,29,ArthroSkill-MC,expert,28.964,true,0.036376129948767,-0.036376129948767
+P162,Centre B,train,knee,expert,29.5,ArthroSkill-MC,expert,29.92,true,0.420157064204226,0.420157064204226
+P024,Centre A,train,shoulder,intermediate,20.5,ArthroSkill-MC,novice,17.546,false,2.95433001201078,-2.95433001201078
+P163,Centre A,train,knee,intermediate,18,ArthroSkill-MC,intermediate,20.651,true,2.65108349754724,2.65108349754724
+P172,Centre A,train,knee,intermediate,21.5,ArthroSkill-MC,intermediate,15.769,true,5.73113164884896,-5.73113164884896
+P040,Centre A,train,knee,novice,9.5,SAIS,novice,5.244,true,4.25570686961251,-4.25570686961251
+P107,Centre C,train,knee,intermediate,18.5,SAIS,intermediate,16.405,true,2.09468309792562,-2.09468309792562
+P101,Centre C,train,knee,expert,27,SAIS,expert,25.76,true,1.24043412869157,-1.24043412869157
+P145,Centre B,train,shoulder,expert,24.5,SAIS,intermediate,28.069,false,3.56942381269229,3.56942381269229
+P087,Centre A,train,shoulder,expert,29.5,SAIS,expert,30,true,0.5,0.5
+P098,Centre B,train,knee,novice,7.5,SAIS,novice,5,true,2.5,-2.5
+P057,Centre B,train,shoulder,expert,25.5,SAIS,expert,23.591,true,1.90936694156765,-1.90936694156765
+P103,Centre A,train,knee,intermediate,17.5,SAIS,expert,19.905,false,2.4051697931698,2.4051697931698
+P185,Centre A,train,shoulder,intermediate,18,SAIS,intermediate,17.464,true,0.535730490489762,-0.535730490489762
+P191,Centre B,train,shoulder,intermediate,21.5,SAIS,intermediate,25.86,true,4.35987110201899,4.35987110201899
+P186,Centre A,train,knee,intermediate,21.5,SAIS,intermediate,22.391,true,0.890763622580803,0.890763622580803
+P154,Centre A,train,shoulder,intermediate,21.5,SAIS,intermediate,20.809,true,0.690514015333079,-0.690514015333079
+P082,Centre A,train,knee,novice,8,SAIS,novice,7.944,true,0.0559386357639031,-0.0559386357639031
+P097,Centre C,train,shoulder,expert,25,SAIS,expert,22.385,true,2.61479808955083,-2.61479808955083
+P049,Centre C,train,shoulder,expert,27,SAIS,expert,30,true,3,3
+P161,Centre C,train,shoulder,intermediate,17,SAIS,intermediate,15.996,true,1.0043995579278,-1.0043995579278
+P030,Centre C,train,knee,expert,29.5,SAIS,intermediate,30,false,0.5,0.5
+P128,Centre A,train,knee,intermediate,19,SAIS,intermediate,22.214,true,3.21350484985227,3.21350484985227
+P034,Centre A,train,knee,intermediate,21,SAIS,expert,25.557,false,4.55717163067388,4.55717163067388
+P039,Centre A,train,shoulder,intermediate,20,SAIS,intermediate,21.155,true,1.15541340095912,1.15541340095912
+P118,Centre C,train,knee,expert,25.5,SAIS,expert,26.881,true,1.38101877615137,1.38101877615137
+P027,Centre C,train,shoulder,novice,11.5,SAIS,novice,7.73,true,3.77046118489428,-3.77046118489428
+P004,Centre C,train,shoulder,expert,27.5,SAIS,expert,26.675,true,0.825358935415192,-0.825358935415192
+P159,Centre B,train,knee,novice,12.5,SAIS,novice,12.773,true,0.272824229262403,0.272824229262403
+P146,Centre A,train,shoulder,intermediate,16.5,SAIS,intermediate,16.188,true,0.312279579056359,-0.312279579056359
+P108,Centre B,train,knee,intermediate,19,SAIS,expert,16.005,false,2.99548112549107,-2.99548112549107
+P083,Centre A,train,knee,expert,24,SAIS,intermediate,22.865,false,1.13461854557628,-1.13461854557628
+P148,Centre A,train,knee,expert,28.5,SAIS,expert,29.132,true,0.632412560601189,0.632412560601189
+P193,Centre C,train,shoulder,intermediate,17,SAIS,intermediate,19.906,true,2.90583483951877,2.90583483951877
+P075,Centre A,train,shoulder,intermediate,19.5,SAIS,expert,12.744,false,6.75600138582935,-6.75600138582935
+P102,Centre A,train,knee,intermediate,19.5,SAIS,expert,23.992,false,4.49177281631142,4.49177281631142
+P038,Centre B,train,knee,expert,26.5,SAIS,expert,24.758,true,1.74222024037314,-1.74222024037314
+P160,Centre A,train,shoulder,intermediate,19,SAIS,intermediate,18.65,true,0.349602398458774,-0.349602398458774
+P029,Centre A,train,knee,intermediate,22,SAIS,expert,21.745,false,0.254635100026047,-0.254635100026047
+P007,Centre A,train,knee,expert,29.5,SAIS,expert,28.868,true,0.632290451377866,-0.632290451377866
+P065,Centre A,train,shoulder,expert,26.5,SAIS,expert,27.076,true,0.576289987204433,0.576289987204433
+P152,Centre C,train,knee,novice,14,SAIS,novice,13.796,true,0.204270256577889,-0.204270256577889
+P113,Centre A,train,shoulder,intermediate,19.5,SAIS,intermediate,12.915,true,6.5851241096138,-6.5851241096138
+P066,Centre B,train,shoulder,novice,7,SAIS,novice,10.766,true,3.76605885661545,3.76605885661545
+P002,Centre B,train,shoulder,expert,24,SAIS,expert,23.52,true,0.480220082450934,-0.480220082450934
+P074,Centre B,train,shoulder,expert,27.5,SAIS,expert,30,true,2.5,2.5
+P012,Centre A,train,knee,intermediate,16.5,SAIS,novice,21.6,false,5.10019865940324,5.10019865940324
+P073,Centre B,train,shoulder,intermediate,18,SAIS,intermediate,25.27,true,7.27037909246706,7.27037909246706
+P158,Centre C,train,shoulder,intermediate,17.5,SAIS,expert,20.456,false,2.95614959822292,2.95614959822292
+P174,Centre C,train,knee,novice,11,SAIS,novice,11.672,true,0.672263339081981,0.672263339081981
+P142,Centre B,train,knee,expert,29,SAIS,expert,30,true,1,1
+P165,Centre A,train,knee,intermediate,22.5,SAIS,intermediate,18.696,true,3.80406244643989,-3.80406244643989
+P028,Centre B,train,knee,intermediate,15.5,SAIS,expert,15.32,false,0.18019531840188,-0.18019531840188
+P150,Centre A,train,knee,novice,10.5,SAIS,novice,10.429,true,0.0712470633671387,-0.0712470633671387
+P176,Centre A,train,shoulder,novice,13,SAIS,novice,10.605,true,2.39547077080775,-2.39547077080775
+P090,Centre B,train,knee,expert,26,SAIS,intermediate,22.872,false,3.12759793940226,-3.12759793940226
+P140,Centre A,train,shoulder,novice,12.5,SAIS,novice,9.84,true,2.65984677950113,-2.65984677950113
+P119,Centre B,train,knee,expert,24,SAIS,expert,26.665,true,2.66498560693469,2.66498560693469
+P094,Centre A,train,knee,intermediate,23,SAIS,intermediate,26.053,true,3.05293727223378,3.05293727223378
+P182,Centre A,train,shoulder,intermediate,19.5,SAIS,intermediate,16.404,true,3.09627259796334,-3.09627259796334
+P169,Centre A,train,knee,novice,11.5,SAIS,novice,13.881,true,2.38105571745874,2.38105571745874
+P079,Centre B,train,shoulder,expert,24.5,SAIS,expert,26.422,true,1.92183390439113,1.92183390439113
+P068,Centre A,train,shoulder,novice,11.5,SAIS,novice,13.279,true,1.77910170734721,1.77910170734721
+P054,Centre B,train,knee,intermediate,17,SAIS,intermediate,16.235,true,0.765321158927279,-0.765321158927279
+P111,Centre B,train,shoulder,expert,27.5,SAIS,expert,30,true,2.5,2.5
+P112,Centre A,train,shoulder,intermediate,17.5,SAIS,intermediate,26.836,true,9.33629015153039,9.33629015153039
+P196,Centre B,train,knee,intermediate,20,SAIS,expert,22.035,false,2.03482943490668,2.03482943490668
+P183,Centre B,train,knee,intermediate,21,SAIS,novice,15.812,false,5.18771189416355,-5.18771189416355
+P062,Centre A,train,knee,expert,27,SAIS,intermediate,27.205,false,0.204514239228839,0.204514239228839
+P181,Centre C,train,knee,expert,23.5,SAIS,intermediate,28.873,false,5.37270582841756,5.37270582841756
+P147,Centre C,train,knee,expert,24,SAIS,expert,22.358,true,1.64224325240143,-1.64224325240143
+P144,Centre B,train,knee,expert,28.5,SAIS,expert,22.451,true,6.04887186737223,-6.04887186737223
+P041,Centre C,train,knee,novice,10,SAIS,novice,15.944,true,5.94375194372789,5.94375194372789
+P149,Centre A,train,knee,expert,27.5,SAIS,intermediate,30,false,2.5,2.5
+P017,Centre A,train,shoulder,novice,7,SAIS,novice,5.952,true,1.04769344588142,-1.04769344588142
+P067,Centre A,train,knee,intermediate,19.5,SAIS,intermediate,18.324,true,1.17551707289655,-1.17551707289655
+P194,Centre A,train,shoulder,expert,28,SAIS,expert,30,true,2,2
+P092,Centre B,train,shoulder,intermediate,16,SAIS,intermediate,13.571,true,2.42877703406266,-2.42877703406266
+P048,Centre A,train,shoulder,novice,10.5,SAIS,novice,8.798,true,1.70230248942384,-1.70230248942384
+P072,Centre A,train,shoulder,novice,8.5,SAIS,novice,11.006,true,2.50633179228294,2.50633179228294
+P046,Centre B,train,knee,expert,29.5,SAIS,expert,29.532,true,0.0318941945731979,0.0318941945731979
+P192,Centre C,train,shoulder,novice,7.5,SAIS,novice,6.061,true,1.43945483433777,-1.43945483433777
+P167,Centre C,train,shoulder,expert,24,SAIS,intermediate,28.293,false,4.29314266446601,4.29314266446601
+P096,Centre B,train,knee,intermediate,21.5,SAIS,intermediate,19.245,true,2.25511846533175,-2.25511846533175
+P015,Centre A,train,knee,expert,25,SAIS,expert,28.173,true,3.17337715854811,3.17337715854811
+P084,Centre B,train,shoulder,novice,7.5,SAIS,novice,6.718,true,0.781557410161468,-0.781557410161468
+P123,Centre C,train,shoulder,intermediate,21.5,SAIS,intermediate,27.509,true,6.00911037980854,6.00911037980854
+P023,Centre C,train,knee,expert,26.5,SAIS,expert,29.886,true,3.38613690118342,3.38613690118342
+P014,Centre B,train,knee,intermediate,16.5,SAIS,intermediate,20.46,true,3.96035064757065,3.96035064757065
+P052,Centre C,train,knee,novice,11,SAIS,novice,10.925,true,0.0752913053755542,-0.0752913053755542
+P031,Centre C,train,knee,expert,23.5,SAIS,expert,24.611,true,1.11092954923871,1.11092954923871
+P061,Centre A,train,knee,novice,14,SAIS,novice,9.618,true,4.38243110401754,-4.38243110401754
+P051,Centre C,train,knee,novice,10,SAIS,novice,9.474,true,0.526255748031019,-0.526255748031019
+P036,Centre B,train,shoulder,intermediate,17,SAIS,novice,14.858,false,2.14188401902737,-2.14188401902737
+P136,Centre A,train,knee,expert,29.5,SAIS,expert,30,true,0.5,0.5
+P135,Centre A,train,shoulder,expert,28,SAIS,expert,23.97,true,4.03040209210005,-4.03040209210005
+P133,Centre C,train,shoulder,intermediate,22.5,SAIS,intermediate,22.075,true,0.42458015213267,-0.42458015213267
+P143,Centre A,train,knee,expert,24,SAIS,expert,25.534,true,1.53359293705356,1.53359293705356
+P035,Centre A,train,shoulder,novice,7.5,SAIS,novice,5,true,2.5,-2.5
+P126,Centre A,train,knee,novice,13,SAIS,intermediate,9.788,false,3.21168439697774,-3.21168439697774
+P099,Centre C,train,knee,novice,12,SAIS,intermediate,11.899,false,0.100775913785025,-0.100775913785025
+P100,Centre C,train,shoulder,expert,29.5,SAIS,expert,30,true,0.5,0.5
+P085,Centre C,train,shoulder,expert,25,SAIS,expert,18.818,true,6.18179413707471,-6.18179413707471
+P177,Centre C,train,knee,intermediate,16.5,SAIS,intermediate,17.016,true,0.515799538176676,0.515799538176676
+P045,Centre A,train,shoulder,novice,12.5,SAIS,novice,16.419,true,3.91937461554815,3.91937461554815
+P044,Centre C,train,knee,novice,8.5,SAIS,novice,11.737,true,3.23677600802263,3.23677600802263
+P050,Centre A,train,shoulder,expert,24,SAIS,expert,20.08,true,3.91986392500756,-3.91986392500756
+P132,Centre A,train,shoulder,intermediate,21.5,SAIS,intermediate,19.123,true,2.3765864773231,-2.3765864773231
+P173,Centre A,train,shoulder,expert,27.5,SAIS,expert,28.488,true,0.988208191708267,0.988208191708267
+P180,Centre A,train,knee,intermediate,21,SAIS,expert,16.18,false,4.82018102309667,-4.82018102309667
+P063,Centre A,train,knee,intermediate,20.5,SAIS,intermediate,18.469,true,2.03103050470089,-2.03103050470089
+P121,Centre A,train,shoulder,expert,30,SAIS,expert,30,true,0,0
+P003,Centre B,train,shoulder,intermediate,16,SAIS,intermediate,14.787,true,1.21321506457576,-1.21321506457576
+P037,Centre B,train,shoulder,intermediate,18,SAIS,intermediate,15.842,true,2.15834373258,-2.15834373258
+P109,Centre A,train,knee,novice,8,SAIS,novice,5.825,true,2.17473533613569,-2.17473533613569
+P199,Centre A,train,shoulder,novice,8.5,SAIS,novice,6.708,true,1.79186206293993,-1.79186206293993
+P006,Centre A,train,knee,intermediate,18,SAIS,expert,13.126,false,4.87438516063241,-4.87438516063241
+P184,Centre A,train,knee,expert,29,SAIS,intermediate,29.793,false,0.793430966310602,0.793430966310602
+P162,Centre B,train,knee,expert,29.5,SAIS,expert,29.477,true,0.0226395033312201,-0.0226395033312201
+P024,Centre A,train,shoulder,intermediate,20.5,SAIS,intermediate,17.709,true,2.79141455961711,-2.79141455961711
+P163,Centre A,train,knee,intermediate,18,SAIS,intermediate,13.845,true,4.15479400703079,-4.15479400703079
+P172,Centre A,train,knee,intermediate,21.5,SAIS,intermediate,24.254,true,2.75380719273474,2.75380719273474
+P040,Centre A,train,knee,novice,9.5,Video Swin-T,novice,7.129,true,2.37097586422117,-2.37097586422117
+P107,Centre C,train,knee,intermediate,18.5,Video Swin-T,novice,21.735,false,3.23464880742038,3.23464880742038
+P101,Centre C,train,knee,expert,27,Video Swin-T,expert,27.987,true,0.986747050849978,0.986747050849978
+P145,Centre B,train,shoulder,expert,24.5,Video Swin-T,intermediate,23.884,false,0.616404333075703,-0.616404333075703
+P087,Centre A,train,shoulder,expert,29.5,Video Swin-T,expert,27.934,true,1.56556487555275,-1.56556487555275
+P098,Centre B,train,knee,novice,7.5,Video Swin-T,novice,7.815,true,0.315077662117487,0.315077662117487
+P057,Centre B,train,shoulder,expert,25.5,Video Swin-T,expert,30,true,4.5,4.5
+P103,Centre A,train,knee,intermediate,17.5,Video Swin-T,intermediate,20.358,true,2.85786581769305,2.85786581769305
+P185,Centre A,train,shoulder,intermediate,18,Video Swin-T,intermediate,13.53,true,4.46952592119406,-4.46952592119406
+P191,Centre B,train,shoulder,intermediate,21.5,Video Swin-T,intermediate,23.388,true,1.88840677230347,1.88840677230347
+P186,Centre A,train,knee,intermediate,21.5,Video Swin-T,intermediate,18.668,true,2.83160595078104,-2.83160595078104
+P154,Centre A,train,shoulder,intermediate,21.5,Video Swin-T,expert,23.147,false,1.64675456449151,1.64675456449151
+P082,Centre A,train,knee,novice,8,Video Swin-T,intermediate,8.96,false,0.960474004723377,0.960474004723377
+P097,Centre C,train,shoulder,expert,25,Video Swin-T,expert,28.129,true,3.12925475441681,3.12925475441681
+P049,Centre C,train,shoulder,expert,27,Video Swin-T,expert,30,true,3,3
+P161,Centre C,train,shoulder,intermediate,17,Video Swin-T,intermediate,19.282,true,2.28246385872377,2.28246385872377
+P030,Centre C,train,knee,expert,29.5,Video Swin-T,expert,29.559,true,0.0586882681768408,0.0586882681768408
+P128,Centre A,train,knee,intermediate,19,Video Swin-T,intermediate,18.338,true,0.66208709828431,-0.66208709828431
+P034,Centre A,train,knee,intermediate,21,Video Swin-T,expert,15.678,false,5.3220834407913,-5.3220834407913
+P039,Centre A,train,shoulder,intermediate,20,Video Swin-T,intermediate,15.454,true,4.5458736069189,-4.5458736069189
+P118,Centre C,train,knee,expert,25.5,Video Swin-T,expert,23.219,true,2.28062667514096,-2.28062667514096
+P027,Centre C,train,shoulder,novice,11.5,Video Swin-T,novice,16.922,true,5.42167177830282,5.42167177830282
+P004,Centre C,train,shoulder,expert,27.5,Video Swin-T,expert,25.782,true,1.71779091132753,-1.71779091132753
+P159,Centre B,train,knee,novice,12.5,Video Swin-T,intermediate,8.394,false,4.10578286012672,-4.10578286012672
+P146,Centre A,train,shoulder,intermediate,16.5,Video Swin-T,expert,11.584,false,4.91638460509553,-4.91638460509553
+P108,Centre B,train,knee,intermediate,19,Video Swin-T,expert,13.71,false,5.28961901113089,-5.28961901113089
+P083,Centre A,train,knee,expert,24,Video Swin-T,expert,20.006,true,3.99393414048914,-3.99393414048914
+P148,Centre A,train,knee,expert,28.5,Video Swin-T,expert,27.729,true,0.771466433575636,-0.771466433575636
+P193,Centre C,train,shoulder,intermediate,17,Video Swin-T,expert,25.019,false,8.01867387019464,8.01867387019464
+P075,Centre A,train,shoulder,intermediate,19.5,Video Swin-T,intermediate,15.411,true,4.08863808199517,-4.08863808199517
+P102,Centre A,train,knee,intermediate,19.5,Video Swin-T,novice,20.949,false,1.44922563278323,1.44922563278323
+P038,Centre B,train,knee,expert,26.5,Video Swin-T,expert,30,true,3.5,3.5
+P160,Centre A,train,shoulder,intermediate,19,Video Swin-T,expert,22.863,false,3.86323307876174,3.86323307876174
+P029,Centre A,train,knee,intermediate,22,Video Swin-T,intermediate,20.187,true,1.81266352344955,-1.81266352344955
+P007,Centre A,train,knee,expert,29.5,Video Swin-T,intermediate,22.914,false,6.58585507485192,-6.58585507485192
+P065,Centre A,train,shoulder,expert,26.5,Video Swin-T,expert,28.527,true,2.02670866535651,2.02670866535651
+P152,Centre C,train,knee,novice,14,Video Swin-T,intermediate,8.76,false,5.23979711645364,-5.23979711645364
+P113,Centre A,train,shoulder,intermediate,19.5,Video Swin-T,intermediate,19.486,true,0.0136535637642865,-0.0136535637642865
+P066,Centre B,train,shoulder,novice,7,Video Swin-T,novice,5,true,2,-2
+P002,Centre B,train,shoulder,expert,24,Video Swin-T,expert,23.818,true,0.181682638412663,-0.181682638412663
+P074,Centre B,train,shoulder,expert,27.5,Video Swin-T,intermediate,30,false,2.5,2.5
+P012,Centre A,train,knee,intermediate,16.5,Video Swin-T,intermediate,19.352,true,2.85176988732902,2.85176988732902
+P073,Centre B,train,shoulder,intermediate,18,Video Swin-T,intermediate,22.805,true,4.8052609583507,4.8052609583507
+P158,Centre C,train,shoulder,intermediate,17.5,Video Swin-T,novice,21.403,false,3.90277634546533,3.90277634546533
+P174,Centre C,train,knee,novice,11,Video Swin-T,novice,15.728,true,4.72843184468612,4.72843184468612
+P142,Centre B,train,knee,expert,29,Video Swin-T,intermediate,30,false,1,1
+P165,Centre A,train,knee,intermediate,22.5,Video Swin-T,intermediate,20.613,true,1.88686115208386,-1.88686115208386
+P028,Centre B,train,knee,intermediate,15.5,Video Swin-T,intermediate,16.561,true,1.06123858174206,1.06123858174206
+P150,Centre A,train,knee,novice,10.5,Video Swin-T,novice,11.216,true,0.715847999128563,0.715847999128563
+P176,Centre A,train,shoulder,novice,13,Video Swin-T,novice,13.196,true,0.196396849409309,0.196396849409309
+P090,Centre B,train,knee,expert,26,Video Swin-T,intermediate,28.639,false,2.6392020734052,2.6392020734052
+P140,Centre A,train,shoulder,novice,12.5,Video Swin-T,novice,5.284,true,7.21609320882771,-7.21609320882771
+P119,Centre B,train,knee,expert,24,Video Swin-T,expert,23.077,true,0.923142264626883,-0.923142264626883
+P094,Centre A,train,knee,intermediate,23,Video Swin-T,intermediate,19.073,true,3.92654431711107,-3.92654431711107
+P182,Centre A,train,shoulder,intermediate,19.5,Video Swin-T,intermediate,20.797,true,1.29737143513867,1.29737143513867
+P169,Centre A,train,knee,novice,11.5,Video Swin-T,novice,12.237,true,0.737020878050522,0.737020878050522
+P079,Centre B,train,shoulder,expert,24.5,Video Swin-T,expert,27.172,true,2.67206029671342,2.67206029671342
+P068,Centre A,train,shoulder,novice,11.5,Video Swin-T,novice,9.301,true,2.19890658417991,-2.19890658417991
+P054,Centre B,train,knee,intermediate,17,Video Swin-T,intermediate,18.702,true,1.70213551910177,1.70213551910177
+P111,Centre B,train,shoulder,expert,27.5,Video Swin-T,expert,28.288,true,0.787666425914491,0.787666425914491
+P112,Centre A,train,shoulder,intermediate,17.5,Video Swin-T,expert,21.901,false,4.40104515734796,4.40104515734796
+P196,Centre B,train,knee,intermediate,20,Video Swin-T,intermediate,22.785,true,2.78474380101747,2.78474380101747
+P183,Centre B,train,knee,intermediate,21,Video Swin-T,intermediate,21.765,true,0.764910634808217,0.764910634808217
+P062,Centre A,train,knee,expert,27,Video Swin-T,expert,30,true,3,3
+P181,Centre C,train,knee,expert,23.5,Video Swin-T,expert,20.883,true,2.61748982289023,-2.61748982289023
+P147,Centre C,train,knee,expert,24,Video Swin-T,expert,25.424,true,1.42422776388492,1.42422776388492
+P144,Centre B,train,knee,expert,28.5,Video Swin-T,expert,24.124,true,4.37646648990054,-4.37646648990054
+P041,Centre C,train,knee,novice,10,Video Swin-T,novice,5.505,true,4.49526228641212,-4.49526228641212
+P149,Centre A,train,knee,expert,27.5,Video Swin-T,intermediate,27.466,false,0.033763020268804,-0.033763020268804
+P017,Centre A,train,shoulder,novice,7,Video Swin-T,intermediate,5,false,2,-2
+P067,Centre A,train,knee,intermediate,19.5,Video Swin-T,intermediate,12.828,true,6.67186874859959,-6.67186874859959
+P194,Centre A,train,shoulder,expert,28,Video Swin-T,expert,27.158,true,0.842213172663495,-0.842213172663495
+P092,Centre B,train,shoulder,intermediate,16,Video Swin-T,intermediate,16.03,true,0.0301383828384871,0.0301383828384871
+P048,Centre A,train,shoulder,novice,10.5,Video Swin-T,intermediate,12.015,false,1.51478939217674,1.51478939217674
+P072,Centre A,train,shoulder,novice,8.5,Video Swin-T,novice,5,true,3.5,-3.5
+P046,Centre B,train,knee,expert,29.5,Video Swin-T,intermediate,28.492,false,1.00804222798592,-1.00804222798592
+P192,Centre C,train,shoulder,novice,7.5,Video Swin-T,intermediate,6.995,false,0.504755290654739,-0.504755290654739
+P167,Centre C,train,shoulder,expert,24,Video Swin-T,expert,25.043,true,1.04252766074667,1.04252766074667
+P096,Centre B,train,knee,intermediate,21.5,Video Swin-T,intermediate,20.853,true,0.646844693290859,-0.646844693290859
+P015,Centre A,train,knee,expert,25,Video Swin-T,expert,27.791,true,2.790985126849,2.790985126849
+P084,Centre B,train,shoulder,novice,7.5,Video Swin-T,novice,7.469,true,0.0309104731170455,-0.0309104731170455
+P123,Centre C,train,shoulder,intermediate,21.5,Video Swin-T,intermediate,21.826,true,0.325855275267855,0.325855275267855
+P023,Centre C,train,knee,expert,26.5,Video Swin-T,expert,30,true,3.5,3.5
+P014,Centre B,train,knee,intermediate,16.5,Video Swin-T,intermediate,12.73,true,3.77000969226403,-3.77000969226403
+P052,Centre C,train,knee,novice,11,Video Swin-T,novice,8.138,true,2.86218015417827,-2.86218015417827
+P031,Centre C,train,knee,expert,23.5,Video Swin-T,expert,23.816,true,0.316349228912983,0.316349228912983
+P061,Centre A,train,knee,novice,14,Video Swin-T,novice,9.53,true,4.47018825770626,-4.47018825770626
+P051,Centre C,train,knee,novice,10,Video Swin-T,novice,5.5,true,4.4996589093671,-4.4996589093671
+P036,Centre B,train,shoulder,intermediate,17,Video Swin-T,intermediate,17.262,true,0.261798238850904,0.261798238850904
+P136,Centre A,train,knee,expert,29.5,Video Swin-T,expert,30,true,0.5,0.5
+P135,Centre A,train,shoulder,expert,28,Video Swin-T,intermediate,27.671,false,0.32929457713017,-0.32929457713017
+P133,Centre C,train,shoulder,intermediate,22.5,Video Swin-T,novice,28.972,false,6.47154842587275,6.47154842587275
+P143,Centre A,train,knee,expert,24,Video Swin-T,expert,25.012,true,1.01176576562134,1.01176576562134
+P035,Centre A,train,shoulder,novice,7.5,Video Swin-T,intermediate,9.935,false,2.43514691839333,2.43514691839333
+P126,Centre A,train,knee,novice,13,Video Swin-T,novice,13.517,true,0.51738279041161,0.51738279041161
+P099,Centre C,train,knee,novice,12,Video Swin-T,novice,7.668,true,4.33187031443989,-4.33187031443989
+P100,Centre C,train,shoulder,expert,29.5,Video Swin-T,intermediate,27.764,false,1.73646480682258,-1.73646480682258
+P085,Centre C,train,shoulder,expert,25,Video Swin-T,expert,23.519,true,1.48109230990836,-1.48109230990836
+P177,Centre C,train,knee,intermediate,16.5,Video Swin-T,expert,12.527,false,3.97319374110999,-3.97319374110999
+P045,Centre A,train,shoulder,novice,12.5,Video Swin-T,novice,14.069,true,1.56887017971088,1.56887017971088
+P044,Centre C,train,knee,novice,8.5,Video Swin-T,novice,5,true,3.5,-3.5
+P050,Centre A,train,shoulder,expert,24,Video Swin-T,intermediate,17.922,false,6.07807029237572,-6.07807029237572
+P132,Centre A,train,shoulder,intermediate,21.5,Video Swin-T,intermediate,21.815,true,0.314663622490219,0.314663622490219
+P173,Centre A,train,shoulder,expert,27.5,Video Swin-T,intermediate,23.86,false,3.63993798155106,-3.63993798155106
+P180,Centre A,train,knee,intermediate,21,Video Swin-T,expert,18.892,false,2.1077779163695,-2.1077779163695
+P063,Centre A,train,knee,intermediate,20.5,Video Swin-T,expert,27.941,false,7.44080215287494,7.44080215287494
+P121,Centre A,train,shoulder,expert,30,Video Swin-T,expert,30,true,0,0
+P003,Centre B,train,shoulder,intermediate,16,Video Swin-T,novice,15.918,false,0.0817683965923681,-0.0817683965923681
+P037,Centre B,train,shoulder,intermediate,18,Video Swin-T,novice,18.185,false,0.18538479674131,0.18538479674131
+P109,Centre A,train,knee,novice,8,Video Swin-T,novice,7.96,true,0.0404331420774948,-0.0404331420774948
+P199,Centre A,train,shoulder,novice,8.5,Video Swin-T,novice,9.03,true,0.530338319319981,0.530338319319981
+P006,Centre A,train,knee,intermediate,18,Video Swin-T,intermediate,26.25,true,8.24957797761974,8.24957797761974
+P184,Centre A,train,knee,expert,29,Video Swin-T,expert,29.964,true,0.964434183055243,0.964434183055243
+P162,Centre B,train,knee,expert,29.5,Video Swin-T,expert,29.228,true,0.272286844030081,-0.272286844030081
+P024,Centre A,train,shoulder,intermediate,20.5,Video Swin-T,novice,25.336,false,4.83581376740321,4.83581376740321
+P163,Centre A,train,knee,intermediate,18,Video Swin-T,novice,21.584,false,3.58420714003353,3.58420714003353
+P172,Centre A,train,knee,intermediate,21.5,Video Swin-T,intermediate,20.214,true,1.28556442124777,-1.28556442124777
+P040,Centre A,train,knee,novice,9.5,3D-ResNet-18,novice,16.116,true,6.61593960598592,6.61593960598592
+P107,Centre C,train,knee,intermediate,18.5,3D-ResNet-18,expert,21.943,false,3.4434377416,3.4434377416
+P101,Centre C,train,knee,expert,27,3D-ResNet-18,expert,27.324,true,0.324183876333333,0.324183876333333
+P145,Centre B,train,shoulder,expert,24.5,3D-ResNet-18,expert,20.988,true,3.51160821114393,-3.51160821114393
+P087,Centre A,train,shoulder,expert,29.5,3D-ResNet-18,intermediate,29.16,false,0.340078227167709,-0.340078227167709
+P098,Centre B,train,knee,novice,7.5,3D-ResNet-18,novice,5.407,true,2.0926923592976,-2.0926923592976
+P057,Centre B,train,shoulder,expert,25.5,3D-ResNet-18,expert,30,true,4.5,4.5
+P103,Centre A,train,knee,intermediate,17.5,3D-ResNet-18,intermediate,16.45,true,1.04958339509523,-1.04958339509523
+P185,Centre A,train,shoulder,intermediate,18,3D-ResNet-18,intermediate,20.067,true,2.06683631454422,2.06683631454422
+P191,Centre B,train,shoulder,intermediate,21.5,3D-ResNet-18,novice,19.693,false,1.80705664345344,-1.80705664345344
+P186,Centre A,train,knee,intermediate,21.5,3D-ResNet-18,novice,15.77,false,5.7297914837458,-5.7297914837458
+P154,Centre A,train,shoulder,intermediate,21.5,3D-ResNet-18,intermediate,22.122,true,0.621563848250826,0.621563848250826
+P082,Centre A,train,knee,novice,8,3D-ResNet-18,novice,8.252,true,0.252445875034349,0.252445875034349
+P097,Centre C,train,shoulder,expert,25,3D-ResNet-18,expert,27.503,true,2.5033868302958,2.5033868302958
+P049,Centre C,train,shoulder,expert,27,3D-ResNet-18,expert,23.691,true,3.30944577033019,-3.30944577033019
+P161,Centre C,train,shoulder,intermediate,17,3D-ResNet-18,novice,24.464,false,7.46356577046219,7.46356577046219
+P030,Centre C,train,knee,expert,29.5,3D-ResNet-18,expert,27.027,true,2.47300587893828,-2.47300587893828
+P128,Centre A,train,knee,intermediate,19,3D-ResNet-18,intermediate,17.584,true,1.41603784839026,-1.41603784839026
+P034,Centre A,train,knee,intermediate,21,3D-ResNet-18,intermediate,25.925,true,4.9248155253275,4.9248155253275
+P039,Centre A,train,shoulder,intermediate,20,3D-ResNet-18,intermediate,21.112,true,1.11200144956001,1.11200144956001
+P118,Centre C,train,knee,expert,25.5,3D-ResNet-18,expert,24.622,true,0.87777752592633,-0.87777752592633
+P027,Centre C,train,shoulder,novice,11.5,3D-ResNet-18,intermediate,10.326,false,1.17393974395957,-1.17393974395957
+P004,Centre C,train,shoulder,expert,27.5,3D-ResNet-18,expert,29.707,true,2.20712706784192,2.20712706784192
+P159,Centre B,train,knee,novice,12.5,3D-ResNet-18,novice,5.85,true,6.65007867868049,-6.65007867868049
+P146,Centre A,train,shoulder,intermediate,16.5,3D-ResNet-18,intermediate,9.172,true,7.32789322964385,-7.32789322964385
+P108,Centre B,train,knee,intermediate,19,3D-ResNet-18,intermediate,17.532,true,1.46780751509465,-1.46780751509465
+P083,Centre A,train,knee,expert,24,3D-ResNet-18,expert,20.467,true,3.53347247703609,-3.53347247703609
+P148,Centre A,train,knee,expert,28.5,3D-ResNet-18,expert,30,true,1.5,1.5
+P193,Centre C,train,shoulder,intermediate,17,3D-ResNet-18,intermediate,19.752,true,2.75225840541535,2.75225840541535
+P075,Centre A,train,shoulder,intermediate,19.5,3D-ResNet-18,intermediate,20.171,true,0.671355199528946,0.671355199528946
+P102,Centre A,train,knee,intermediate,19.5,3D-ResNet-18,intermediate,16.771,true,2.72851606820681,-2.72851606820681
+P038,Centre B,train,knee,expert,26.5,3D-ResNet-18,intermediate,27.765,false,1.26455469864964,1.26455469864964
+P160,Centre A,train,shoulder,intermediate,19,3D-ResNet-18,intermediate,21.905,true,2.90531382843045,2.90531382843045
+P029,Centre A,train,knee,intermediate,22,3D-ResNet-18,intermediate,19.12,true,2.87950106481431,-2.87950106481431
+P007,Centre A,train,knee,expert,29.5,3D-ResNet-18,expert,29.632,true,0.131584573999952,0.131584573999952
+P065,Centre A,train,shoulder,expert,26.5,3D-ResNet-18,intermediate,22.473,false,4.02663637635219,-4.02663637635219
+P152,Centre C,train,knee,novice,14,3D-ResNet-18,intermediate,15.203,false,1.20252196256025,1.20252196256025
+P113,Centre A,train,shoulder,intermediate,19.5,3D-ResNet-18,expert,21.986,false,2.48632457036984,2.48632457036984
+P066,Centre B,train,shoulder,novice,7,3D-ResNet-18,novice,9.065,true,2.06506084647517,2.06506084647517
+P002,Centre B,train,shoulder,expert,24,3D-ResNet-18,intermediate,26.715,false,2.71469704617834,2.71469704617834
+P074,Centre B,train,shoulder,expert,27.5,3D-ResNet-18,expert,22.631,true,4.86859499865778,-4.86859499865778
+P012,Centre A,train,knee,intermediate,16.5,3D-ResNet-18,intermediate,14.488,true,2.01161356296117,-2.01161356296117
+P073,Centre B,train,shoulder,intermediate,18,3D-ResNet-18,intermediate,18.266,true,0.266162058886781,0.266162058886781
+P158,Centre C,train,shoulder,intermediate,17.5,3D-ResNet-18,novice,18.399,false,0.898541119346454,0.898541119346454
+P174,Centre C,train,knee,novice,11,3D-ResNet-18,novice,11.826,true,0.82579988514502,0.82579988514502
+P142,Centre B,train,knee,expert,29,3D-ResNet-18,expert,26.069,true,2.93091155559178,-2.93091155559178
+P165,Centre A,train,knee,intermediate,22.5,3D-ResNet-18,expert,22.377,false,0.123189545260917,-0.123189545260917
+P028,Centre B,train,knee,intermediate,15.5,3D-ResNet-18,intermediate,17.003,true,1.50303676570377,1.50303676570377
+P150,Centre A,train,knee,novice,10.5,3D-ResNet-18,intermediate,8.31,false,2.18983077357299,-2.18983077357299
+P176,Centre A,train,shoulder,novice,13,3D-ResNet-18,novice,21.549,true,8.54891155952814,8.54891155952814
+P090,Centre B,train,knee,expert,26,3D-ResNet-18,expert,25.978,true,0.0218427634370073,-0.0218427634370073
+P140,Centre A,train,shoulder,novice,12.5,3D-ResNet-18,novice,13.061,true,0.561450211034405,0.561450211034405
+P119,Centre B,train,knee,expert,24,3D-ResNet-18,expert,28.583,true,4.58324519273014,4.58324519273014
+P094,Centre A,train,knee,intermediate,23,3D-ResNet-18,intermediate,20.256,true,2.74432246287189,-2.74432246287189
+P182,Centre A,train,shoulder,intermediate,19.5,3D-ResNet-18,novice,18.298,false,1.20248493058311,-1.20248493058311
+P169,Centre A,train,knee,novice,11.5,3D-ResNet-18,novice,8.722,true,2.77788750202526,-2.77788750202526
+P079,Centre B,train,shoulder,expert,24.5,3D-ResNet-18,expert,24.171,true,0.329006570861335,-0.329006570861335
+P068,Centre A,train,shoulder,novice,11.5,3D-ResNet-18,novice,10.184,true,1.31608323615232,-1.31608323615232
+P054,Centre B,train,knee,intermediate,17,3D-ResNet-18,intermediate,12,true,4.99958003508452,-4.99958003508452
+P111,Centre B,train,shoulder,expert,27.5,3D-ResNet-18,intermediate,26.011,false,1.48899249800933,-1.48899249800933
+P112,Centre A,train,shoulder,intermediate,17.5,3D-ResNet-18,expert,21.386,false,3.88604230230741,3.88604230230741
+P196,Centre B,train,knee,intermediate,20,3D-ResNet-18,intermediate,19.617,true,0.382853569299609,-0.382853569299609
+P183,Centre B,train,knee,intermediate,21,3D-ResNet-18,intermediate,21.995,true,0.994666351174271,0.994666351174271
+P062,Centre A,train,knee,expert,27,3D-ResNet-18,expert,27.172,true,0.172026351165762,0.172026351165762
+P181,Centre C,train,knee,expert,23.5,3D-ResNet-18,expert,29.912,true,6.41152204455976,6.41152204455976
+P147,Centre C,train,knee,expert,24,3D-ResNet-18,intermediate,22.715,false,1.28476588114673,-1.28476588114673
+P144,Centre B,train,knee,expert,28.5,3D-ResNet-18,expert,23.876,true,4.62410450154159,-4.62410450154159
+P041,Centre C,train,knee,novice,10,3D-ResNet-18,novice,10.95,true,0.950096148387914,0.950096148387914
+P149,Centre A,train,knee,expert,27.5,3D-ResNet-18,intermediate,29.494,false,1.99434669875217,1.99434669875217
+P017,Centre A,train,shoulder,novice,7,3D-ResNet-18,novice,5.687,true,1.31315831569607,-1.31315831569607
+P067,Centre A,train,knee,intermediate,19.5,3D-ResNet-18,intermediate,23.237,true,3.73706285075329,3.73706285075329
+P194,Centre A,train,shoulder,expert,28,3D-ResNet-18,intermediate,30,false,2,2
+P092,Centre B,train,shoulder,intermediate,16,3D-ResNet-18,expert,22.21,false,6.21012652424288,6.21012652424288
+P048,Centre A,train,shoulder,novice,10.5,3D-ResNet-18,novice,5,true,5.5,-5.5
+P072,Centre A,train,shoulder,novice,8.5,3D-ResNet-18,novice,8.135,true,0.365140173484155,-0.365140173484155
+P046,Centre B,train,knee,expert,29.5,3D-ResNet-18,intermediate,22.225,false,7.27507352156463,-7.27507352156463
+P192,Centre C,train,shoulder,novice,7.5,3D-ResNet-18,novice,8.29,true,0.790149512321765,0.790149512321765
+P167,Centre C,train,shoulder,expert,24,3D-ResNet-18,intermediate,20.788,false,3.21223170165544,-3.21223170165544
+P096,Centre B,train,knee,intermediate,21.5,3D-ResNet-18,intermediate,23.921,true,2.42135689316545,2.42135689316545
+P015,Centre A,train,knee,expert,25,3D-ResNet-18,expert,20.065,true,4.93467720865074,-4.93467720865074
+P084,Centre B,train,shoulder,novice,7.5,3D-ResNet-18,novice,6.411,true,1.08888784836277,-1.08888784836277
+P123,Centre C,train,shoulder,intermediate,21.5,3D-ResNet-18,intermediate,23.618,true,2.1179097693313,2.1179097693313
+P023,Centre C,train,knee,expert,26.5,3D-ResNet-18,intermediate,22.968,false,3.53171567924074,-3.53171567924074
+P014,Centre B,train,knee,intermediate,16.5,3D-ResNet-18,expert,17.495,false,0.995211101222196,0.995211101222196
+P052,Centre C,train,knee,novice,11,3D-ResNet-18,novice,11.811,true,0.81051227653343,0.81051227653343
+P031,Centre C,train,knee,expert,23.5,3D-ResNet-18,intermediate,26.713,false,3.21290295561734,3.21290295561734
+P061,Centre A,train,knee,novice,14,3D-ResNet-18,novice,15.415,true,1.41505695337935,1.41505695337935
+P051,Centre C,train,knee,novice,10,3D-ResNet-18,novice,7.204,true,2.79598270730681,-2.79598270730681
+P036,Centre B,train,shoulder,intermediate,17,3D-ResNet-18,intermediate,11.335,true,5.66484677875007,-5.66484677875007
+P136,Centre A,train,knee,expert,29.5,3D-ResNet-18,expert,30,true,0.5,0.5
+P135,Centre A,train,shoulder,expert,28,3D-ResNet-18,expert,24.496,true,3.50439544334129,-3.50439544334129
+P133,Centre C,train,shoulder,intermediate,22.5,3D-ResNet-18,intermediate,28.112,true,5.61198080775591,5.61198080775591
+P143,Centre A,train,knee,expert,24,3D-ResNet-18,expert,26.697,true,2.69704525142138,2.69704525142138
+P035,Centre A,train,shoulder,novice,7.5,3D-ResNet-18,intermediate,9.532,false,2.03227832005454,2.03227832005454
+P126,Centre A,train,knee,novice,13,3D-ResNet-18,novice,15.582,true,2.58241645013932,2.58241645013932
+P099,Centre C,train,knee,novice,12,3D-ResNet-18,novice,14.103,true,2.10345861193423,2.10345861193423
+P100,Centre C,train,shoulder,expert,29.5,3D-ResNet-18,expert,27.365,true,2.13538396800061,-2.13538396800061
+P085,Centre C,train,shoulder,expert,25,3D-ResNet-18,intermediate,25.682,false,0.682369732521991,0.682369732521991
+P177,Centre C,train,knee,intermediate,16.5,3D-ResNet-18,intermediate,19.578,true,3.0783213736323,3.0783213736323
+P045,Centre A,train,shoulder,novice,12.5,3D-ResNet-18,novice,9.385,true,3.1148716808322,-3.1148716808322
+P044,Centre C,train,knee,novice,8.5,3D-ResNet-18,novice,6.988,true,1.51160435774403,-1.51160435774403
+P050,Centre A,train,shoulder,expert,24,3D-ResNet-18,expert,20.789,true,3.21081194540872,-3.21081194540872
+P132,Centre A,train,shoulder,intermediate,21.5,3D-ResNet-18,intermediate,22.064,true,0.563949530719238,0.563949530719238
+P173,Centre A,train,shoulder,expert,27.5,3D-ResNet-18,expert,27.264,true,0.235831613025983,-0.235831613025983
+P180,Centre A,train,knee,intermediate,21,3D-ResNet-18,novice,21.079,false,0.0793659423183435,0.0793659423183435
+P063,Centre A,train,knee,intermediate,20.5,3D-ResNet-18,intermediate,18.974,true,1.52615059776564,-1.52615059776564
+P121,Centre A,train,shoulder,expert,30,3D-ResNet-18,intermediate,30,false,0,0
+P003,Centre B,train,shoulder,intermediate,16,3D-ResNet-18,intermediate,12.968,true,3.03164004767306,-3.03164004767306
+P037,Centre B,train,shoulder,intermediate,18,3D-ResNet-18,intermediate,19.024,true,1.02371413618626,1.02371413618626
+P109,Centre A,train,knee,novice,8,3D-ResNet-18,intermediate,6.109,false,1.891278781433,-1.891278781433
+P199,Centre A,train,shoulder,novice,8.5,3D-ResNet-18,novice,10.559,true,2.05883234309651,2.05883234309651
+P006,Centre A,train,knee,intermediate,18,3D-ResNet-18,expert,21.523,false,3.52313453933672,3.52313453933672
+P184,Centre A,train,knee,expert,29,3D-ResNet-18,expert,29.165,true,0.164913722878381,0.164913722878381
+P162,Centre B,train,knee,expert,29.5,3D-ResNet-18,intermediate,29.356,false,0.143623354968934,-0.143623354968934
+P024,Centre A,train,shoulder,intermediate,20.5,3D-ResNet-18,novice,22.605,false,2.10481842997305,2.10481842997305
+P163,Centre A,train,knee,intermediate,18,3D-ResNet-18,intermediate,22.587,true,4.58652031376997,4.58652031376997
+P172,Centre A,train,knee,intermediate,21.5,3D-ResNet-18,intermediate,18.044,true,3.45647248238945,-3.45647248238945
+P040,Centre A,train,knee,novice,9.5,Appearance only,novice,9.87,true,0.369830905958862,0.369830905958862
+P107,Centre C,train,knee,intermediate,18.5,Appearance only,intermediate,20.954,true,2.45353404414061,2.45353404414061
+P101,Centre C,train,knee,expert,27,Appearance only,intermediate,25.867,false,1.13320792607421,-1.13320792607421
+P145,Centre B,train,shoulder,expert,24.5,Appearance only,expert,28.422,true,3.92159850469148,3.92159850469148
+P087,Centre A,train,shoulder,expert,29.5,Appearance only,expert,30,true,0.5,0.5
+P098,Centre B,train,knee,novice,7.5,Appearance only,novice,12.017,true,4.51743718496214,4.51743718496214
+P057,Centre B,train,shoulder,expert,25.5,Appearance only,expert,22.466,true,3.03427153946781,-3.03427153946781
+P103,Centre A,train,knee,intermediate,17.5,Appearance only,intermediate,17.671,true,0.170588563241274,0.170588563241274
+P185,Centre A,train,shoulder,intermediate,18,Appearance only,intermediate,16.828,true,1.17246224855226,-1.17246224855226
+P191,Centre B,train,shoulder,intermediate,21.5,Appearance only,intermediate,24.806,true,3.3059760435447,3.3059760435447
+P186,Centre A,train,knee,intermediate,21.5,Appearance only,intermediate,21.577,true,0.0770984390828318,0.0770984390828318
+P154,Centre A,train,shoulder,intermediate,21.5,Appearance only,intermediate,20.816,true,0.683606521894589,-0.683606521894589
+P082,Centre A,train,knee,novice,8,Appearance only,novice,6.639,true,1.36087001508554,-1.36087001508554
+P097,Centre C,train,shoulder,expert,25,Appearance only,expert,26.064,true,1.06424138067265,1.06424138067265
+P049,Centre C,train,shoulder,expert,27,Appearance only,intermediate,26.835,false,0.164865600365648,-0.164865600365648
+P161,Centre C,train,shoulder,intermediate,17,Appearance only,intermediate,20.594,true,3.59434978545973,3.59434978545973
+P030,Centre C,train,knee,expert,29.5,Appearance only,expert,27.756,true,1.74359858939646,-1.74359858939646
+P128,Centre A,train,knee,intermediate,19,Appearance only,intermediate,20.999,true,1.99893937892635,1.99893937892635
+P034,Centre A,train,knee,intermediate,21,Appearance only,intermediate,18.41,true,2.59017408020942,-2.59017408020942
+P039,Centre A,train,shoulder,intermediate,20,Appearance only,novice,18.372,false,1.62793381911066,-1.62793381911066
+P118,Centre C,train,knee,expert,25.5,Appearance only,expert,20.346,true,5.15433128576986,-5.15433128576986
+P027,Centre C,train,shoulder,novice,11.5,Appearance only,novice,6.463,true,5.03704921424876,-5.03704921424876
+P004,Centre C,train,shoulder,expert,27.5,Appearance only,intermediate,25.213,false,2.28709119441174,-2.28709119441174
+P159,Centre B,train,knee,novice,12.5,Appearance only,novice,10.982,true,1.51816950276017,-1.51816950276017
+P146,Centre A,train,shoulder,intermediate,16.5,Appearance only,novice,20.089,false,3.58912018791366,3.58912018791366
+P108,Centre B,train,knee,intermediate,19,Appearance only,intermediate,21.258,true,2.25822545259249,2.25822545259249
+P083,Centre A,train,knee,expert,24,Appearance only,expert,22.908,true,1.09153957494312,-1.09153957494312
+P148,Centre A,train,knee,expert,28.5,Appearance only,expert,27.559,true,0.941134637785442,-0.941134637785442
+P193,Centre C,train,shoulder,intermediate,17,Appearance only,intermediate,14.887,true,2.11341503753741,-2.11341503753741
+P075,Centre A,train,shoulder,intermediate,19.5,Appearance only,expert,21.221,false,1.72096835950685,1.72096835950685
+P102,Centre A,train,knee,intermediate,19.5,Appearance only,intermediate,18.71,true,0.790217106927685,-0.790217106927685
+P038,Centre B,train,knee,expert,26.5,Appearance only,expert,22.751,true,3.74906755100741,-3.74906755100741
+P160,Centre A,train,shoulder,intermediate,19,Appearance only,expert,22.994,false,3.99410178629146,3.99410178629146
+P029,Centre A,train,knee,intermediate,22,Appearance only,intermediate,26.624,true,4.62363072556416,4.62363072556416
+P007,Centre A,train,knee,expert,29.5,Appearance only,intermediate,30,false,0.5,0.5
+P065,Centre A,train,shoulder,expert,26.5,Appearance only,expert,24.492,true,2.00811925419988,-2.00811925419988
+P152,Centre C,train,knee,novice,14,Appearance only,novice,13.04,true,0.960467488530011,-0.960467488530011
+P113,Centre A,train,shoulder,intermediate,19.5,Appearance only,intermediate,21.808,true,2.30835714812639,2.30835714812639
+P066,Centre B,train,shoulder,novice,7,Appearance only,novice,5.442,true,1.55752268223761,-1.55752268223761
+P002,Centre B,train,shoulder,expert,24,Appearance only,expert,20.673,true,3.32662134988295,-3.32662134988295
+P074,Centre B,train,shoulder,expert,27.5,Appearance only,expert,26.811,true,0.689193193752889,-0.689193193752889
+P012,Centre A,train,knee,intermediate,16.5,Appearance only,intermediate,18.418,true,1.91786613516099,1.91786613516099
+P073,Centre B,train,shoulder,intermediate,18,Appearance only,novice,17.332,false,0.667966953748387,-0.667966953748387
+P158,Centre C,train,shoulder,intermediate,17.5,Appearance only,intermediate,16.71,true,0.790029234682986,-0.790029234682986
+P174,Centre C,train,knee,novice,11,Appearance only,novice,10.945,true,0.0552506333601937,-0.0552506333601937
+P142,Centre B,train,knee,expert,29,Appearance only,intermediate,25.983,false,3.01697145637489,-3.01697145637489
+P165,Centre A,train,knee,intermediate,22.5,Appearance only,intermediate,20.874,true,1.6263012637914,-1.6263012637914
+P028,Centre B,train,knee,intermediate,15.5,Appearance only,expert,17.208,false,1.7081950466967,1.7081950466967
+P150,Centre A,train,knee,novice,10.5,Appearance only,novice,9.83,true,0.669776040338979,-0.669776040338979
+P176,Centre A,train,shoulder,novice,13,Appearance only,novice,12.485,true,0.515014206416604,-0.515014206416604
+P090,Centre B,train,knee,expert,26,Appearance only,expert,25.514,true,0.486456161134832,-0.486456161134832
+P140,Centre A,train,shoulder,novice,12.5,Appearance only,novice,5.514,true,6.98560785367618,-6.98560785367618
+P119,Centre B,train,knee,expert,24,Appearance only,expert,21.821,true,2.17933412067244,-2.17933412067244
+P094,Centre A,train,knee,intermediate,23,Appearance only,novice,21.912,false,1.08829331603166,-1.08829331603166
+P182,Centre A,train,shoulder,intermediate,19.5,Appearance only,intermediate,16.855,true,2.64512358509913,-2.64512358509913
+P169,Centre A,train,knee,novice,11.5,Appearance only,novice,13.516,true,2.0157825661491,2.0157825661491
+P079,Centre B,train,shoulder,expert,24.5,Appearance only,intermediate,22.362,false,2.1380422988598,-2.1380422988598
+P068,Centre A,train,shoulder,novice,11.5,Appearance only,novice,17.631,true,6.13112633294546,6.13112633294546
+P054,Centre B,train,knee,intermediate,17,Appearance only,intermediate,18.732,true,1.73203623578393,1.73203623578393
+P111,Centre B,train,shoulder,expert,27.5,Appearance only,intermediate,27.132,false,0.367545499621929,-0.367545499621929
+P112,Centre A,train,shoulder,intermediate,17.5,Appearance only,intermediate,21.024,true,3.52378157340891,3.52378157340891
+P196,Centre B,train,knee,intermediate,20,Appearance only,intermediate,20.079,true,0.0788662637143176,0.0788662637143176
+P183,Centre B,train,knee,intermediate,21,Appearance only,intermediate,21.541,true,0.540979904606704,0.540979904606704
+P062,Centre A,train,knee,expert,27,Appearance only,expert,28.526,true,1.5258330017082,1.5258330017082
+P181,Centre C,train,knee,expert,23.5,Appearance only,intermediate,27.372,false,3.87194327908308,3.87194327908308
+P147,Centre C,train,knee,expert,24,Appearance only,intermediate,26.034,false,2.03355744280184,2.03355744280184
+P144,Centre B,train,knee,expert,28.5,Appearance only,expert,30,true,1.5,1.5
+P041,Centre C,train,knee,novice,10,Appearance only,intermediate,10.467,false,0.466555487042067,0.466555487042067
+P149,Centre A,train,knee,expert,27.5,Appearance only,intermediate,23.975,false,3.5253310451994,-3.5253310451994
+P017,Centre A,train,shoulder,novice,7,Appearance only,novice,6.034,true,0.96572302489506,-0.96572302489506
+P067,Centre A,train,knee,intermediate,19.5,Appearance only,expert,23.376,false,3.87615173992141,3.87615173992141
+P194,Centre A,train,shoulder,expert,28,Appearance only,expert,30,true,2,2
+P092,Centre B,train,shoulder,intermediate,16,Appearance only,intermediate,16.291,true,0.29104927510566,0.29104927510566
+P048,Centre A,train,shoulder,novice,10.5,Appearance only,novice,11.213,true,0.713027170885661,0.713027170885661
+P072,Centre A,train,shoulder,novice,8.5,Appearance only,novice,9.506,true,1.00587477941168,1.00587477941168
+P046,Centre B,train,knee,expert,29.5,Appearance only,intermediate,29.719,false,0.219403514985732,0.219403514985732
+P192,Centre C,train,shoulder,novice,7.5,Appearance only,novice,6.499,true,1.00064707831173,-1.00064707831173
+P167,Centre C,train,shoulder,expert,24,Appearance only,expert,24.386,true,0.386259272664105,0.386259272664105
+P096,Centre B,train,knee,intermediate,21.5,Appearance only,intermediate,22.085,true,0.58462373283993,0.58462373283993
+P015,Centre A,train,knee,expert,25,Appearance only,expert,25.689,true,0.688768663784384,0.688768663784384
+P084,Centre B,train,shoulder,novice,7.5,Appearance only,novice,6.974,true,0.525649734567119,-0.525649734567119
+P123,Centre C,train,shoulder,intermediate,21.5,Appearance only,intermediate,22.87,true,1.37012973804848,1.37012973804848
+P023,Centre C,train,knee,expert,26.5,Appearance only,expert,27.732,true,1.2319548214517,1.2319548214517
+P014,Centre B,train,knee,intermediate,16.5,Appearance only,intermediate,17.119,true,0.619025830085739,0.619025830085739
+P052,Centre C,train,knee,novice,11,Appearance only,novice,13.593,true,2.59250173586351,2.59250173586351
+P031,Centre C,train,knee,expert,23.5,Appearance only,expert,21.989,true,1.51142059837326,-1.51142059837326
+P061,Centre A,train,knee,novice,14,Appearance only,novice,17.248,true,3.2476216688424,3.2476216688424
+P051,Centre C,train,knee,novice,10,Appearance only,novice,12.347,true,2.34698780192282,2.34698780192282
+P036,Centre B,train,shoulder,intermediate,17,Appearance only,intermediate,17.687,true,0.686930954235454,0.686930954235454
+P136,Centre A,train,knee,expert,29.5,Appearance only,expert,30,true,0.5,0.5
+P135,Centre A,train,shoulder,expert,28,Appearance only,expert,25.939,true,2.06110936627018,-2.06110936627018
+P133,Centre C,train,shoulder,intermediate,22.5,Appearance only,intermediate,23.89,true,1.39011510131066,1.39011510131066
+P143,Centre A,train,knee,expert,24,Appearance only,expert,22.58,true,1.42002696075846,-1.42002696075846
+P035,Centre A,train,shoulder,novice,7.5,Appearance only,novice,8.348,true,0.848195675608929,0.848195675608929
+P126,Centre A,train,knee,novice,13,Appearance only,intermediate,9.72,false,3.28017134514194,-3.28017134514194
+P099,Centre C,train,knee,novice,12,Appearance only,novice,14.274,true,2.27449565215483,2.27449565215483
+P100,Centre C,train,shoulder,expert,29.5,Appearance only,expert,30,true,0.5,0.5
+P085,Centre C,train,shoulder,expert,25,Appearance only,expert,25.238,true,0.238026853344142,0.238026853344142
+P177,Centre C,train,knee,intermediate,16.5,Appearance only,novice,12.782,false,3.71849673276768,-3.71849673276768
+P045,Centre A,train,shoulder,novice,12.5,Appearance only,novice,15.158,true,2.65803791677798,2.65803791677798
+P044,Centre C,train,knee,novice,8.5,Appearance only,novice,5,true,3.5,-3.5
+P050,Centre A,train,shoulder,expert,24,Appearance only,intermediate,21.27,false,2.72984058384149,-2.72984058384149
+P132,Centre A,train,shoulder,intermediate,21.5,Appearance only,intermediate,18.606,true,2.8944540024286,-2.8944540024286
+P173,Centre A,train,shoulder,expert,27.5,Appearance only,expert,29.427,true,1.92740474685672,1.92740474685672
+P180,Centre A,train,knee,intermediate,21,Appearance only,novice,21.001,false,0.00107939536727386,0.00107939536727386
+P063,Centre A,train,knee,intermediate,20.5,Appearance only,novice,21.124,false,0.623924784581678,0.623924784581678
+P121,Centre A,train,shoulder,expert,30,Appearance only,expert,28.787,true,1.21319076683639,-1.21319076683639
+P003,Centre B,train,shoulder,intermediate,16,Appearance only,intermediate,22.263,true,6.26348059036888,6.26348059036888
+P037,Centre B,train,shoulder,intermediate,18,Appearance only,expert,18.567,false,0.566851433409166,0.566851433409166
+P109,Centre A,train,knee,novice,8,Appearance only,intermediate,5,false,3,-3
+P199,Centre A,train,shoulder,novice,8.5,Appearance only,novice,8.869,true,0.368720406112441,0.368720406112441
+P006,Centre A,train,knee,intermediate,18,Appearance only,intermediate,17.05,true,0.950057489225333,-0.950057489225333
+P184,Centre A,train,knee,expert,29,Appearance only,expert,30,true,1,1
+P162,Centre B,train,knee,expert,29.5,Appearance only,expert,30,true,0.5,0.5
+P024,Centre A,train,shoulder,intermediate,20.5,Appearance only,expert,26.95,false,6.45002316221096,6.45002316221096
+P163,Centre A,train,knee,intermediate,18,Appearance only,expert,11.576,false,6.42390936983294,-6.42390936983294
+P172,Centre A,train,knee,intermediate,21.5,Appearance only,intermediate,20.597,true,0.902940999518439,-0.902940999518439
+P040,Centre A,train,knee,novice,9.5,Motion only,novice,11.843,true,2.34295389545595,2.34295389545595
+P107,Centre C,train,knee,intermediate,18.5,Motion only,intermediate,16.584,true,1.91567111434899,-1.91567111434899
+P101,Centre C,train,knee,expert,27,Motion only,intermediate,23.197,false,3.8029144093024,-3.8029144093024
+P145,Centre B,train,shoulder,expert,24.5,Motion only,intermediate,25.978,false,1.47764433883163,1.47764433883163
+P087,Centre A,train,shoulder,expert,29.5,Motion only,expert,30,true,0.5,0.5
+P098,Centre B,train,knee,novice,7.5,Motion only,intermediate,9.043,false,1.54288013057845,1.54288013057845
+P057,Centre B,train,shoulder,expert,25.5,Motion only,expert,27.479,true,1.97936301046377,1.97936301046377
+P103,Centre A,train,knee,intermediate,17.5,Motion only,novice,17.662,false,0.161585832203322,0.161585832203322
+P185,Centre A,train,shoulder,intermediate,18,Motion only,intermediate,18.379,true,0.379234287853265,0.379234287853265
+P191,Centre B,train,shoulder,intermediate,21.5,Motion only,novice,22.718,false,1.21779173964349,1.21779173964349
+P186,Centre A,train,knee,intermediate,21.5,Motion only,novice,23.306,false,1.80612631366024,1.80612631366024
+P154,Centre A,train,shoulder,intermediate,21.5,Motion only,novice,23.453,false,1.9530207400883,1.9530207400883
+P082,Centre A,train,knee,novice,8,Motion only,novice,10.56,true,2.55988568911726,2.55988568911726
+P097,Centre C,train,shoulder,expert,25,Motion only,expert,20.682,true,4.3181911750844,-4.3181911750844
+P049,Centre C,train,shoulder,expert,27,Motion only,expert,23.571,true,3.42902064464164,-3.42902064464164
+P161,Centre C,train,shoulder,intermediate,17,Motion only,intermediate,23.581,true,6.5810597017432,6.5810597017432
+P030,Centre C,train,knee,expert,29.5,Motion only,expert,29.629,true,0.128803746018899,0.128803746018899
+P128,Centre A,train,knee,intermediate,19,Motion only,expert,21.67,false,2.67015183732222,2.67015183732222
+P034,Centre A,train,knee,intermediate,21,Motion only,intermediate,17.874,true,3.12572474969219,-3.12572474969219
+P039,Centre A,train,shoulder,intermediate,20,Motion only,intermediate,24.088,true,4.08807436770474,4.08807436770474
+P118,Centre C,train,knee,expert,25.5,Motion only,expert,24.731,true,0.769165810733657,-0.769165810733657
+P027,Centre C,train,shoulder,novice,11.5,Motion only,intermediate,12.081,false,0.581207978870484,0.581207978870484
+P004,Centre C,train,shoulder,expert,27.5,Motion only,expert,27.79,true,0.2904876227012,0.2904876227012
+P159,Centre B,train,knee,novice,12.5,Motion only,intermediate,11.844,false,0.656306025894928,-0.656306025894928
+P146,Centre A,train,shoulder,intermediate,16.5,Motion only,expert,15.238,false,1.26159674993641,-1.26159674993641
+P108,Centre B,train,knee,intermediate,19,Motion only,expert,22.196,false,3.19596935047495,3.19596935047495
+P083,Centre A,train,knee,expert,24,Motion only,intermediate,30,false,6,6
+P148,Centre A,train,knee,expert,28.5,Motion only,expert,25.282,true,3.21803980380223,-3.21803980380223
+P193,Centre C,train,shoulder,intermediate,17,Motion only,intermediate,17.556,true,0.556426577141494,0.556426577141494
+P075,Centre A,train,shoulder,intermediate,19.5,Motion only,intermediate,20.628,true,1.12812933201153,1.12812933201153
+P102,Centre A,train,knee,intermediate,19.5,Motion only,expert,22.082,false,2.58153680182064,2.58153680182064
+P038,Centre B,train,knee,expert,26.5,Motion only,expert,24.499,true,2.00066129249087,-2.00066129249087
+P160,Centre A,train,shoulder,intermediate,19,Motion only,intermediate,14.801,true,4.19922761258558,-4.19922761258558
+P029,Centre A,train,knee,intermediate,22,Motion only,intermediate,21.049,true,0.950572938045632,-0.950572938045632
+P007,Centre A,train,knee,expert,29.5,Motion only,expert,30,true,0.5,0.5
+P065,Centre A,train,shoulder,expert,26.5,Motion only,expert,28.692,true,2.19236433949295,2.19236433949295
+P152,Centre C,train,knee,novice,14,Motion only,novice,12.775,true,1.22510783994734,-1.22510783994734
+P113,Centre A,train,shoulder,intermediate,19.5,Motion only,intermediate,21.691,true,2.19064648714466,2.19064648714466
+P066,Centre B,train,shoulder,novice,7,Motion only,novice,12.97,true,5.97021411549589,5.97021411549589
+P002,Centre B,train,shoulder,expert,24,Motion only,intermediate,27.467,false,3.46694837858795,3.46694837858795
+P074,Centre B,train,shoulder,expert,27.5,Motion only,expert,29.393,true,1.89317741195878,1.89317741195878
+P012,Centre A,train,knee,intermediate,16.5,Motion only,intermediate,15.96,true,0.539986772756283,-0.539986772756283
+P073,Centre B,train,shoulder,intermediate,18,Motion only,intermediate,18.791,true,0.791473506396599,0.791473506396599
+P158,Centre C,train,shoulder,intermediate,17.5,Motion only,intermediate,14.554,true,2.94632269087965,-2.94632269087965
+P174,Centre C,train,knee,novice,11,Motion only,intermediate,11.877,false,0.876541781597652,0.876541781597652
+P142,Centre B,train,knee,expert,29,Motion only,intermediate,30,false,1,1
+P165,Centre A,train,knee,intermediate,22.5,Motion only,expert,25.201,false,2.70086992067433,2.70086992067433
+P028,Centre B,train,knee,intermediate,15.5,Motion only,intermediate,10.317,true,5.18254238676352,-5.18254238676352
+P150,Centre A,train,knee,novice,10.5,Motion only,novice,13.398,true,2.89799040542389,2.89799040542389
+P176,Centre A,train,shoulder,novice,13,Motion only,intermediate,13.009,false,0.00910613463452314,0.00910613463452314
+P090,Centre B,train,knee,expert,26,Motion only,expert,28.661,true,2.66076856203473,2.66076856203473
+P140,Centre A,train,shoulder,novice,12.5,Motion only,novice,9.54,true,2.9599708830937,-2.9599708830937
+P119,Centre B,train,knee,expert,24,Motion only,expert,24.511,true,0.510534397013846,0.510534397013846
+P094,Centre A,train,knee,intermediate,23,Motion only,expert,20.105,false,2.89501491318449,-2.89501491318449
+P182,Centre A,train,shoulder,intermediate,19.5,Motion only,intermediate,19.613,true,0.112857894723216,0.112857894723216
+P169,Centre A,train,knee,novice,11.5,Motion only,novice,9.918,true,1.58161935423408,-1.58161935423408
+P079,Centre B,train,shoulder,expert,24.5,Motion only,expert,24.979,true,0.479061962405257,0.479061962405257
+P068,Centre A,train,shoulder,novice,11.5,Motion only,intermediate,9.299,false,2.20063301407389,-2.20063301407389
+P054,Centre B,train,knee,intermediate,17,Motion only,intermediate,23.118,true,6.1182821742961,6.1182821742961
+P111,Centre B,train,shoulder,expert,27.5,Motion only,expert,28.848,true,1.34801213044084,1.34801213044084
+P112,Centre A,train,shoulder,intermediate,17.5,Motion only,intermediate,16.935,true,0.565460688932962,-0.565460688932962
+P196,Centre B,train,knee,intermediate,20,Motion only,expert,17.36,false,2.6398346218015,-2.6398346218015
+P183,Centre B,train,knee,intermediate,21,Motion only,novice,16.141,false,4.85883589693641,-4.85883589693641
+P062,Centre A,train,knee,expert,27,Motion only,expert,29.623,true,2.62338400165732,2.62338400165732
+P181,Centre C,train,knee,expert,23.5,Motion only,expert,22.414,true,1.08579491346535,-1.08579491346535
+P147,Centre C,train,knee,expert,24,Motion only,intermediate,22.391,false,1.60920407490869,-1.60920407490869
+P144,Centre B,train,knee,expert,28.5,Motion only,expert,28.262,true,0.237947139838575,-0.237947139838575
+P041,Centre C,train,knee,novice,10,Motion only,novice,10.782,true,0.782294749868162,0.782294749868162
+P149,Centre A,train,knee,expert,27.5,Motion only,expert,29.345,true,1.84465666240651,1.84465666240651
+P017,Centre A,train,shoulder,novice,7,Motion only,novice,5,true,2,-2
+P067,Centre A,train,knee,intermediate,19.5,Motion only,intermediate,19.889,true,0.389304156792619,0.389304156792619
+P194,Centre A,train,shoulder,expert,28,Motion only,expert,23.686,true,4.31355547101031,-4.31355547101031
+P092,Centre B,train,shoulder,intermediate,16,Motion only,intermediate,18.305,true,2.30481682200915,2.30481682200915
+P048,Centre A,train,shoulder,novice,10.5,Motion only,novice,8.999,true,1.50103870133075,-1.50103870133075
+P072,Centre A,train,shoulder,novice,8.5,Motion only,novice,6.975,true,1.52493643145325,-1.52493643145325
+P046,Centre B,train,knee,expert,29.5,Motion only,intermediate,25.431,false,4.06907138183748,-4.06907138183748
+P192,Centre C,train,shoulder,novice,7.5,Motion only,novice,5,true,2.5,-2.5
+P167,Centre C,train,shoulder,expert,24,Motion only,intermediate,25.654,false,1.65360605809985,1.65360605809985
+P096,Centre B,train,knee,intermediate,21.5,Motion only,intermediate,22.058,true,0.558361133854813,0.558361133854813
+P015,Centre A,train,knee,expert,25,Motion only,intermediate,24.382,false,0.617566919989688,-0.617566919989688
+P084,Centre B,train,shoulder,novice,7.5,Motion only,novice,5,true,2.5,-2.5
+P123,Centre C,train,shoulder,intermediate,21.5,Motion only,novice,17.573,false,3.92684211132545,-3.92684211132545
+P023,Centre C,train,knee,expert,26.5,Motion only,intermediate,23.318,false,3.18150431615129,-3.18150431615129
+P014,Centre B,train,knee,intermediate,16.5,Motion only,intermediate,14.465,true,2.03538047444765,-2.03538047444765
+P052,Centre C,train,knee,novice,11,Motion only,novice,15.912,true,4.91228617053784,4.91228617053784
+P031,Centre C,train,knee,expert,23.5,Motion only,intermediate,23.968,false,0.46823838591088,0.46823838591088
+P061,Centre A,train,knee,novice,14,Motion only,novice,12.963,true,1.03698455133887,-1.03698455133887
+P051,Centre C,train,knee,novice,10,Motion only,novice,8.499,true,1.50124716543703,-1.50124716543703
+P036,Centre B,train,shoulder,intermediate,17,Motion only,intermediate,22.158,true,5.15817061800887,5.15817061800887
+P136,Centre A,train,knee,expert,29.5,Motion only,expert,29.794,true,0.294244009341128,0.294244009341128
+P135,Centre A,train,shoulder,expert,28,Motion only,expert,25.027,true,2.97348442198782,-2.97348442198782
+P133,Centre C,train,shoulder,intermediate,22.5,Motion only,intermediate,19.783,true,2.71696486169408,-2.71696486169408
+P143,Centre A,train,knee,expert,24,Motion only,expert,23.274,true,0.72582947851259,-0.72582947851259
+P035,Centre A,train,shoulder,novice,7.5,Motion only,novice,9.457,true,1.95712376241707,1.95712376241707
+P126,Centre A,train,knee,novice,13,Motion only,novice,9.665,true,3.33489797205541,-3.33489797205541
+P099,Centre C,train,knee,novice,12,Motion only,novice,9.267,true,2.73288830791161,-2.73288830791161
+P100,Centre C,train,shoulder,expert,29.5,Motion only,expert,27.76,true,1.73986325126859,-1.73986325126859
+P085,Centre C,train,shoulder,expert,25,Motion only,intermediate,30,false,5,5
+P177,Centre C,train,knee,intermediate,16.5,Motion only,intermediate,17.391,true,0.890931916757356,0.890931916757356
+P045,Centre A,train,shoulder,novice,12.5,Motion only,novice,9.557,true,2.94310121774344,-2.94310121774344
+P044,Centre C,train,knee,novice,8.5,Motion only,novice,8.47,true,0.0296061716375515,-0.0296061716375515
+P050,Centre A,train,shoulder,expert,24,Motion only,expert,28.158,true,4.15751312862808,4.15751312862808
+P132,Centre A,train,shoulder,intermediate,21.5,Motion only,intermediate,20.718,true,0.781970508633069,-0.781970508633069
+P173,Centre A,train,shoulder,expert,27.5,Motion only,expert,28.006,true,0.505697594001401,0.505697594001401
+P180,Centre A,train,knee,intermediate,21,Motion only,intermediate,21.31,true,0.310284620391968,0.310284620391968
+P063,Centre A,train,knee,intermediate,20.5,Motion only,intermediate,22.849,true,2.34859313439193,2.34859313439193
+P121,Centre A,train,shoulder,expert,30,Motion only,intermediate,28.416,false,1.58377843651634,-1.58377843651634
+P003,Centre B,train,shoulder,intermediate,16,Motion only,intermediate,13.386,true,2.6135494649286,-2.6135494649286
+P037,Centre B,train,shoulder,intermediate,18,Motion only,expert,20.579,false,2.57918915340033,2.57918915340033
+P109,Centre A,train,knee,novice,8,Motion only,novice,12.194,true,4.19397839027562,4.19397839027562
+P199,Centre A,train,shoulder,novice,8.5,Motion only,novice,8.142,true,0.358243832885114,-0.358243832885114
+P006,Centre A,train,knee,intermediate,18,Motion only,intermediate,19.977,true,1.97670134933007,1.97670134933007
+P184,Centre A,train,knee,expert,29,Motion only,expert,25.793,true,3.20679707856352,-3.20679707856352
+P162,Centre B,train,knee,expert,29.5,Motion only,expert,28.778,true,0.722147423211492,-0.722147423211492
+P024,Centre A,train,shoulder,intermediate,20.5,Motion only,novice,21.835,false,1.3346114612594,1.3346114612594
+P163,Centre A,train,knee,intermediate,18,Motion only,intermediate,19.414,true,1.41365122218067,1.41365122218067
+P172,Centre A,train,knee,intermediate,21.5,Motion only,intermediate,18.789,true,2.71116369511988,-2.71116369511988
+P040,Centre A,train,knee,novice,9.5,Naive concat,intermediate,5.757,false,3.74311105621737,-3.74311105621737
+P107,Centre C,train,knee,intermediate,18.5,Naive concat,intermediate,19.451,true,0.95124912057949,0.95124912057949
+P101,Centre C,train,knee,expert,27,Naive concat,expert,24.689,true,2.31116939025249,-2.31116939025249
+P145,Centre B,train,shoulder,expert,24.5,Naive concat,expert,24.207,true,0.292828136281916,-0.292828136281916
+P087,Centre A,train,shoulder,expert,29.5,Naive concat,expert,30,true,0.5,0.5
+P098,Centre B,train,knee,novice,7.5,Naive concat,intermediate,5.488,false,2.01216548723975,-2.01216548723975
+P057,Centre B,train,shoulder,expert,25.5,Naive concat,expert,28.5,true,2.99986744433591,2.99986744433591
+P103,Centre A,train,knee,intermediate,17.5,Naive concat,expert,14.954,false,2.54638476626136,-2.54638476626136
+P185,Centre A,train,shoulder,intermediate,18,Naive concat,intermediate,22.121,true,4.12108427781838,4.12108427781838
+P191,Centre B,train,shoulder,intermediate,21.5,Naive concat,intermediate,21.361,true,0.139312463777038,-0.139312463777038
+P186,Centre A,train,knee,intermediate,21.5,Naive concat,intermediate,23.865,true,2.3651389858887,2.3651389858887
+P154,Centre A,train,shoulder,intermediate,21.5,Naive concat,intermediate,16.163,true,5.3368310093828,-5.3368310093828
+P082,Centre A,train,knee,novice,8,Naive concat,novice,5,true,3,-3
+P097,Centre C,train,shoulder,expert,25,Naive concat,intermediate,26.029,false,1.02869007861307,1.02869007861307
+P049,Centre C,train,shoulder,expert,27,Naive concat,intermediate,26.999,false,0.000841624782246697,-0.000841624782246697
+P161,Centre C,train,shoulder,intermediate,17,Naive concat,expert,25.166,false,8.16599595236233,8.16599595236233
+P030,Centre C,train,knee,expert,29.5,Naive concat,expert,26.404,true,3.09587555860439,-3.09587555860439
+P128,Centre A,train,knee,intermediate,19,Naive concat,intermediate,18.084,true,0.915550533798971,-0.915550533798971
+P034,Centre A,train,knee,intermediate,21,Naive concat,intermediate,21.574,true,0.57401565314651,0.57401565314651
+P039,Centre A,train,shoulder,intermediate,20,Naive concat,intermediate,20.865,true,0.864820757405969,0.864820757405969
+P118,Centre C,train,knee,expert,25.5,Naive concat,expert,24.521,true,0.97905954488612,-0.97905954488612
+P027,Centre C,train,shoulder,novice,11.5,Naive concat,intermediate,15.324,false,3.82399264530106,3.82399264530106
+P004,Centre C,train,shoulder,expert,27.5,Naive concat,expert,25.952,true,1.54761709045778,-1.54761709045778
+P159,Centre B,train,knee,novice,12.5,Naive concat,novice,13.487,true,0.986827175857428,0.986827175857428
+P146,Centre A,train,shoulder,intermediate,16.5,Naive concat,intermediate,17.118,true,0.618200544033641,0.618200544033641
+P108,Centre B,train,knee,intermediate,19,Naive concat,intermediate,22.828,true,3.82757896901806,3.82757896901806
+P083,Centre A,train,knee,expert,24,Naive concat,expert,20.64,true,3.35958134859494,-3.35958134859494
+P148,Centre A,train,knee,expert,28.5,Naive concat,expert,24.059,true,4.44115771975046,-4.44115771975046
+P193,Centre C,train,shoulder,intermediate,17,Naive concat,novice,19.298,false,2.29792989859759,2.29792989859759
+P075,Centre A,train,shoulder,intermediate,19.5,Naive concat,novice,21.976,false,2.47551214000648,2.47551214000648
+P102,Centre A,train,knee,intermediate,19.5,Naive concat,intermediate,23.158,true,3.65762605984048,3.65762605984048
+P038,Centre B,train,knee,expert,26.5,Naive concat,expert,30,true,3.5,3.5
+P160,Centre A,train,shoulder,intermediate,19,Naive concat,expert,17.489,false,1.5113030996172,-1.5113030996172
+P029,Centre A,train,knee,intermediate,22,Naive concat,intermediate,22.257,true,0.256645952869967,0.256645952869967
+P007,Centre A,train,knee,expert,29.5,Naive concat,expert,30,true,0.5,0.5
+P065,Centre A,train,shoulder,expert,26.5,Naive concat,expert,26.258,true,0.242135318627295,-0.242135318627295
+P152,Centre C,train,knee,novice,14,Naive concat,novice,12.427,true,1.57330806865186,-1.57330806865186
+P113,Centre A,train,shoulder,intermediate,19.5,Naive concat,intermediate,21.485,true,1.98526566949356,1.98526566949356
+P066,Centre B,train,shoulder,novice,7,Naive concat,novice,5,true,2,-2
+P002,Centre B,train,shoulder,expert,24,Naive concat,expert,25.647,true,1.64745202846161,1.64745202846161
+P074,Centre B,train,shoulder,expert,27.5,Naive concat,expert,29.861,true,2.36144903531992,2.36144903531992
+P012,Centre A,train,knee,intermediate,16.5,Naive concat,intermediate,22.938,true,6.43794819688006,6.43794819688006
+P073,Centre B,train,shoulder,intermediate,18,Naive concat,novice,17.377,false,0.622732652195516,-0.622732652195516
+P158,Centre C,train,shoulder,intermediate,17.5,Naive concat,intermediate,21.417,true,3.91697438090287,3.91697438090287
+P174,Centre C,train,knee,novice,11,Naive concat,novice,13.263,true,2.26272998788998,2.26272998788998
+P142,Centre B,train,knee,expert,29,Naive concat,expert,27.788,true,1.21241742882222,-1.21241742882222
+P165,Centre A,train,knee,intermediate,22.5,Naive concat,expert,20.024,false,2.47570335281451,-2.47570335281451
+P028,Centre B,train,knee,intermediate,15.5,Naive concat,intermediate,17.74,true,2.2398841116445,2.2398841116445
+P150,Centre A,train,knee,novice,10.5,Naive concat,novice,13.18,true,2.67996019988525,2.67996019988525
+P176,Centre A,train,shoulder,novice,13,Naive concat,novice,14.799,true,1.79901258802393,1.79901258802393
+P090,Centre B,train,knee,expert,26,Naive concat,expert,23.492,true,2.50771997716917,-2.50771997716917
+P140,Centre A,train,shoulder,novice,12.5,Naive concat,novice,11.974,true,0.525502731029459,-0.525502731029459
+P119,Centre B,train,knee,expert,24,Naive concat,expert,16.183,true,7.81741466238594,-7.81741466238594
+P094,Centre A,train,knee,intermediate,23,Naive concat,intermediate,28.904,true,5.90402491437241,5.90402491437241
+P182,Centre A,train,shoulder,intermediate,19.5,Naive concat,intermediate,19.183,true,0.31674530270196,-0.31674530270196
+P169,Centre A,train,knee,novice,11.5,Naive concat,intermediate,14.456,false,2.95569519932754,2.95569519932754
+P079,Centre B,train,shoulder,expert,24.5,Naive concat,intermediate,18.214,false,6.2855088115848,-6.2855088115848
+P068,Centre A,train,shoulder,novice,11.5,Naive concat,intermediate,14.248,false,2.74804092336315,2.74804092336315
+P054,Centre B,train,knee,intermediate,17,Naive concat,intermediate,17.698,true,0.697982980609165,0.697982980609165
+P111,Centre B,train,shoulder,expert,27.5,Naive concat,expert,23.614,true,3.88556543227323,-3.88556543227323
+P112,Centre A,train,shoulder,intermediate,17.5,Naive concat,intermediate,16.431,true,1.06873759637853,-1.06873759637853
+P196,Centre B,train,knee,intermediate,20,Naive concat,novice,18.093,false,1.90695427510585,-1.90695427510585
+P183,Centre B,train,knee,intermediate,21,Naive concat,novice,22.13,false,1.13022360922789,1.13022360922789
+P062,Centre A,train,knee,expert,27,Naive concat,intermediate,25.692,false,1.30846824272027,-1.30846824272027
+P181,Centre C,train,knee,expert,23.5,Naive concat,expert,21.847,true,1.65298921996856,-1.65298921996856
+P147,Centre C,train,knee,expert,24,Naive concat,intermediate,28.093,false,4.09319905842922,4.09319905842922
+P144,Centre B,train,knee,expert,28.5,Naive concat,expert,23.695,true,4.80496625909443,-4.80496625909443
+P041,Centre C,train,knee,novice,10,Naive concat,intermediate,8.734,false,1.26627799518162,-1.26627799518162
+P149,Centre A,train,knee,expert,27.5,Naive concat,intermediate,28.965,false,1.46455550902016,1.46455550902016
+P017,Centre A,train,shoulder,novice,7,Naive concat,novice,6.891,true,0.108546415500532,-0.108546415500532
+P067,Centre A,train,knee,intermediate,19.5,Naive concat,intermediate,20.17,true,0.670173016286316,0.670173016286316
+P194,Centre A,train,shoulder,expert,28,Naive concat,expert,23.55,true,4.45038507314251,-4.45038507314251
+P092,Centre B,train,shoulder,intermediate,16,Naive concat,intermediate,24.589,true,8.58913956426717,8.58913956426717
+P048,Centre A,train,shoulder,novice,10.5,Naive concat,novice,8.664,true,1.8363897989024,-1.8363897989024
+P072,Centre A,train,shoulder,novice,8.5,Naive concat,intermediate,7.63,false,0.869561954882043,-0.869561954882043
+P046,Centre B,train,knee,expert,29.5,Naive concat,expert,28.712,true,0.787795390130793,-0.787795390130793
+P192,Centre C,train,shoulder,novice,7.5,Naive concat,novice,5,true,2.5,-2.5
+P167,Centre C,train,shoulder,expert,24,Naive concat,expert,20.374,true,3.62555128601517,-3.62555128601517
+P096,Centre B,train,knee,intermediate,21.5,Naive concat,intermediate,17.354,true,4.14626986829707,-4.14626986829707
+P015,Centre A,train,knee,expert,25,Naive concat,expert,24.272,true,0.72843996986283,-0.72843996986283
+P084,Centre B,train,shoulder,novice,7.5,Naive concat,novice,8.41,true,0.910434893993111,0.910434893993111
+P123,Centre C,train,shoulder,intermediate,21.5,Naive concat,intermediate,20.891,true,0.608791331660228,-0.608791331660228
+P023,Centre C,train,knee,expert,26.5,Naive concat,expert,25.536,true,0.964288526968133,-0.964288526968133
+P014,Centre B,train,knee,intermediate,16.5,Naive concat,intermediate,14.302,true,2.19766180009882,-2.19766180009882
+P052,Centre C,train,knee,novice,11,Naive concat,intermediate,10.839,false,0.160526884834985,-0.160526884834985
+P031,Centre C,train,knee,expert,23.5,Naive concat,expert,22.228,true,1.27153140443705,-1.27153140443705
+P061,Centre A,train,knee,novice,14,Naive concat,novice,19.469,true,5.46947021660083,5.46947021660083
+P051,Centre C,train,knee,novice,10,Naive concat,novice,8.024,true,1.97645403829707,-1.97645403829707
+P036,Centre B,train,shoulder,intermediate,17,Naive concat,intermediate,19.36,true,2.36005942162006,2.36005942162006
+P136,Centre A,train,knee,expert,29.5,Naive concat,expert,29.213,true,0.287011387981028,-0.287011387981028
+P135,Centre A,train,shoulder,expert,28,Naive concat,intermediate,27.968,false,0.0315612638713247,-0.0315612638713247
+P133,Centre C,train,shoulder,intermediate,22.5,Naive concat,intermediate,25.787,true,3.2867857612443,3.2867857612443
+P143,Centre A,train,knee,expert,24,Naive concat,expert,24.066,true,0.0664789320324815,0.0664789320324815
+P035,Centre A,train,shoulder,novice,7.5,Naive concat,novice,6.429,true,1.07100210621641,-1.07100210621641
+P126,Centre A,train,knee,novice,13,Naive concat,novice,14.09,true,1.08951758927817,1.08951758927817
+P099,Centre C,train,knee,novice,12,Naive concat,intermediate,10.197,false,1.80290206448604,-1.80290206448604
+P100,Centre C,train,shoulder,expert,29.5,Naive concat,expert,29.334,true,0.166196665323934,-0.166196665323934
+P085,Centre C,train,shoulder,expert,25,Naive concat,expert,25.74,true,0.739788633499057,0.739788633499057
+P177,Centre C,train,knee,intermediate,16.5,Naive concat,intermediate,19.542,true,3.0419678614376,3.0419678614376
+P045,Centre A,train,shoulder,novice,12.5,Naive concat,novice,14.14,true,1.64047353066709,1.64047353066709
+P044,Centre C,train,knee,novice,8.5,Naive concat,novice,7.581,true,0.918984794853793,-0.918984794853793
+P050,Centre A,train,shoulder,expert,24,Naive concat,expert,24.725,true,0.725320071873824,0.725320071873824
+P132,Centre A,train,shoulder,intermediate,21.5,Naive concat,novice,22.249,false,0.748819937804445,0.748819937804445
+P173,Centre A,train,shoulder,expert,27.5,Naive concat,expert,26.724,true,0.776302030076934,-0.776302030076934
+P180,Centre A,train,knee,intermediate,21,Naive concat,expert,17.326,false,3.67378065988946,-3.67378065988946
+P063,Centre A,train,knee,intermediate,20.5,Naive concat,intermediate,16.63,true,3.87019974780251,-3.87019974780251
+P121,Centre A,train,shoulder,expert,30,Naive concat,expert,30,true,0,0
+P003,Centre B,train,shoulder,intermediate,16,Naive concat,intermediate,17.639,true,1.63933304275487,1.63933304275487
+P037,Centre B,train,shoulder,intermediate,18,Naive concat,intermediate,17.791,true,0.209116983527117,-0.209116983527117
+P109,Centre A,train,knee,novice,8,Naive concat,novice,7.044,true,0.955900988013458,-0.955900988013458
+P199,Centre A,train,shoulder,novice,8.5,Naive concat,novice,11.392,true,2.89203276083683,2.89203276083683
+P006,Centre A,train,knee,intermediate,18,Naive concat,intermediate,17.785,true,0.215071627372037,-0.215071627372037
+P184,Centre A,train,knee,expert,29,Naive concat,expert,30,true,1,1
+P162,Centre B,train,knee,expert,29.5,Naive concat,intermediate,30,false,0.5,0.5
+P024,Centre A,train,shoulder,intermediate,20.5,Naive concat,intermediate,20.932,true,0.431818247759612,0.431818247759612
+P163,Centre A,train,knee,intermediate,18,Naive concat,novice,22.759,false,4.75946673393687,4.75946673393687
+P172,Centre A,train,knee,intermediate,21.5,Naive concat,intermediate,18.1,true,3.39985253723422,-3.39985253723422
+P040,Centre A,train,knee,novice,9.5,Unmasked fusion,novice,10.323,true,0.822825918549071,0.822825918549071
+P107,Centre C,train,knee,intermediate,18.5,Unmasked fusion,intermediate,20.023,true,1.52259099471707,1.52259099471707
+P101,Centre C,train,knee,expert,27,Unmasked fusion,expert,29.67,true,2.66980873332936,2.66980873332936
+P145,Centre B,train,shoulder,expert,24.5,Unmasked fusion,intermediate,25.218,false,0.718044323564122,0.718044323564122
+P087,Centre A,train,shoulder,expert,29.5,Unmasked fusion,expert,29.55,true,0.050034356867517,0.050034356867517
+P098,Centre B,train,knee,novice,7.5,Unmasked fusion,intermediate,8.794,false,1.29436028716111,1.29436028716111
+P057,Centre B,train,shoulder,expert,25.5,Unmasked fusion,expert,27.656,true,2.1564592749754,2.1564592749754
+P103,Centre A,train,knee,intermediate,17.5,Unmasked fusion,intermediate,16.554,true,0.946410152239473,-0.946410152239473
+P185,Centre A,train,shoulder,intermediate,18,Unmasked fusion,intermediate,18.63,true,0.629856305621672,0.629856305621672
+P191,Centre B,train,shoulder,intermediate,21.5,Unmasked fusion,novice,14.871,false,6.62904588139891,-6.62904588139891
+P186,Centre A,train,knee,intermediate,21.5,Unmasked fusion,intermediate,22.443,true,0.943440697268134,0.943440697268134
+P154,Centre A,train,shoulder,intermediate,21.5,Unmasked fusion,novice,22.546,false,1.04649807375371,1.04649807375371
+P082,Centre A,train,knee,novice,8,Unmasked fusion,novice,8.492,true,0.492033911615517,0.492033911615517
+P097,Centre C,train,shoulder,expert,25,Unmasked fusion,expert,25.603,true,0.602881444649572,0.602881444649572
+P049,Centre C,train,shoulder,expert,27,Unmasked fusion,expert,28.24,true,1.24001413091051,1.24001413091051
+P161,Centre C,train,shoulder,intermediate,17,Unmasked fusion,intermediate,20.492,true,3.49195894026625,3.49195894026625
+P030,Centre C,train,knee,expert,29.5,Unmasked fusion,expert,27.386,true,2.11367401668216,-2.11367401668216
+P128,Centre A,train,knee,intermediate,19,Unmasked fusion,intermediate,20.8,true,1.8002788781488,1.8002788781488
+P034,Centre A,train,knee,intermediate,21,Unmasked fusion,expert,22.715,false,1.71480789976351,1.71480789976351
+P039,Centre A,train,shoulder,intermediate,20,Unmasked fusion,expert,23.219,false,3.21925204161389,3.21925204161389
+P118,Centre C,train,knee,expert,25.5,Unmasked fusion,intermediate,26.643,false,1.1429088999168,1.1429088999168
+P027,Centre C,train,shoulder,novice,11.5,Unmasked fusion,novice,6.029,true,5.47082660503019,-5.47082660503019
+P004,Centre C,train,shoulder,expert,27.5,Unmasked fusion,expert,27.108,true,0.392492580211059,-0.392492580211059
+P159,Centre B,train,knee,novice,12.5,Unmasked fusion,intermediate,14.493,false,1.99314377649084,1.99314377649084
+P146,Centre A,train,shoulder,intermediate,16.5,Unmasked fusion,intermediate,15.324,true,1.17561303592836,-1.17561303592836
+P108,Centre B,train,knee,intermediate,19,Unmasked fusion,intermediate,17.85,true,1.15012595318717,-1.15012595318717
+P083,Centre A,train,knee,expert,24,Unmasked fusion,intermediate,27.104,false,3.10382189711522,3.10382189711522
+P148,Centre A,train,knee,expert,28.5,Unmasked fusion,expert,22.441,true,6.05917924530838,-6.05917924530838
+P193,Centre C,train,shoulder,intermediate,17,Unmasked fusion,intermediate,14.14,true,2.86026184386949,-2.86026184386949
+P075,Centre A,train,shoulder,intermediate,19.5,Unmasked fusion,novice,16.438,false,3.06185756768271,-3.06185756768271
+P102,Centre A,train,knee,intermediate,19.5,Unmasked fusion,intermediate,21.856,true,2.35593944496369,2.35593944496369
+P038,Centre B,train,knee,expert,26.5,Unmasked fusion,intermediate,25.989,false,0.511049139395237,-0.511049139395237
+P160,Centre A,train,shoulder,intermediate,19,Unmasked fusion,intermediate,18.577,true,0.422588643090737,-0.422588643090737
+P029,Centre A,train,knee,intermediate,22,Unmasked fusion,intermediate,24.174,true,2.17403091245497,2.17403091245497
+P007,Centre A,train,knee,expert,29.5,Unmasked fusion,expert,25.407,true,4.09338955400432,-4.09338955400432
+P065,Centre A,train,shoulder,expert,26.5,Unmasked fusion,intermediate,27.411,false,0.910583404382802,0.910583404382802
+P152,Centre C,train,knee,novice,14,Unmasked fusion,novice,12.037,true,1.96306150682734,-1.96306150682734
+P113,Centre A,train,shoulder,intermediate,19.5,Unmasked fusion,intermediate,23.883,true,4.3831729495623,4.3831729495623
+P066,Centre B,train,shoulder,novice,7,Unmasked fusion,intermediate,12.337,false,5.33723356557352,5.33723356557352
+P002,Centre B,train,shoulder,expert,24,Unmasked fusion,expert,24.519,true,0.518679842213793,0.518679842213793
+P074,Centre B,train,shoulder,expert,27.5,Unmasked fusion,intermediate,25.681,false,1.81897243771684,-1.81897243771684
+P012,Centre A,train,knee,intermediate,16.5,Unmasked fusion,expert,22.956,false,6.45568095900638,6.45568095900638
+P073,Centre B,train,shoulder,intermediate,18,Unmasked fusion,intermediate,17.917,true,0.0829961856020773,-0.0829961856020773
+P158,Centre C,train,shoulder,intermediate,17.5,Unmasked fusion,expert,20.339,false,2.83918700259969,2.83918700259969
+P174,Centre C,train,knee,novice,11,Unmasked fusion,intermediate,8.362,false,2.63784116361695,-2.63784116361695
+P142,Centre B,train,knee,expert,29,Unmasked fusion,intermediate,30,false,1,1
+P165,Centre A,train,knee,intermediate,22.5,Unmasked fusion,novice,24.267,false,1.7670830491507,1.7670830491507
+P028,Centre B,train,knee,intermediate,15.5,Unmasked fusion,novice,12.066,false,3.43405998675908,-3.43405998675908
+P150,Centre A,train,knee,novice,10.5,Unmasked fusion,novice,9.835,true,0.664704798427346,-0.664704798427346
+P176,Centre A,train,shoulder,novice,13,Unmasked fusion,novice,12.828,true,0.171745367392585,-0.171745367392585
+P090,Centre B,train,knee,expert,26,Unmasked fusion,expert,25.75,true,0.250387808733038,-0.250387808733038
+P140,Centre A,train,shoulder,novice,12.5,Unmasked fusion,novice,12.95,true,0.450050429779203,0.450050429779203
+P119,Centre B,train,knee,expert,24,Unmasked fusion,expert,19.892,true,4.10812446179143,-4.10812446179143
+P094,Centre A,train,knee,intermediate,23,Unmasked fusion,intermediate,22.136,true,0.864092453785915,-0.864092453785915
+P182,Centre A,train,shoulder,intermediate,19.5,Unmasked fusion,intermediate,17.065,true,2.43484284098987,-2.43484284098987
+P169,Centre A,train,knee,novice,11.5,Unmasked fusion,novice,10.614,true,0.885593957453615,-0.885593957453615
+P079,Centre B,train,shoulder,expert,24.5,Unmasked fusion,expert,24.333,true,0.167477839560903,-0.167477839560903
+P068,Centre A,train,shoulder,novice,11.5,Unmasked fusion,novice,13.731,true,2.23130489997956,2.23130489997956
+P054,Centre B,train,knee,intermediate,17,Unmasked fusion,intermediate,23.09,true,6.0901566191576,6.0901566191576
+P111,Centre B,train,shoulder,expert,27.5,Unmasked fusion,intermediate,27.719,false,0.218996741716509,0.218996741716509
+P112,Centre A,train,shoulder,intermediate,17.5,Unmasked fusion,intermediate,17.541,true,0.041164557858238,0.041164557858238
+P196,Centre B,train,knee,intermediate,20,Unmasked fusion,novice,16.583,false,3.41719030062637,-3.41719030062637
+P183,Centre B,train,knee,intermediate,21,Unmasked fusion,intermediate,18.251,true,2.74880225203068,-2.74880225203068
+P062,Centre A,train,knee,expert,27,Unmasked fusion,expert,26.098,true,0.901772607554918,-0.901772607554918
+P181,Centre C,train,knee,expert,23.5,Unmasked fusion,expert,22.995,true,0.504831053930506,-0.504831053930506
+P147,Centre C,train,knee,expert,24,Unmasked fusion,intermediate,25.622,false,1.62165701891136,1.62165701891136
+P144,Centre B,train,knee,expert,28.5,Unmasked fusion,expert,24.748,true,3.75233104250736,-3.75233104250736
+P041,Centre C,train,knee,novice,10,Unmasked fusion,novice,13.173,true,3.17263182421211,3.17263182421211
+P149,Centre A,train,knee,expert,27.5,Unmasked fusion,intermediate,26.704,false,0.795912806526054,-0.795912806526054
+P017,Centre A,train,shoulder,novice,7,Unmasked fusion,intermediate,9.201,false,2.2013512220468,2.2013512220468
+P067,Centre A,train,knee,intermediate,19.5,Unmasked fusion,intermediate,17.651,true,1.84869006662016,-1.84869006662016
+P194,Centre A,train,shoulder,expert,28,Unmasked fusion,expert,21.416,true,6.58441830916723,-6.58441830916723
+P092,Centre B,train,shoulder,intermediate,16,Unmasked fusion,intermediate,16.769,true,0.768713456481208,0.768713456481208
+P048,Centre A,train,shoulder,novice,10.5,Unmasked fusion,novice,10.161,true,0.339063508538617,-0.339063508538617
+P072,Centre A,train,shoulder,novice,8.5,Unmasked fusion,intermediate,5.154,false,3.34626232750501,-3.34626232750501
+P046,Centre B,train,knee,expert,29.5,Unmasked fusion,intermediate,29.89,false,0.390025027856204,0.390025027856204
+P192,Centre C,train,shoulder,novice,7.5,Unmasked fusion,novice,7.657,true,0.157366093876002,0.157366093876002
+P167,Centre C,train,shoulder,expert,24,Unmasked fusion,intermediate,22.395,false,1.60474014153473,-1.60474014153473
+P096,Centre B,train,knee,intermediate,21.5,Unmasked fusion,intermediate,22.684,true,1.18384074029771,1.18384074029771
+P015,Centre A,train,knee,expert,25,Unmasked fusion,expert,26.329,true,1.32913855246149,1.32913855246149
+P084,Centre B,train,shoulder,novice,7.5,Unmasked fusion,intermediate,9.997,false,2.49683171505942,2.49683171505942
+P123,Centre C,train,shoulder,intermediate,21.5,Unmasked fusion,intermediate,23.751,true,2.2513591390088,2.2513591390088
+P023,Centre C,train,knee,expert,26.5,Unmasked fusion,expert,23.521,true,2.97917134524631,-2.97917134524631
+P014,Centre B,train,knee,intermediate,16.5,Unmasked fusion,expert,16.51,false,0.0104317023858194,0.0104317023858194
+P052,Centre C,train,knee,novice,11,Unmasked fusion,intermediate,6.219,false,4.78121669981845,-4.78121669981845
+P031,Centre C,train,knee,expert,23.5,Unmasked fusion,expert,26.971,true,3.47086926817263,3.47086926817263
+P061,Centre A,train,knee,novice,14,Unmasked fusion,novice,16.046,true,2.04568213498241,2.04568213498241
+P051,Centre C,train,knee,novice,10,Unmasked fusion,novice,9.549,true,0.450829979857234,-0.450829979857234
+P036,Centre B,train,shoulder,intermediate,17,Unmasked fusion,expert,14.97,false,2.03033312718736,-2.03033312718736
+P136,Centre A,train,knee,expert,29.5,Unmasked fusion,expert,30,true,0.5,0.5
+P135,Centre A,train,shoulder,expert,28,Unmasked fusion,intermediate,26.436,false,1.56381071940503,-1.56381071940503
+P133,Centre C,train,shoulder,intermediate,22.5,Unmasked fusion,expert,23.776,false,1.27640234312191,1.27640234312191
+P143,Centre A,train,knee,expert,24,Unmasked fusion,intermediate,22.912,false,1.08755607082447,-1.08755607082447
+P035,Centre A,train,shoulder,novice,7.5,Unmasked fusion,novice,9.566,true,2.06644765843744,2.06644765843744
+P126,Centre A,train,knee,novice,13,Unmasked fusion,novice,10.923,true,2.07673774582269,-2.07673774582269
+P099,Centre C,train,knee,novice,12,Unmasked fusion,intermediate,15.507,false,3.50703455495235,3.50703455495235
+P100,Centre C,train,shoulder,expert,29.5,Unmasked fusion,expert,30,true,0.5,0.5
+P085,Centre C,train,shoulder,expert,25,Unmasked fusion,expert,23.969,true,1.03127226698165,-1.03127226698165
+P177,Centre C,train,knee,intermediate,16.5,Unmasked fusion,intermediate,13.334,true,3.16623780275735,-3.16623780275735
+P045,Centre A,train,shoulder,novice,12.5,Unmasked fusion,intermediate,6.193,false,6.30661559084729,-6.30661559084729
+P044,Centre C,train,knee,novice,8.5,Unmasked fusion,novice,6.984,true,1.51553998033117,-1.51553998033117
+P050,Centre A,train,shoulder,expert,24,Unmasked fusion,expert,23.844,true,0.155757889968299,-0.155757889968299
+P132,Centre A,train,shoulder,intermediate,21.5,Unmasked fusion,intermediate,18.604,true,2.8961600865578,-2.8961600865578
+P173,Centre A,train,shoulder,expert,27.5,Unmasked fusion,expert,22.602,true,4.8977782979459,-4.8977782979459
+P180,Centre A,train,knee,intermediate,21,Unmasked fusion,intermediate,22.98,true,1.97978641574582,1.97978641574582
+P063,Centre A,train,knee,intermediate,20.5,Unmasked fusion,intermediate,21.959,true,1.45881716322804,1.45881716322804
+P121,Centre A,train,shoulder,expert,30,Unmasked fusion,expert,30,true,0,0
+P003,Centre B,train,shoulder,intermediate,16,Unmasked fusion,intermediate,13.868,true,2.13174241000086,-2.13174241000086
+P037,Centre B,train,shoulder,intermediate,18,Unmasked fusion,intermediate,19.086,true,1.08607818101455,1.08607818101455
+P109,Centre A,train,knee,novice,8,Unmasked fusion,novice,9.189,true,1.18853928199755,1.18853928199755
+P199,Centre A,train,shoulder,novice,8.5,Unmasked fusion,novice,8.965,true,0.464879187463351,0.464879187463351
+P006,Centre A,train,knee,intermediate,18,Unmasked fusion,novice,19.114,false,1.11398264564526,1.11398264564526
+P184,Centre A,train,knee,expert,29,Unmasked fusion,expert,30,true,1,1
+P162,Centre B,train,knee,expert,29.5,Unmasked fusion,expert,26.678,true,2.82154093988437,-2.82154093988437
+P024,Centre A,train,shoulder,intermediate,20.5,Unmasked fusion,expert,19.861,false,0.638526943949312,-0.638526943949312
+P163,Centre A,train,knee,intermediate,18,Unmasked fusion,novice,22.087,false,4.08742518678782,4.08742518678782
+P172,Centre A,train,knee,intermediate,21.5,Unmasked fusion,intermediate,15.87,true,5.62987516202121,-5.62987516202121
+P197,Centre B,val,shoulder,intermediate,20.5,ArthroSkill-MC,intermediate,22.018,true,1.5178076578059,1.5178076578059
+P114,Centre A,val,knee,intermediate,16.5,ArthroSkill-MC,intermediate,19.263,true,2.76347643976254,2.76347643976254
+P032,Centre A,val,knee,expert,25,ArthroSkill-MC,expert,26.023,true,1.0233003311155,1.0233003311155
+P025,Centre A,val,shoulder,intermediate,15.5,ArthroSkill-MC,intermediate,14.144,true,1.35579400878384,-1.35579400878384
+P189,Centre A,val,knee,novice,7,ArthroSkill-MC,intermediate,5,false,2,-2
+P120,Centre B,val,knee,expert,23.5,ArthroSkill-MC,expert,25.323,true,1.82266645322075,1.82266645322075
+P042,Centre C,val,shoulder,expert,28.5,ArthroSkill-MC,expert,28.917,true,0.417291044950932,0.417291044950932
+P151,Centre C,val,knee,intermediate,18,ArthroSkill-MC,intermediate,21.386,true,3.38603852012496,3.38603852012496
+P157,Centre A,val,knee,intermediate,19,ArthroSkill-MC,intermediate,21.147,true,2.14710775798412,2.14710775798412
+P008,Centre B,val,shoulder,expert,26.5,ArthroSkill-MC,expert,25.794,true,0.706333524268036,-0.706333524268036
+P124,Centre B,val,knee,expert,25,ArthroSkill-MC,expert,27.535,true,2.53509631910993,2.53509631910993
+P175,Centre C,val,shoulder,novice,14,ArthroSkill-MC,novice,14.387,true,0.387413736608322,0.387413736608322
+P055,Centre B,val,shoulder,intermediate,18,ArthroSkill-MC,intermediate,15.089,true,2.91138858750918,-2.91138858750918
+P117,Centre B,val,knee,novice,6.5,ArthroSkill-MC,novice,5.991,true,0.508741061881373,-0.508741061881373
+P053,Centre A,val,shoulder,expert,25,ArthroSkill-MC,expert,23.596,true,1.40392180224531,-1.40392180224531
+P130,Centre B,val,shoulder,expert,25.5,ArthroSkill-MC,expert,21.969,true,3.53054329763328,-3.53054329763328
+P155,Centre B,val,shoulder,novice,10,ArthroSkill-MC,novice,11.547,true,1.54704004462401,1.54704004462401
+P089,Centre A,val,knee,intermediate,19,ArthroSkill-MC,intermediate,18.21,true,0.789803286639966,-0.789803286639966
+P060,Centre A,val,shoulder,intermediate,16,ArthroSkill-MC,intermediate,15.497,true,0.502776058017622,-0.502776058017622
+P069,Centre C,val,shoulder,intermediate,21,ArthroSkill-MC,novice,18.671,false,2.32874041058054,-2.32874041058054
+P078,Centre B,val,shoulder,novice,11.5,ArthroSkill-MC,novice,13.761,true,2.26110274194698,2.26110274194698
+P091,Centre C,val,knee,intermediate,23,ArthroSkill-MC,intermediate,22.729,true,0.27054340081019,-0.27054340081019
+P056,Centre B,val,shoulder,expert,23.5,ArthroSkill-MC,intermediate,22.907,false,0.593295612621603,-0.593295612621603
+P059,Centre B,val,knee,expert,25.5,ArthroSkill-MC,expert,26.35,true,0.849791380498107,0.849791380498107
+P170,Centre B,val,shoulder,novice,9,ArthroSkill-MC,novice,10.548,true,1.54805891582171,1.54805891582171
+P093,Centre C,val,knee,intermediate,18,ArthroSkill-MC,intermediate,16.456,true,1.54401087601929,-1.54401087601929
+P198,Centre C,val,shoulder,novice,11,ArthroSkill-MC,intermediate,10.16,false,0.839953068913664,-0.839953068913664
+P171,Centre A,val,knee,expert,24,ArthroSkill-MC,expert,26.597,true,2.59696424114535,2.59696424114535
+P018,Centre A,val,shoulder,expert,24,ArthroSkill-MC,expert,25.92,true,1.92039576793756,1.92039576793756
+P188,Centre B,val,knee,expert,29,ArthroSkill-MC,expert,29.461,true,0.460824837181093,0.460824837181093
+P115,Centre A,val,knee,expert,26.5,ArthroSkill-MC,expert,27.379,true,0.878720214806542,0.878720214806542
+P156,Centre A,val,knee,intermediate,18,ArthroSkill-MC,intermediate,20.53,true,2.53031643449636,2.53031643449636
+P071,Centre B,val,knee,novice,7,ArthroSkill-MC,novice,5.741,true,1.2592126494804,-1.2592126494804
+P122,Centre B,val,shoulder,intermediate,17.5,ArthroSkill-MC,intermediate,17.146,true,0.353877271765224,-0.353877271765224
+P190,Centre C,val,shoulder,expert,26,ArthroSkill-MC,expert,26.376,true,0.375559335554673,0.375559335554673
+P106,Centre A,val,shoulder,intermediate,17.5,ArthroSkill-MC,novice,15.314,false,2.18552064483237,-2.18552064483237
+P178,Centre A,val,knee,intermediate,17.5,ArthroSkill-MC,intermediate,18.277,true,0.777272482882346,0.777272482882346
+P141,Centre C,val,knee,novice,11,ArthroSkill-MC,novice,13.408,true,2.40779533402514,2.40779533402514
+P200,Centre A,val,knee,novice,9,ArthroSkill-MC,novice,7.527,true,1.47257371331702,-1.47257371331702
+P197,Centre B,val,shoulder,intermediate,20.5,SAIS,intermediate,16.244,true,4.25570686961251,-4.25570686961251
+P114,Centre A,val,knee,intermediate,16.5,SAIS,intermediate,14.405,true,2.09468309792562,-2.09468309792562
+P032,Centre A,val,knee,expert,25,SAIS,expert,23.76,true,1.24043412869157,-1.24043412869157
+P025,Centre A,val,shoulder,intermediate,15.5,SAIS,novice,19.069,false,3.56942381269229,3.56942381269229
+P189,Centre A,val,knee,novice,7,SAIS,novice,6.967,true,0.0328170540148678,-0.0328170540148678
+P120,Centre B,val,knee,expert,23.5,SAIS,expert,23.475,true,0.0250049979566143,-0.0250049979566143
+P042,Centre C,val,shoulder,expert,28.5,SAIS,expert,25.698,true,2.80154785316311,-2.80154785316311
+P151,Centre C,val,knee,intermediate,18,SAIS,expert,17.263,false,0.736869706860276,-0.736869706860276
+P157,Centre A,val,knee,intermediate,19,SAIS,novice,14.954,false,4.0462442418658,-4.0462442418658
+P008,Centre B,val,shoulder,expert,26.5,SAIS,intermediate,25.391,false,1.10947072469514,-1.10947072469514
+P124,Centre B,val,knee,expert,25,SAIS,expert,22.557,true,2.44304664734839,-2.44304664734839
+P175,Centre C,val,shoulder,novice,14,SAIS,novice,13.529,true,0.471356346939624,-0.471356346939624
+P055,Centre B,val,shoulder,intermediate,18,SAIS,intermediate,7.298,true,10.7023611604619,-10.7023611604619
+P117,Centre B,val,knee,novice,6.5,SAIS,novice,5,true,1.5,-1.5
+P053,Centre A,val,shoulder,expert,25,SAIS,expert,24.244,true,0.755891577637428,-0.755891577637428
+P130,Centre B,val,shoulder,expert,25.5,SAIS,intermediate,25.688,false,0.188410891777615,0.188410891777615
+P155,Centre B,val,shoulder,novice,10,SAIS,novice,6.2,true,3.79955175615686,-3.79955175615686
+P089,Centre A,val,knee,intermediate,19,SAIS,intermediate,16.316,true,2.68357441468353,-2.68357441468353
+P060,Centre A,val,shoulder,intermediate,16,SAIS,novice,11.187,false,4.81326575236753,-4.81326575236753
+P069,Centre C,val,shoulder,intermediate,21,SAIS,intermediate,24.35,true,3.35024946571214,3.35024946571214
+P078,Centre B,val,shoulder,novice,11.5,SAIS,novice,16.343,true,4.843433775717,4.843433775717
+P091,Centre C,val,knee,intermediate,23,SAIS,intermediate,22.229,true,0.771022544842499,-0.771022544842499
+P056,Centre B,val,shoulder,expert,23.5,SAIS,expert,25.418,true,1.91819759946241,1.91819759946241
+P059,Centre B,val,knee,expert,25.5,SAIS,expert,23.036,true,2.46411817653652,-2.46411817653652
+P170,Centre B,val,shoulder,novice,9,SAIS,intermediate,10.049,false,1.04875678818537,1.04875678818537
+P093,Centre C,val,knee,intermediate,18,SAIS,intermediate,15.741,true,2.25875623860817,-2.25875623860817
+P198,Centre C,val,shoulder,novice,11,SAIS,intermediate,11.929,false,0.929414651147241,0.929414651147241
+P171,Centre A,val,knee,expert,24,SAIS,expert,23.763,true,0.237459928602561,-0.237459928602561
+P018,Centre A,val,shoulder,expert,24,SAIS,expert,25.746,true,1.74636680967743,1.74636680967743
+P188,Centre B,val,knee,expert,29,SAIS,expert,30,true,1,1
+P115,Centre A,val,knee,expert,26.5,SAIS,expert,28.448,true,1.94836811630254,1.94836811630254
+P156,Centre A,val,knee,intermediate,18,SAIS,intermediate,16.456,true,1.54423361460385,-1.54423361460385
+P071,Centre B,val,knee,novice,7,SAIS,novice,6.66,true,0.340075987278024,-0.340075987278024
+P122,Centre B,val,shoulder,intermediate,17.5,SAIS,intermediate,16.455,true,1.04468556110069,-1.04468556110069
+P190,Centre C,val,shoulder,expert,26,SAIS,expert,21.916,true,4.0844824866104,-4.0844824866104
+P106,Centre A,val,shoulder,intermediate,17.5,SAIS,novice,24.415,false,6.91535751012618,6.91535751012618
+P178,Centre A,val,knee,intermediate,17.5,SAIS,novice,23.032,false,5.53239612761131,5.53239612761131
+P141,Centre C,val,knee,novice,11,SAIS,intermediate,16.1,false,5.10019865940324,5.10019865940324
+P200,Centre A,val,knee,novice,9,SAIS,intermediate,7.66,false,1.33977956262358,-1.33977956262358
+P197,Centre B,val,shoulder,intermediate,20.5,Video Swin-T,intermediate,18.129,true,2.37097586422117,-2.37097586422117
+P114,Centre A,val,knee,intermediate,16.5,Video Swin-T,novice,19.735,false,3.23464880742038,3.23464880742038
+P032,Centre A,val,knee,expert,25,Video Swin-T,expert,25.987,true,0.986747050849978,0.986747050849978
+P025,Centre A,val,shoulder,intermediate,15.5,Video Swin-T,expert,14.884,false,0.616404333075703,-0.616404333075703
+P189,Centre A,val,knee,novice,7,Video Swin-T,novice,10.213,true,3.21286170254188,3.21286170254188
+P120,Centre B,val,knee,expert,23.5,Video Swin-T,expert,23.537,true,0.037399027913505,0.037399027913505
+P042,Centre C,val,shoulder,expert,28.5,Video Swin-T,expert,29.334,true,0.834040807481482,0.834040807481482
+P151,Centre C,val,knee,intermediate,18,Video Swin-T,intermediate,21.385,true,3.38498746236566,3.38498746236566
+P157,Centre A,val,knee,intermediate,19,Video Swin-T,intermediate,20.377,true,1.37673143174024,1.37673143174024
+P008,Centre B,val,shoulder,expert,26.5,Video Swin-T,intermediate,27.187,false,0.686745986365871,0.686745986365871
+P124,Centre B,val,knee,expert,25,Video Swin-T,expert,30,true,5,5
+P175,Centre C,val,shoulder,novice,14,Video Swin-T,novice,10.099,true,3.901277080137,-3.901277080137
+P055,Centre B,val,shoulder,intermediate,18,Video Swin-T,expert,23.077,false,5.07691058683377,5.07691058683377
+P117,Centre B,val,knee,novice,6.5,Video Swin-T,novice,5,true,1.5,-1.5
+P053,Centre A,val,shoulder,expert,25,Video Swin-T,intermediate,24.313,false,0.687449626632649,-0.687449626632649
+P130,Centre B,val,shoulder,expert,25.5,Video Swin-T,intermediate,21.717,false,3.78299722705772,-3.78299722705772
+P155,Centre B,val,shoulder,novice,10,Video Swin-T,novice,5,true,5,-5
+P089,Centre A,val,knee,intermediate,19,Video Swin-T,intermediate,22.552,true,3.55182732135626,3.55182732135626
+P060,Centre A,val,shoulder,intermediate,16,Video Swin-T,intermediate,16.331,true,0.331340854913986,0.331340854913986
+P069,Centre C,val,shoulder,intermediate,21,Video Swin-T,intermediate,21.277,true,0.276570926901506,0.276570926901506
+P078,Centre B,val,shoulder,novice,11.5,Video Swin-T,novice,6.178,true,5.3220834407913,-5.3220834407913
+P091,Centre C,val,knee,intermediate,23,Video Swin-T,intermediate,18.454,true,4.5458736069189,-4.5458736069189
+P056,Centre B,val,shoulder,expert,23.5,Video Swin-T,expert,21.219,true,2.28062667514096,-2.28062667514096
+P059,Centre B,val,knee,expert,25.5,Video Swin-T,expert,30,true,4.5,4.5
+P170,Centre B,val,shoulder,novice,9,Video Swin-T,novice,7.282,true,1.71779091132753,-1.71779091132753
+P093,Centre C,val,knee,intermediate,18,Video Swin-T,expert,13.894,false,4.10578286012672,-4.10578286012672
+P198,Centre C,val,shoulder,novice,11,Video Swin-T,novice,6.084,true,4.91638460509553,-4.91638460509553
+P171,Centre A,val,knee,expert,24,Video Swin-T,intermediate,18.71,false,5.28961901113089,-5.28961901113089
+P018,Centre A,val,shoulder,expert,24,Video Swin-T,expert,22.874,true,1.12557368170807,-1.12557368170807
+P188,Centre B,val,knee,expert,29,Video Swin-T,expert,25.502,true,3.49804933989829,-3.49804933989829
+P115,Centre A,val,knee,expert,26.5,Video Swin-T,intermediate,29.084,false,2.5844061161598,2.5844061161598
+P156,Centre A,val,knee,intermediate,18,Video Swin-T,intermediate,11.766,true,6.23442146321858,-6.23442146321858
+P071,Centre B,val,knee,novice,7,Video Swin-T,novice,12.565,true,5.56516894494755,5.56516894494755
+P122,Centre B,val,shoulder,intermediate,17.5,Video Swin-T,novice,23.998,false,6.49846406366693,6.49846406366693
+P190,Centre C,val,shoulder,expert,26,Video Swin-T,expert,23.721,true,2.27850677286744,-2.27850677286744
+P106,Centre A,val,shoulder,intermediate,17.5,Video Swin-T,expert,17.973,false,0.472816585675908,0.472816585675908
+P178,Centre A,val,knee,intermediate,17.5,Video Swin-T,intermediate,17.696,true,0.196200224918286,0.196200224918286
+P141,Centre C,val,knee,novice,11,Video Swin-T,intermediate,15.796,false,4.79644278924121,4.79644278924121
+P200,Centre A,val,knee,novice,9,Video Swin-T,novice,6.15,true,2.84952728573906,-2.84952728573906
+P197,Centre B,val,shoulder,intermediate,20.5,3D-ResNet-18,intermediate,27.116,true,6.61593960598592,6.61593960598592
+P114,Centre A,val,knee,intermediate,16.5,3D-ResNet-18,expert,19.943,false,3.4434377416,3.4434377416
+P032,Centre A,val,knee,expert,25,3D-ResNet-18,expert,25.324,true,0.324183876333333,0.324183876333333
+P025,Centre A,val,shoulder,intermediate,15.5,3D-ResNet-18,intermediate,11.988,true,3.51160821114393,-3.51160821114393
+P189,Centre A,val,knee,novice,7,3D-ResNet-18,intermediate,6.66,false,0.34007822716771,-0.34007822716771
+P120,Centre B,val,knee,expert,23.5,3D-ResNet-18,expert,21.407,true,2.0926923592976,-2.0926923592976
+P042,Centre C,val,shoulder,expert,28.5,3D-ResNet-18,expert,30,true,1.5,1.5
+P151,Centre C,val,knee,intermediate,18,3D-ResNet-18,expert,16.95,false,1.04958339509523,-1.04958339509523
+P157,Centre A,val,knee,intermediate,19,3D-ResNet-18,intermediate,11.365,true,7.63450730554756,-7.63450730554756
+P008,Centre B,val,shoulder,expert,26.5,3D-ResNet-18,expert,28.575,true,2.0748579596432,2.0748579596432
+P124,Centre B,val,knee,expert,25,3D-ResNet-18,intermediate,25.923,false,0.922913894949964,0.922913894949964
+P175,Centre C,val,shoulder,novice,14,3D-ResNet-18,novice,11.847,true,2.15307734981662,-2.15307734981662
+P055,Centre B,val,shoulder,intermediate,18,3D-ResNet-18,intermediate,14.673,true,3.32669859907002,-3.32669859907002
+P117,Centre B,val,knee,novice,6.5,3D-ResNet-18,intermediate,10.58,false,4.07954784254224,4.07954784254224
+P053,Centre A,val,shoulder,expert,25,3D-ResNet-18,intermediate,24.164,false,0.835953885971417,-0.835953885971417
+P130,Centre B,val,shoulder,expert,25.5,3D-ResNet-18,expert,25.061,true,0.438933206284581,-0.438933206284581
+P155,Centre B,val,shoulder,novice,10,3D-ResNet-18,intermediate,5.999,false,4.00103605590714,-4.00103605590714
+P089,Centre A,val,knee,intermediate,19,3D-ResNet-18,intermediate,15.484,true,3.51592163847017,-3.51592163847017
+P060,Centre A,val,shoulder,intermediate,16,3D-ResNet-18,intermediate,16.411,true,0.411167890675891,0.411167890675891
+P069,Centre C,val,shoulder,intermediate,21,3D-ResNet-18,expert,18.326,false,2.67360447825141,-2.67360447825141
+P078,Centre B,val,shoulder,novice,11.5,3D-ResNet-18,intermediate,12.104,false,0.60448625041774,0.60448625041774
+P091,Centre C,val,knee,intermediate,23,3D-ResNet-18,expert,22.41,false,0.590231757677177,-0.590231757677177
+P056,Centre B,val,shoulder,expert,23.5,3D-ResNet-18,expert,25.616,true,2.11600773571668,2.11600773571668
+P059,Centre B,val,knee,expert,25.5,3D-ResNet-18,expert,29.767,true,4.26726390929767,4.26726390929767
+P170,Centre B,val,shoulder,novice,9,3D-ResNet-18,novice,8.109,true,0.890797471196516,-0.890797471196516
+P093,Centre C,val,knee,intermediate,18,3D-ResNet-18,intermediate,16.48,true,1.51951494486283,-1.51951494486283
+P198,Centre C,val,shoulder,novice,11,3D-ResNet-18,novice,6.192,true,4.80837201268432,-4.80837201268432
+P171,Centre A,val,knee,expert,24,3D-ResNet-18,intermediate,30,false,6,6
+P018,Centre A,val,shoulder,expert,24,3D-ResNet-18,expert,20.467,true,3.53347247703609,-3.53347247703609
+P188,Centre B,val,knee,expert,29,3D-ResNet-18,expert,30,true,1,1
+P115,Centre A,val,knee,expert,26.5,3D-ResNet-18,expert,29.252,true,2.75225840541535,2.75225840541535
+P156,Centre A,val,knee,intermediate,18,3D-ResNet-18,intermediate,18.671,true,0.671355199528946,0.671355199528946
+P071,Centre B,val,knee,novice,7,3D-ResNet-18,novice,5,true,2,-2
+P122,Centre B,val,shoulder,intermediate,17.5,3D-ResNet-18,novice,18.765,false,1.26455469864964,1.26455469864964
+P190,Centre C,val,shoulder,expert,26,3D-ResNet-18,expert,27.04,true,1.03981152696849,1.03981152696849
+P106,Centre A,val,shoulder,intermediate,17.5,3D-ResNet-18,intermediate,13.74,true,3.76045355210833,-3.76045355210833
+P178,Centre A,val,knee,intermediate,17.5,3D-ResNet-18,intermediate,17.366,true,0.133616729448615,-0.133616729448615
+P141,Centre C,val,knee,novice,11,3D-ResNet-18,intermediate,9.197,false,1.80273695488753,-1.80273695488753
+P200,Centre A,val,knee,novice,9,3D-ResNet-18,novice,6.506,true,2.49421077307016,-2.49421077307016
+P197,Centre B,val,shoulder,intermediate,20.5,Appearance only,intermediate,20.87,true,0.369830905958864,0.369830905958864
+P114,Centre A,val,knee,intermediate,16.5,Appearance only,intermediate,18.954,true,2.45353404414061,2.45353404414061
+P032,Centre A,val,knee,expert,25,Appearance only,intermediate,23.867,false,1.13320792607421,-1.13320792607421
+P025,Centre A,val,shoulder,intermediate,15.5,Appearance only,intermediate,19.422,true,3.92159850469148,3.92159850469148
+P189,Centre A,val,knee,novice,7,Appearance only,novice,8.827,true,1.82661409530588,1.82661409530588
+P120,Centre B,val,knee,expert,23.5,Appearance only,expert,28.017,true,4.51743718496214,4.51743718496214
+P042,Centre C,val,shoulder,expert,28.5,Appearance only,expert,25.466,true,3.03427153946781,-3.03427153946781
+P151,Centre C,val,knee,intermediate,18,Appearance only,intermediate,18.171,true,0.170588563241274,0.170588563241274
+P157,Centre A,val,knee,intermediate,19,Appearance only,intermediate,17.828,true,1.17246224855226,-1.17246224855226
+P008,Centre B,val,shoulder,expert,26.5,Appearance only,expert,29.806,true,3.3059760435447,3.3059760435447
+P124,Centre B,val,knee,expert,25,Appearance only,expert,25.077,true,0.0770984390828318,0.0770984390828318
+P175,Centre C,val,shoulder,novice,14,Appearance only,novice,13.316,true,0.683606521894589,-0.683606521894589
+P055,Centre B,val,shoulder,intermediate,18,Appearance only,intermediate,16.639,true,1.36087001508554,-1.36087001508554
+P117,Centre B,val,knee,novice,6.5,Appearance only,novice,7.564,true,1.06424138067265,1.06424138067265
+P053,Centre A,val,shoulder,expert,25,Appearance only,intermediate,24.835,false,0.164865600365648,-0.164865600365648
+P130,Centre B,val,shoulder,expert,25.5,Appearance only,expert,29.094,true,3.59434978545973,3.59434978545973
+P155,Centre B,val,shoulder,novice,10,Appearance only,novice,8.256,true,1.74359858939646,-1.74359858939646
+P089,Centre A,val,knee,intermediate,19,Appearance only,intermediate,20.999,true,1.99893937892635,1.99893937892635
+P060,Centre A,val,shoulder,intermediate,16,Appearance only,intermediate,13.41,true,2.59017408020942,-2.59017408020942
+P069,Centre C,val,shoulder,intermediate,21,Appearance only,novice,19.372,false,1.62793381911066,-1.62793381911066
+P078,Centre B,val,shoulder,novice,11.5,Appearance only,novice,6.346,true,5.15433128576986,-5.15433128576986
+P091,Centre C,val,knee,intermediate,23,Appearance only,intermediate,17.963,true,5.03704921424876,-5.03704921424876
+P056,Centre B,val,shoulder,expert,23.5,Appearance only,intermediate,21.213,false,2.28709119441174,-2.28709119441174
+P059,Centre B,val,knee,expert,25.5,Appearance only,expert,23.982,true,1.51816950276017,-1.51816950276017
+P170,Centre B,val,shoulder,novice,9,Appearance only,intermediate,5,false,4,-4
+P093,Centre C,val,knee,intermediate,18,Appearance only,intermediate,16.775,true,1.22534754052,-1.22534754052
+P198,Centre C,val,shoulder,novice,11,Appearance only,novice,8.519,true,2.4813796867217,-2.4813796867217
+P171,Centre A,val,knee,expert,24,Appearance only,expert,22.838,true,1.16168630682684,-1.16168630682684
+P018,Centre A,val,shoulder,expert,24,Appearance only,intermediate,21.726,false,2.2743001977406,-2.2743001977406
+P188,Centre B,val,knee,expert,29,Appearance only,expert,28.427,true,0.572537404861531,-0.572537404861531
+P115,Centre A,val,knee,expert,26.5,Appearance only,expert,24.693,true,1.80666001773944,-1.80666001773944
+P156,Centre A,val,knee,intermediate,18,Appearance only,expert,17.738,false,0.26220658124863,-0.26220658124863
+P071,Centre B,val,knee,novice,7,Appearance only,novice,5,true,2,-2
+P122,Centre B,val,shoulder,intermediate,17.5,Appearance only,expert,19.058,false,1.55817891252545,1.55817891252545
+P190,Centre C,val,shoulder,expert,26,Appearance only,intermediate,23.535,false,2.46463491544085,-2.46463491544085
+P106,Centre A,val,shoulder,intermediate,17.5,Appearance only,intermediate,16.082,true,1.41781856592327,-1.41781856592327
+P178,Centre A,val,knee,intermediate,17.5,Appearance only,intermediate,20.315,true,2.81538139159662,2.81538139159662
+P141,Centre C,val,knee,novice,11,Appearance only,novice,10.296,true,0.703739316068637,-0.703739316068637
+P200,Centre A,val,knee,novice,9,Appearance only,novice,10.966,true,1.9658970416327,1.9658970416327
+P197,Centre B,val,shoulder,intermediate,20.5,Motion only,intermediate,22.843,true,2.34295389545595,2.34295389545595
+P114,Centre A,val,knee,intermediate,16.5,Motion only,intermediate,14.584,true,1.91567111434899,-1.91567111434899
+P032,Centre A,val,knee,expert,25,Motion only,intermediate,21.197,false,3.8029144093024,-3.8029144093024
+P025,Centre A,val,shoulder,intermediate,15.5,Motion only,novice,16.978,false,1.47764433883163,1.47764433883163
+P189,Centre A,val,knee,novice,7,Motion only,novice,8.265,true,1.26462689215497,1.26462689215497
+P120,Centre B,val,knee,expert,23.5,Motion only,expert,22.216,true,1.28444237767926,-1.28444237767926
+P042,Centre C,val,shoulder,expert,28.5,Motion only,expert,29.553,true,1.05272458571312,1.05272458571312
+P151,Centre C,val,knee,intermediate,18,Motion only,intermediate,20.699,true,2.69874788422544,2.69874788422544
+P157,Centre A,val,knee,intermediate,19,Motion only,intermediate,18.103,true,0.896729146617563,-0.896729146617563
+P008,Centre B,val,shoulder,expert,26.5,Motion only,intermediate,27.492,false,0.991692648974819,0.991692648974819
+P124,Centre B,val,knee,expert,25,Motion only,expert,25.379,true,0.379234287853265,0.379234287853265
+P175,Centre C,val,shoulder,novice,14,Motion only,intermediate,15.218,false,1.2177917396435,1.2177917396435
+P055,Centre B,val,shoulder,intermediate,18,Motion only,intermediate,21.2,true,3.20015749521931,3.20015749521931
+P117,Centre B,val,knee,novice,6.5,Motion only,intermediate,8.165,false,1.66460672883528,1.66460672883528
+P053,Centre A,val,shoulder,expert,25,Motion only,intermediate,19.873,false,5.12709370064128,-5.12709370064128
+P130,Centre B,val,shoulder,expert,25.5,Motion only,expert,28.828,true,3.32773355750562,3.32773355750562
+P155,Centre B,val,shoulder,novice,10,Motion only,novice,7.161,true,2.83920212710224,-2.83920212710224
+P089,Centre A,val,knee,intermediate,19,Motion only,expert,17.647,false,1.3529419770497,-1.3529419770497
+P060,Centre A,val,shoulder,intermediate,16,Motion only,intermediate,17.528,true,1.52774048074743,1.52774048074743
+P069,Centre C,val,shoulder,intermediate,21,Motion only,intermediate,21.063,true,0.0632004119522911,0.0632004119522911
+P078,Centre B,val,shoulder,novice,11.5,Motion only,intermediate,8.468,false,3.03183927489284,-3.03183927489284
+P091,Centre C,val,knee,intermediate,23,Motion only,intermediate,19.46,true,3.53967413618106,-3.53967413618106
+P056,Centre B,val,shoulder,expert,23.5,Motion only,expert,25.382,true,1.88171611349222,1.88171611349222
+P059,Centre B,val,knee,expert,25.5,Motion only,expert,30,true,4.5,4.5
+P170,Centre B,val,shoulder,novice,9,Motion only,novice,11.986,true,2.98573213317829,2.98573213317829
+P093,Centre C,val,knee,intermediate,18,Motion only,intermediate,16.629,true,1.37088645988128,-1.37088645988128
+P198,Centre C,val,shoulder,novice,11,Motion only,novice,11.773,true,0.773273646020279,0.773273646020279
+P171,Centre A,val,knee,expert,24,Motion only,intermediate,23.918,false,0.0819432517024019,-0.0819432517024019
+P018,Centre A,val,shoulder,expert,24,Motion only,expert,19.753,true,4.24693256106878,-4.24693256106878
+P188,Centre B,val,knee,expert,29,Motion only,intermediate,28.318,false,0.682178735685145,-0.682178735685145
+P115,Centre A,val,knee,expert,26.5,Motion only,intermediate,25.238,false,1.26159674993641,-1.26159674993641
+P156,Centre A,val,knee,intermediate,18,Motion only,expert,21.196,false,3.19596935047495,3.19596935047495
+P071,Centre B,val,knee,novice,7,Motion only,intermediate,13.388,false,6.38762964103989,6.38762964103989
+P122,Centre B,val,shoulder,intermediate,17.5,Motion only,intermediate,14.282,true,3.21803980380223,-3.21803980380223
+P190,Centre C,val,shoulder,expert,26,Motion only,expert,26.556,true,0.556426577141494,0.556426577141494
+P106,Centre A,val,shoulder,intermediate,17.5,Motion only,expert,18.628,false,1.12812933201153,1.12812933201153
+P178,Centre A,val,knee,intermediate,17.5,Motion only,intermediate,20.082,true,2.58153680182064,2.58153680182064
+P141,Centre C,val,knee,novice,11,Motion only,novice,8.999,true,2.00066129249088,-2.00066129249088
+P200,Centre A,val,knee,novice,9,Motion only,novice,5,true,4,-4
+P197,Centre B,val,shoulder,intermediate,20.5,Naive concat,expert,17.664,false,2.83627348588173,-2.83627348588173
+P114,Centre A,val,knee,intermediate,16.5,Naive concat,intermediate,15.539,true,0.961005957923414,-0.961005957923414
+P032,Centre A,val,knee,expert,25,Naive concat,expert,23.38,true,1.61974171864354,-1.61974171864354
+P025,Centre A,val,shoulder,intermediate,15.5,Naive concat,novice,14.516,false,0.984073254471287,-0.984073254471287
+P189,Centre A,val,knee,novice,7,Naive concat,intermediate,5,false,2,-2
+P120,Centre B,val,knee,expert,23.5,Naive concat,intermediate,22.713,false,0.78749460251305,-0.78749460251305
+P042,Centre C,val,shoulder,expert,28.5,Naive concat,intermediate,30,false,1.5,1.5
+P151,Centre C,val,knee,intermediate,18,Naive concat,intermediate,17.547,true,0.452985214062899,-0.452985214062899
+P157,Centre A,val,knee,intermediate,19,Naive concat,intermediate,18.577,true,0.423423707611111,-0.423423707611111
+P008,Centre B,val,shoulder,expert,26.5,Naive concat,expert,29.761,true,3.26074564241613,3.26074564241613
+P124,Centre B,val,knee,expert,25,Naive concat,intermediate,26.94,false,1.94014662983804,1.94014662983804
+P175,Centre C,val,shoulder,novice,14,Naive concat,novice,15.499,true,1.49857703838995,1.49857703838995
+P055,Centre B,val,shoulder,intermediate,18,Naive concat,intermediate,18.944,true,0.944415730222037,0.944415730222037
+P117,Centre B,val,knee,novice,6.5,Naive concat,intermediate,6.62,false,0.120482769220111,0.120482769220111
+P053,Centre A,val,shoulder,expert,25,Naive concat,intermediate,29.98,false,4.97983214211701,4.97983214211701
+P130,Centre B,val,shoulder,expert,25.5,Naive concat,expert,24.889,true,0.611269986258492,-0.611269986258492
+P155,Centre B,val,shoulder,novice,10,Naive concat,novice,6.904,true,3.09587555860439,-3.09587555860439
+P089,Centre A,val,knee,intermediate,19,Naive concat,intermediate,18.084,true,0.915550533798971,-0.915550533798971
+P060,Centre A,val,shoulder,intermediate,16,Naive concat,intermediate,16.574,true,0.57401565314651,0.57401565314651
+P069,Centre C,val,shoulder,intermediate,21,Naive concat,intermediate,21.865,true,0.864820757405969,0.864820757405969
+P078,Centre B,val,shoulder,novice,11.5,Naive concat,novice,10.521,true,0.979059544886121,-0.979059544886121
+P091,Centre C,val,knee,intermediate,23,Naive concat,novice,26.824,false,3.82399264530106,3.82399264530106
+P056,Centre B,val,shoulder,expert,23.5,Naive concat,expert,17.407,true,6.09291281529601,-6.09291281529601
+P059,Centre B,val,knee,expert,25.5,Naive concat,intermediate,28.401,false,2.90097228135646,2.90097228135646
+P170,Centre B,val,shoulder,novice,9,Naive concat,novice,7.784,true,1.21568928022525,-1.21568928022525
+P093,Centre C,val,knee,intermediate,18,Naive concat,expert,15.847,false,2.15297879783854,-2.15297879783854
+P198,Centre C,val,shoulder,novice,11,Naive concat,intermediate,9.351,false,1.64914624708188,-1.64914624708188
+P171,Centre A,val,knee,expert,24,Naive concat,expert,20.753,true,3.24694226151805,-3.24694226151805
+P018,Centre A,val,shoulder,expert,24,Naive concat,expert,24.228,true,0.228107306556222,0.228107306556222
+P188,Centre B,val,knee,expert,29,Naive concat,intermediate,30,false,1,1
+P115,Centre A,val,knee,expert,26.5,Naive concat,intermediate,29.655,false,3.15497141091117,3.15497141091117
+P156,Centre A,val,knee,intermediate,18,Naive concat,novice,16.585,false,1.41479910774113,-1.41479910774113
+P071,Centre B,val,knee,novice,7,Naive concat,novice,7.623,true,0.623040300343661,0.623040300343661
+P122,Centre B,val,shoulder,intermediate,17.5,Naive concat,intermediate,16.991,true,0.508554150625933,-0.508554150625933
+P190,Centre C,val,shoulder,expert,26,Naive concat,intermediate,24.489,false,1.5113030996172,-1.5113030996172
+P106,Centre A,val,shoulder,intermediate,17.5,Naive concat,novice,17.757,false,0.256645952869967,0.256645952869967
+P178,Centre A,val,knee,intermediate,17.5,Naive concat,intermediate,21.333,true,3.83255103049777,3.83255103049777
+P141,Centre C,val,knee,novice,11,Naive concat,novice,7.646,true,3.35417047907164,-3.35417047907164
+P200,Centre A,val,knee,novice,9,Naive concat,novice,8.033,true,0.96740407466527,-0.96740407466527
+P197,Centre B,val,shoulder,intermediate,20.5,Unmasked fusion,intermediate,21.323,true,0.822825918549071,0.822825918549071
+P114,Centre A,val,knee,intermediate,16.5,Unmasked fusion,intermediate,18.023,true,1.52259099471707,1.52259099471707
+P032,Centre A,val,knee,expert,25,Unmasked fusion,intermediate,27.67,false,2.66980873332936,2.66980873332936
+P025,Centre A,val,shoulder,intermediate,15.5,Unmasked fusion,novice,16.218,false,0.718044323564122,0.718044323564122
+P189,Centre A,val,knee,novice,7,Unmasked fusion,novice,7.237,true,0.237429835114205,0.237429835114205
+P120,Centre B,val,knee,expert,23.5,Unmasked fusion,intermediate,24.236,false,0.736025370298698,0.736025370298698
+P042,Centre C,val,shoulder,expert,28.5,Unmasked fusion,expert,29.035,true,0.535130142561634,0.535130142561634
+P151,Centre C,val,knee,intermediate,18,Unmasked fusion,intermediate,16.129,true,1.87138843903449,-1.87138843903449
+P157,Centre A,val,knee,intermediate,19,Unmasked fusion,intermediate,16.817,true,2.1831994297305,-2.1831994297305
+P008,Centre B,val,shoulder,expert,26.5,Unmasked fusion,expert,24.957,true,1.5429254546722,-1.5429254546722
+P124,Centre B,val,knee,expert,25,Unmasked fusion,expert,25.943,true,0.943440697268134,0.943440697268134
+P175,Centre C,val,shoulder,novice,14,Unmasked fusion,intermediate,15.046,false,1.04649807375371,1.04649807375371
+P055,Centre B,val,shoulder,intermediate,18,Unmasked fusion,intermediate,19.257,true,1.25709482887636,1.25709482887636
+P117,Centre B,val,knee,novice,6.5,Unmasked fusion,novice,5,true,1.5,-1.5
+P053,Centre A,val,shoulder,expert,25,Unmasked fusion,expert,24.685,true,0.314556825346539,-0.314556825346539
+P130,Centre B,val,shoulder,expert,25.5,Unmasked fusion,expert,20.794,true,4.7064500594695,-4.7064500594695
+P155,Centre B,val,shoulder,novice,10,Unmasked fusion,intermediate,11.698,false,1.69797539378195,1.69797539378195
+P089,Centre A,val,knee,intermediate,19,Unmasked fusion,intermediate,21.345,true,2.34453395673474,2.34453395673474
+P060,Centre A,val,shoulder,intermediate,16,Unmasked fusion,intermediate,19.849,true,3.84934937837544,3.84934937837544
+P069,Centre C,val,shoulder,intermediate,21,Unmasked fusion,novice,22.091,false,1.09131579094472,1.09131579094472
+P078,Centre B,val,shoulder,novice,11.5,Unmasked fusion,novice,10.03,true,1.46969996150692,-1.46969996150692
+P091,Centre C,val,knee,intermediate,23,Unmasked fusion,intermediate,25.652,true,2.65220350275773,2.65220350275773
+P056,Centre B,val,shoulder,expert,23.5,Unmasked fusion,intermediate,26.649,false,3.14910162543272,3.14910162543272
+P059,Centre B,val,knee,expert,25.5,Unmasked fusion,expert,24.732,true,0.76752623671296,-0.76752623671296
+P170,Centre B,val,shoulder,novice,9,Unmasked fusion,novice,8.357,true,0.643257554458614,-0.643257554458614
+P093,Centre C,val,knee,intermediate,18,Unmasked fusion,intermediate,20.486,true,2.48574936682286,2.48574936682286
+P198,Centre C,val,shoulder,novice,11,Unmasked fusion,novice,6.918,true,4.08223526545816,-4.08223526545816
+P171,Centre A,val,knee,expert,24,Unmasked fusion,expert,26.438,true,2.43818895496062,2.43818895496062
+P018,Centre A,val,shoulder,expert,24,Unmasked fusion,intermediate,24.274,false,0.273848511497459,0.273848511497459
+P188,Centre B,val,knee,expert,29,Unmasked fusion,expert,28.717,true,0.283499713701847,-0.283499713701847
+P115,Centre A,val,knee,expert,26.5,Unmasked fusion,expert,27.709,true,1.20875382336412,1.20875382336412
+P156,Centre A,val,knee,intermediate,18,Unmasked fusion,intermediate,15.834,true,2.16577642363411,-2.16577642363411
+P071,Centre B,val,knee,novice,7,Unmasked fusion,novice,6.546,true,0.454109973699174,-0.454109973699174
+P122,Centre B,val,shoulder,intermediate,17.5,Unmasked fusion,intermediate,14.589,true,2.91116598195558,-2.91116598195558
+P190,Centre C,val,shoulder,expert,26,Unmasked fusion,expert,28.069,true,2.06916767813272,2.06916767813272
+P106,Centre A,val,shoulder,intermediate,17.5,Unmasked fusion,intermediate,19.304,true,1.80411810198471,1.80411810198471
+P178,Centre A,val,knee,intermediate,17.5,Unmasked fusion,intermediate,15.665,true,1.83521613787368,-1.83521613787368
+P141,Centre C,val,knee,novice,11,Unmasked fusion,novice,5,true,6,-6
+P200,Centre A,val,knee,novice,9,Unmasked fusion,novice,12.41,true,3.40959933053989,3.40959933053989
+P026,Centre A,test,shoulder,intermediate,21.5,ArthroSkill-MC,intermediate,21.049,true,0.45149257538257,-0.45149257538257
+P129,Centre C,test,shoulder,expert,26,ArthroSkill-MC,expert,26.344,true,0.344262990302806,0.344262990302806
+P104,Centre A,test,shoulder,novice,13,ArthroSkill-MC,novice,13.959,true,0.959169770067236,0.959169770067236
+P134,Centre C,test,knee,expert,24,ArthroSkill-MC,expert,25.482,true,1.48223323765379,1.48223323765379
+P043,Centre A,test,knee,intermediate,15.5,ArthroSkill-MC,intermediate,14.372,true,1.12798648357377,-1.12798648357377
+P153,Centre A,test,knee,expert,26,ArthroSkill-MC,expert,24.622,true,1.37823024233397,-1.37823024233397
+P080,Centre B,test,shoulder,novice,7,ArthroSkill-MC,novice,5.786,true,1.21384771362326,-1.21384771362326
+P195,Centre A,test,knee,intermediate,21,ArthroSkill-MC,intermediate,23.202,true,2.20237871305765,2.20237871305765
+P013,Centre B,test,shoulder,expert,23.5,ArthroSkill-MC,expert,22.674,true,0.826069866399084,-0.826069866399084
+P131,Centre B,test,knee,novice,14.5,ArthroSkill-MC,novice,13.646,true,0.854183095029327,-0.854183095029327
+P005,Centre A,test,shoulder,expert,24.5,ArthroSkill-MC,expert,22.783,true,1.71747529812073,-1.71747529812073
+P076,Centre A,test,knee,expert,25.5,ArthroSkill-MC,expert,24.228,true,1.27194725252226,-1.27194725252226
+P127,Centre A,test,knee,novice,11.5,ArthroSkill-MC,novice,12.77,true,1.27003139171836,1.27003139171836
+P110,Centre C,test,knee,expert,24,ArthroSkill-MC,expert,25.308,true,1.3078468415662,1.3078468415662
+P105,Centre C,test,knee,novice,7.5,ArthroSkill-MC,novice,7.268,true,0.232330287430508,-0.232330287430508
+P179,Centre C,test,knee,intermediate,17,ArthroSkill-MC,intermediate,17.667,true,0.666810964333155,0.666810964333155
+P168,Centre C,test,shoulder,intermediate,22.5,ArthroSkill-MC,intermediate,20.581,true,1.91917677001922,-1.91917677001922
+P139,Centre B,test,knee,intermediate,15.5,ArthroSkill-MC,intermediate,14.462,true,1.03810026109109,-1.03810026109109
+P187,Centre B,test,shoulder,expert,24,ArthroSkill-MC,intermediate,23.012,false,0.987800607367863,-0.987800607367863
+P088,Centre A,test,shoulder,novice,6.5,ArthroSkill-MC,intermediate,7.748,false,1.24799245754648,1.24799245754648
+P010,Centre C,test,shoulder,novice,12,ArthroSkill-MC,novice,11.555,true,0.44529880311666,-0.44529880311666
+P033,Centre C,test,shoulder,novice,13.5,ArthroSkill-MC,novice,9.857,true,3.64282845767186,-3.64282845767186
+P166,Centre C,test,shoulder,intermediate,20,ArthroSkill-MC,intermediate,17.474,true,2.52622666309021,-2.52622666309021
+P001,Centre A,test,shoulder,intermediate,16,ArthroSkill-MC,intermediate,14.805,true,1.1948432929363,-1.1948432929363
+P016,Centre A,test,knee,intermediate,16.5,ArthroSkill-MC,intermediate,18.398,true,1.89820199754119,1.89820199754119
+P070,Centre A,test,knee,novice,10,ArthroSkill-MC,novice,6.442,true,3.55754833622231,-3.55754833622231
+P064,Centre A,test,shoulder,intermediate,21.5,ArthroSkill-MC,intermediate,20.14,true,1.36041556906799,-1.36041556906799
+P077,Centre B,test,knee,intermediate,23,ArthroSkill-MC,intermediate,19.451,true,3.54919872161842,-3.54919872161842
+P020,Centre C,test,knee,novice,10,ArthroSkill-MC,novice,11.691,true,1.69119447736529,1.69119447736529
+P116,Centre B,test,shoulder,intermediate,19.5,ArthroSkill-MC,intermediate,18.118,true,1.38200809404404,-1.38200809404404
+P058,Centre C,test,knee,expert,24.5,ArthroSkill-MC,expert,25.462,true,0.961685123694021,0.961685123694021
+P011,Centre B,test,knee,expert,24.5,ArthroSkill-MC,expert,25.464,true,0.964057309237205,0.964057309237205
+P125,Centre B,test,knee,expert,28,ArthroSkill-MC,intermediate,26.009,false,1.99114333871821,-1.99114333871821
+P021,Centre C,test,shoulder,intermediate,16.5,ArthroSkill-MC,intermediate,13.64,true,2.86030485487883,-2.86030485487883
+P081,Centre A,test,shoulder,expert,24,ArthroSkill-MC,expert,25.755,true,1.75541014197711,1.75541014197711
+P095,Centre B,test,knee,intermediate,22,ArthroSkill-MC,expert,22.416,false,0.415847316009746,0.415847316009746
+P164,Centre B,test,shoulder,expert,27,ArthroSkill-MC,expert,25.481,true,1.51947725047243,-1.51947725047243
+P086,Centre A,test,shoulder,intermediate,16.5,ArthroSkill-MC,expert,19.425,false,2.92500784090715,2.92500784090715
+P137,Centre A,test,knee,intermediate,16.5,ArthroSkill-MC,intermediate,19.082,true,2.58221302171479,2.58221302171479
+P022,Centre A,test,knee,expert,25.5,ArthroSkill-MC,expert,23.744,true,1.75647091197555,-1.75647091197555
+P026,Centre A,test,shoulder,intermediate,21.5,SAIS,intermediate,21.716,true,0.21567005026122,0.21567005026122
+P129,Centre C,test,shoulder,expert,26,SAIS,expert,19.4,true,6.59967633274767,-6.59967633274767
+P104,Centre A,test,shoulder,novice,13,SAIS,intermediate,17.81,false,4.81001727905083,4.81001727905083
+P134,Centre C,test,knee,expert,24,SAIS,intermediate,22.408,false,1.59181393862561,-1.59181393862561
+P043,Centre A,test,knee,intermediate,15.5,SAIS,intermediate,16.845,true,1.34458764280954,1.34458764280954
+P153,Centre A,test,knee,expert,26,SAIS,intermediate,26.631,false,0.631066935489272,0.631066935489272
+P080,Centre B,test,shoulder,novice,7,SAIS,novice,6.381,true,0.619429859670083,-0.619429859670083
+P195,Centre A,test,knee,intermediate,21,SAIS,novice,19.58,false,1.41991484066064,-1.41991484066064
+P013,Centre B,test,shoulder,expert,23.5,SAIS,expert,17.31,true,6.19042956641931,-6.19042956641931
+P131,Centre B,test,knee,novice,14.5,SAIS,novice,13.348,true,1.15220419714842,-1.15220419714842
+P005,Centre A,test,shoulder,expert,24.5,SAIS,intermediate,21.097,false,3.40281305683802,-3.40281305683802
+P076,Centre A,test,knee,expert,25.5,SAIS,expert,27.402,true,1.90213874237252,1.90213874237252
+P127,Centre A,test,knee,novice,11.5,SAIS,intermediate,5,false,6.5,-6.5
+P110,Centre C,test,knee,expert,24,SAIS,expert,28.249,true,4.24867456173665,4.24867456173665
+P105,Centre C,test,knee,novice,7.5,SAIS,intermediate,7.2,false,0.299854211746547,-0.299854211746547
+P179,Centre C,test,knee,intermediate,17,SAIS,intermediate,20.967,true,3.96675317891791,3.96675317891791
+P168,Centre C,test,shoulder,intermediate,22.5,SAIS,intermediate,22.939,true,0.438786316603213,0.438786316603213
+P139,Centre B,test,knee,intermediate,15.5,SAIS,novice,13.925,false,1.57507215256435,-1.57507215256435
+P187,Centre B,test,shoulder,expert,24,SAIS,expert,24.874,true,0.87363084518055,0.87363084518055
+P088,Centre A,test,shoulder,novice,6.5,SAIS,novice,5,true,1.5,-1.5
+P010,Centre C,test,shoulder,novice,12,SAIS,novice,8.789,true,3.21097178006716,-3.21097178006716
+P033,Centre C,test,shoulder,novice,13.5,SAIS,novice,16.505,true,3.00459516817107,3.00459516817107
+P166,Centre C,test,shoulder,intermediate,20,SAIS,novice,22.491,false,2.49146224415009,2.49146224415009
+P001,Centre A,test,shoulder,intermediate,16,SAIS,expert,18.645,false,2.64467373670145,2.64467373670145
+P016,Centre A,test,knee,intermediate,16.5,SAIS,expert,16.48,false,0.0197947108189602,-0.0197947108189602
+P070,Centre A,test,knee,novice,10,SAIS,novice,7.548,true,2.45215976161153,-2.45215976161153
+P064,Centre A,test,shoulder,intermediate,21.5,SAIS,intermediate,19.195,true,2.30540214389874,-2.30540214389874
+P077,Centre B,test,knee,intermediate,23,SAIS,intermediate,22.236,true,0.76392406420371,-0.76392406420371
+P020,Centre C,test,knee,novice,10,SAIS,novice,7.01,true,2.99043569110457,-2.99043569110457
+P116,Centre B,test,shoulder,intermediate,19.5,SAIS,intermediate,23.151,true,3.6507450966229,3.6507450966229
+P058,Centre C,test,knee,expert,24.5,SAIS,intermediate,20.086,false,4.41427455881935,-4.41427455881935
+P011,Centre B,test,knee,expert,24.5,SAIS,expert,28.294,true,3.7935745421651,3.7935745421651
+P125,Centre B,test,knee,expert,28,SAIS,expert,24.96,true,3.04016161368604,-3.04016161368604
+P021,Centre C,test,shoulder,intermediate,16.5,SAIS,intermediate,19.503,true,3.00270542943157,3.00270542943157
+P081,Centre A,test,shoulder,expert,24,SAIS,expert,23.654,true,0.345884613484479,-0.345884613484479
+P095,Centre B,test,knee,intermediate,22,SAIS,novice,21.223,false,0.777273522806624,-0.777273522806624
+P164,Centre B,test,shoulder,expert,27,SAIS,expert,30,true,3,3
+P086,Centre A,test,shoulder,intermediate,16.5,SAIS,expert,18.138,false,1.63819910468765,1.63819910468765
+P137,Centre A,test,knee,intermediate,16.5,SAIS,novice,15.036,false,1.46438175656536,-1.46438175656536
+P022,Centre A,test,knee,expert,25.5,SAIS,expert,26.415,true,0.915391114840336,0.915391114840336
+P026,Centre A,test,shoulder,intermediate,21.5,Video Swin-T,intermediate,21.904,true,0.40351531285712,0.40351531285712
+P129,Centre C,test,shoulder,expert,26,Video Swin-T,expert,25.089,true,0.910911595187031,-0.910911595187031
+P104,Centre A,test,shoulder,novice,13,Video Swin-T,novice,12.421,true,0.578866946018948,-0.578866946018948
+P134,Centre C,test,knee,expert,24,Video Swin-T,intermediate,24.406,false,0.406146034659273,0.406146034659273
+P043,Centre A,test,knee,intermediate,15.5,Video Swin-T,intermediate,18.22,true,2.7204011361936,2.7204011361936
+P153,Centre A,test,knee,expert,26,Video Swin-T,expert,14.651,true,11.349458531606,-11.349458531606
+P080,Centre B,test,shoulder,novice,7,Video Swin-T,intermediate,8.95,false,1.95019706067147,1.95019706067147
+P195,Centre A,test,knee,intermediate,21,Video Swin-T,novice,23.024,false,2.02407723045151,2.02407723045151
+P013,Centre B,test,shoulder,expert,23.5,Video Swin-T,expert,30,true,6.5,6.5
+P131,Centre B,test,knee,novice,14.5,Video Swin-T,intermediate,10.18,false,4.32049304848391,-4.32049304848391
+P005,Centre A,test,shoulder,expert,24.5,Video Swin-T,intermediate,19.124,false,5.37642036378075,-5.37642036378075
+P076,Centre A,test,knee,expert,25.5,Video Swin-T,expert,27.612,true,2.1123901587983,2.1123901587983
+P127,Centre A,test,knee,novice,11.5,Video Swin-T,novice,11.324,true,0.17557243299021,-0.17557243299021
+P110,Centre C,test,knee,expert,24,Video Swin-T,expert,19.525,true,4.47526198739396,-4.47526198739396
+P105,Centre C,test,knee,novice,7.5,Video Swin-T,novice,13.221,true,5.72148011069937,5.72148011069937
+P179,Centre C,test,knee,intermediate,17,Video Swin-T,intermediate,18.935,true,1.93516214722786,1.93516214722786
+P168,Centre C,test,shoulder,intermediate,22.5,Video Swin-T,intermediate,21.239,true,1.26086965768338,-1.26086965768338
+P139,Centre B,test,knee,intermediate,15.5,Video Swin-T,expert,18.116,false,2.61597955718975,2.61597955718975
+P187,Centre B,test,shoulder,expert,24,Video Swin-T,intermediate,25.346,false,1.34624062268692,1.34624062268692
+P088,Centre A,test,shoulder,novice,6.5,Video Swin-T,novice,5.691,true,0.80903606882723,-0.80903606882723
+P010,Centre C,test,shoulder,novice,12,Video Swin-T,intermediate,8.108,false,3.89170736890993,-3.89170736890993
+P033,Centre C,test,shoulder,novice,13.5,Video Swin-T,novice,17.345,true,3.84511248063924,3.84511248063924
+P166,Centre C,test,shoulder,intermediate,20,Video Swin-T,novice,19.633,false,0.367410892361608,-0.367410892361608
+P001,Centre A,test,shoulder,intermediate,16,Video Swin-T,intermediate,14.683,true,1.31710035210335,-1.31710035210335
+P016,Centre A,test,knee,intermediate,16.5,Video Swin-T,novice,15.071,false,1.42890357349938,-1.42890357349938
+P070,Centre A,test,knee,novice,10,Video Swin-T,novice,10.413,true,0.413413477596368,0.413413477596368
+P064,Centre A,test,shoulder,intermediate,21.5,Video Swin-T,intermediate,18.376,true,3.12393569218275,-3.12393569218275
+P077,Centre B,test,knee,intermediate,23,Video Swin-T,novice,18.829,false,4.17136678138902,-4.17136678138902
+P020,Centre C,test,knee,novice,10,Video Swin-T,novice,5.696,true,4.30378757084557,-4.30378757084557
+P116,Centre B,test,shoulder,intermediate,19.5,Video Swin-T,intermediate,16.479,true,3.02098791580333,-3.02098791580333
+P058,Centre C,test,knee,expert,24.5,Video Swin-T,expert,22.007,true,2.49264379294824,-2.49264379294824
+P011,Centre B,test,knee,expert,24.5,Video Swin-T,expert,23.446,true,1.05361937544985,-1.05361937544985
+P125,Centre B,test,knee,expert,28,Video Swin-T,expert,29.295,true,1.29479193179022,1.29479193179022
+P021,Centre C,test,shoulder,intermediate,16.5,Video Swin-T,novice,17.934,false,1.43373638210166,1.43373638210166
+P081,Centre A,test,shoulder,expert,24,Video Swin-T,expert,26.208,true,2.20816944653249,2.20816944653249
+P095,Centre B,test,knee,intermediate,22,Video Swin-T,intermediate,18.566,true,3.43372190792835,-3.43372190792835
+P164,Centre B,test,shoulder,expert,27,Video Swin-T,intermediate,25.676,false,1.32413529478474,-1.32413529478474
+P086,Centre A,test,shoulder,intermediate,16.5,Video Swin-T,intermediate,16.195,true,0.305156464506105,-0.305156464506105
+P137,Centre A,test,knee,intermediate,16.5,Video Swin-T,intermediate,21.863,true,5.36269735416987,5.36269735416987
+P022,Centre A,test,knee,expert,25.5,Video Swin-T,intermediate,29.29,false,3.79042624892698,3.79042624892698
+P026,Centre A,test,shoulder,intermediate,21.5,3D-ResNet-18,novice,25.451,false,3.95085268717791,3.95085268717791
+P129,Centre C,test,shoulder,expert,26,3D-ResNet-18,expert,27.515,true,1.5148934013763,1.5148934013763
+P104,Centre A,test,shoulder,novice,13,3D-ResNet-18,intermediate,7.754,false,5.24632254068678,-5.24632254068678
+P134,Centre C,test,knee,expert,24,3D-ResNet-18,expert,26.119,true,2.11919246919868,2.11919246919868
+P043,Centre A,test,knee,intermediate,15.5,3D-ResNet-18,novice,16.841,false,1.34094146555014,1.34094146555014
+P153,Centre A,test,knee,expert,26,3D-ResNet-18,intermediate,27.242,false,1.24175434266525,1.24175434266525
+P080,Centre B,test,shoulder,novice,7,3D-ResNet-18,novice,5.073,true,1.92685411777971,-1.92685411777971
+P195,Centre A,test,knee,intermediate,21,3D-ResNet-18,expert,23.441,false,2.44084421976428,2.44084421976428
+P013,Centre B,test,shoulder,expert,23.5,3D-ResNet-18,expert,23.527,true,0.0270807383991816,0.0270807383991816
+P131,Centre B,test,knee,novice,14.5,3D-ResNet-18,intermediate,15.499,false,0.999413321749062,0.999413321749062
+P005,Centre A,test,shoulder,expert,24.5,3D-ResNet-18,expert,23.259,true,1.24058759242392,-1.24058759242392
+P076,Centre A,test,knee,expert,25.5,3D-ResNet-18,expert,22.68,true,2.82002130805823,-2.82002130805823
+P127,Centre A,test,knee,novice,11.5,3D-ResNet-18,novice,5.241,true,6.25890617988361,-6.25890617988361
+P110,Centre C,test,knee,expert,24,3D-ResNet-18,intermediate,24.271,false,0.270676093032424,0.270676093032424
+P105,Centre C,test,knee,novice,7.5,3D-ResNet-18,intermediate,6.051,false,1.44874567895636,-1.44874567895636
+P179,Centre C,test,knee,intermediate,17,3D-ResNet-18,intermediate,17.055,true,0.0545183539153804,0.0545183539153804
+P168,Centre C,test,shoulder,intermediate,22.5,3D-ResNet-18,intermediate,17.555,true,4.94450228770682,-4.94450228770682
+P139,Centre B,test,knee,intermediate,15.5,3D-ResNet-18,intermediate,5.001,true,10.4991277666246,-10.4991277666246
+P187,Centre B,test,shoulder,expert,24,3D-ResNet-18,expert,24.483,true,0.483338257335348,0.483338257335348
+P088,Centre A,test,shoulder,novice,6.5,3D-ResNet-18,intermediate,8.57,false,2.07001417909584,2.07001417909584
+P010,Centre C,test,shoulder,novice,12,3D-ResNet-18,novice,10.822,true,1.17820123290547,-1.17820123290547
+P033,Centre C,test,shoulder,novice,13.5,3D-ResNet-18,intermediate,11.139,false,2.36050722583007,-2.36050722583007
+P166,Centre C,test,shoulder,intermediate,20,3D-ResNet-18,intermediate,20.519,true,0.518709697951952,0.518709697951952
+P001,Centre A,test,shoulder,intermediate,16,3D-ResNet-18,intermediate,14.59,true,1.40999409868905,-1.40999409868905
+P016,Centre A,test,knee,intermediate,16.5,3D-ResNet-18,intermediate,13.058,true,3.44178852643468,-3.44178852643468
+P070,Centre A,test,knee,novice,10,3D-ResNet-18,novice,9.781,true,0.219406680680892,-0.219406680680892
+P064,Centre A,test,shoulder,intermediate,21.5,3D-ResNet-18,intermediate,21.522,true,0.0215508886672175,0.0215508886672175
+P077,Centre B,test,knee,intermediate,23,3D-ResNet-18,intermediate,24.175,true,1.17548339769008,1.17548339769008
+P020,Centre C,test,knee,novice,10,3D-ResNet-18,novice,7.057,true,2.94340765064967,-2.94340765064967
+P116,Centre B,test,shoulder,intermediate,19.5,3D-ResNet-18,novice,22.751,false,3.25094440432477,3.25094440432477
+P058,Centre C,test,knee,expert,24.5,3D-ResNet-18,expert,21.171,true,3.32943620927474,-3.32943620927474
+P011,Centre B,test,knee,expert,24.5,3D-ResNet-18,expert,30,true,5.5,5.5
+P125,Centre B,test,knee,expert,28,3D-ResNet-18,intermediate,22.655,false,5.34522500005257,-5.34522500005257
+P021,Centre C,test,shoulder,intermediate,16.5,3D-ResNet-18,expert,20.85,false,4.34994925477403,4.34994925477403
+P081,Centre A,test,shoulder,expert,24,3D-ResNet-18,intermediate,23.148,false,0.851638222142526,-0.851638222142526
+P095,Centre B,test,knee,intermediate,22,3D-ResNet-18,novice,23.367,false,1.36665951927727,1.36665951927727
+P164,Centre B,test,shoulder,expert,27,3D-ResNet-18,intermediate,29.601,false,2.60090497234173,2.60090497234173
+P086,Centre A,test,shoulder,intermediate,16.5,3D-ResNet-18,intermediate,15.754,true,0.745589360872968,-0.745589360872968
+P137,Centre A,test,knee,intermediate,16.5,3D-ResNet-18,intermediate,19.225,true,2.72478912798355,2.72478912798355
+P022,Centre A,test,knee,expert,25.5,3D-ResNet-18,expert,30,true,4.5,4.5
+P026,Centre A,test,shoulder,intermediate,21.5,Appearance only,intermediate,20.442,true,1.05773564224713,-1.05773564224713
+P129,Centre C,test,shoulder,expert,26,Appearance only,expert,26.315,true,0.314739238172024,0.314739238172024
+P104,Centre A,test,shoulder,novice,13,Appearance only,novice,9.871,true,3.12930549024256,-3.12930549024256
+P134,Centre C,test,knee,expert,24,Appearance only,expert,23.536,true,0.463650343856852,-0.463650343856852
+P043,Centre A,test,knee,intermediate,15.5,Appearance only,intermediate,15.729,true,0.228977511191925,0.228977511191925
+P153,Centre A,test,knee,expert,26,Appearance only,expert,27.71,true,1.71004674063406,1.71004674063406
+P080,Centre B,test,shoulder,novice,7,Appearance only,novice,5.968,true,1.03184284898553,-1.03184284898553
+P195,Centre A,test,knee,intermediate,21,Appearance only,intermediate,25.258,true,4.25840209681763,4.25840209681763
+P013,Centre B,test,shoulder,expert,23.5,Appearance only,expert,25.255,true,1.75477838783742,1.75477838783742
+P131,Centre B,test,knee,novice,14.5,Appearance only,novice,12.076,true,2.42384947043795,-2.42384947043795
+P005,Centre A,test,shoulder,expert,24.5,Appearance only,intermediate,21.222,false,3.27756001210712,-3.27756001210712
+P076,Centre A,test,knee,expert,25.5,Appearance only,expert,26.374,true,0.874287437032482,0.874287437032482
+P127,Centre A,test,knee,novice,11.5,Appearance only,novice,7.122,true,4.3777733856571,-4.3777733856571
+P110,Centre C,test,knee,expert,24,Appearance only,expert,21.246,true,2.75423350713644,-2.75423350713644
+P105,Centre C,test,knee,novice,7.5,Appearance only,intermediate,5,false,2.5,-2.5
+P179,Centre C,test,knee,intermediate,17,Appearance only,novice,13.353,false,3.64661067363954,-3.64661067363954
+P168,Centre C,test,shoulder,intermediate,22.5,Appearance only,intermediate,22.192,true,0.307518989343993,-0.307518989343993
+P139,Centre B,test,knee,intermediate,15.5,Appearance only,intermediate,19.359,true,3.8589904379392,3.8589904379392
+P187,Centre B,test,shoulder,expert,24,Appearance only,intermediate,24.491,false,0.490563257235593,0.490563257235593
+P088,Centre A,test,shoulder,novice,6.5,Appearance only,novice,5,true,1.5,-1.5
+P010,Centre C,test,shoulder,novice,12,Appearance only,intermediate,14.206,false,2.2060410646659,2.2060410646659
+P033,Centre C,test,shoulder,novice,13.5,Appearance only,novice,12.56,true,0.939508060587942,-0.939508060587942
+P166,Centre C,test,shoulder,intermediate,20,Appearance only,intermediate,18.825,true,1.17510477745393,-1.17510477745393
+P001,Centre A,test,shoulder,intermediate,16,Appearance only,intermediate,15.802,true,0.198293801491925,-0.198293801491925
+P016,Centre A,test,knee,intermediate,16.5,Appearance only,intermediate,14.514,true,1.9860330893282,-1.9860330893282
+P070,Centre A,test,knee,novice,10,Appearance only,intermediate,9.068,false,0.932105967148683,-0.932105967148683
+P064,Centre A,test,shoulder,intermediate,21.5,Appearance only,novice,23.434,false,1.93409729958246,1.93409729958246
+P077,Centre B,test,knee,intermediate,23,Appearance only,intermediate,24.142,true,1.14187584895318,1.14187584895318
+P020,Centre C,test,knee,novice,10,Appearance only,novice,13.457,true,3.45686276100121,3.45686276100121
+P116,Centre B,test,shoulder,intermediate,19.5,Appearance only,intermediate,20.835,true,1.33452501572173,1.33452501572173
+P058,Centre C,test,knee,expert,24.5,Appearance only,intermediate,21.576,false,2.92403312608711,-2.92403312608711
+P011,Centre B,test,knee,expert,24.5,Appearance only,intermediate,24.757,false,0.25748585375759,0.25748585375759
+P125,Centre B,test,knee,expert,28,Appearance only,expert,26.064,true,1.93624218499241,-1.93624218499241
+P021,Centre C,test,shoulder,intermediate,16.5,Appearance only,expert,19.79,false,3.28985292460005,3.28985292460005
+P081,Centre A,test,shoulder,expert,24,Appearance only,expert,21.453,true,2.54662640401112,-2.54662640401112
+P095,Centre B,test,knee,intermediate,22,Appearance only,intermediate,23.995,true,1.99528224742109,1.99528224742109
+P164,Centre B,test,shoulder,expert,27,Appearance only,intermediate,25.605,false,1.39532582085491,-1.39532582085491
+P086,Centre A,test,shoulder,intermediate,16.5,Appearance only,expert,19.75,false,3.25025031500835,3.25025031500835
+P137,Centre A,test,knee,intermediate,16.5,Appearance only,intermediate,11.332,true,5.16834018426683,-5.16834018426683
+P022,Centre A,test,knee,expert,25.5,Appearance only,expert,25.38,true,0.119548828216715,-0.119548828216715
+P026,Centre A,test,shoulder,intermediate,21.5,Motion only,intermediate,20.626,true,0.873542400761981,-0.873542400761981
+P129,Centre C,test,shoulder,expert,26,Motion only,expert,30,true,4,4
+P104,Centre A,test,shoulder,novice,13,Motion only,novice,15.558,true,2.55777394559426,2.55777394559426
+P134,Centre C,test,knee,expert,24,Motion only,intermediate,25.483,false,1.48283076827171,1.48283076827171
+P043,Centre A,test,knee,intermediate,15.5,Motion only,intermediate,17.697,true,2.19654041942185,2.19654041942185
+P153,Centre A,test,knee,expert,26,Motion only,intermediate,26.468,false,0.467757781429409,0.467757781429409
+P080,Centre B,test,shoulder,novice,7,Motion only,novice,8.746,true,1.74552623646096,1.74552623646096
+P195,Centre A,test,knee,intermediate,21,Motion only,novice,21.751,false,0.751165550273647,0.751165550273647
+P013,Centre B,test,shoulder,expert,23.5,Motion only,expert,22.403,true,1.09674353065739,-1.09674353065739
+P131,Centre B,test,knee,novice,14.5,Motion only,novice,12.934,true,1.56598420735508,-1.56598420735508
+P005,Centre A,test,shoulder,expert,24.5,Motion only,intermediate,24.729,false,0.228937422328386,0.228937422328386
+P076,Centre A,test,knee,expert,25.5,Motion only,expert,28.877,true,3.37663699502776,3.37663699502776
+P127,Centre A,test,knee,novice,11.5,Motion only,novice,9.567,true,1.93306234360318,-1.93306234360318
+P110,Centre C,test,knee,expert,24,Motion only,expert,23.158,true,0.842015467371024,-0.842015467371024
+P105,Centre C,test,knee,novice,7.5,Motion only,intermediate,7.71,false,0.210047768663555,0.210047768663555
+P179,Centre C,test,knee,intermediate,17,Motion only,intermediate,19.025,true,2.02542408153095,2.02542408153095
+P168,Centre C,test,shoulder,intermediate,22.5,Motion only,intermediate,17.969,true,4.53058052627252,-4.53058052627252
+P139,Centre B,test,knee,intermediate,15.5,Motion only,intermediate,18.137,true,2.63666379694935,2.63666379694935
+P187,Centre B,test,shoulder,expert,24,Motion only,expert,27.732,true,3.73207949972814,3.73207949972814
+P088,Centre A,test,shoulder,novice,6.5,Motion only,intermediate,7.747,false,1.2472832084006,1.2472832084006
+P010,Centre C,test,shoulder,novice,12,Motion only,novice,11.408,true,0.591760459229208,-0.591760459229208
+P033,Centre C,test,shoulder,novice,13.5,Motion only,intermediate,11.606,false,1.89446061171598,-1.89446061171598
+P166,Centre C,test,shoulder,intermediate,20,Motion only,expert,20.779,false,0.778591971312611,0.778591971312611
+P001,Centre A,test,shoulder,intermediate,16,Motion only,intermediate,15.406,true,0.593642188926644,-0.593642188926644
+P016,Centre A,test,knee,intermediate,16.5,Motion only,intermediate,16.809,true,0.30929831938828,0.30929831938828
+P070,Centre A,test,knee,novice,10,Motion only,intermediate,7.31,false,2.68998328585154,-2.68998328585154
+P064,Centre A,test,shoulder,intermediate,21.5,Motion only,expert,18.454,false,3.04616935148066,-3.04616935148066
+P077,Centre B,test,knee,intermediate,23,Motion only,intermediate,26.802,true,3.80240980350296,3.80240980350296
+P020,Centre C,test,knee,novice,10,Motion only,novice,15.671,true,5.67080030716448,5.67080030716448
+P116,Centre B,test,shoulder,intermediate,19.5,Motion only,intermediate,23.767,true,4.266579883725,4.266579883725
+P058,Centre C,test,knee,expert,24.5,Motion only,intermediate,26.726,false,2.2264767040688,2.2264767040688
+P011,Centre B,test,knee,expert,24.5,Motion only,expert,27.814,true,3.31445585159307,3.31445585159307
+P125,Centre B,test,knee,expert,28,Motion only,expert,21.248,true,6.75214998937798,-6.75214998937798
+P021,Centre C,test,shoulder,intermediate,16.5,Motion only,novice,17.964,false,1.46389677240672,1.46389677240672
+P081,Centre A,test,shoulder,expert,24,Motion only,intermediate,24.656,false,0.656026651571981,0.656026651571981
+P095,Centre B,test,knee,intermediate,22,Motion only,expert,19.72,false,2.28012046253884,-2.28012046253884
+P164,Centre B,test,shoulder,expert,27,Motion only,expert,30,true,3,3
+P086,Centre A,test,shoulder,intermediate,16.5,Motion only,intermediate,19.162,true,2.66227283305136,2.66227283305136
+P137,Centre A,test,knee,intermediate,16.5,Motion only,novice,14.312,false,2.18821335752096,-2.18821335752096
+P022,Centre A,test,knee,expert,25.5,Motion only,expert,22.953,true,2.5471365907376,-2.5471365907376
+P026,Centre A,test,shoulder,intermediate,21.5,Naive concat,intermediate,21.737,true,0.23731863219944,0.23731863219944
+P129,Centre C,test,shoulder,expert,26,Naive concat,expert,24.98,true,1.02001702208781,-1.02001702208781
+P104,Centre A,test,shoulder,novice,13,Naive concat,intermediate,11.336,false,1.6643382521262,-1.6643382521262
+P134,Centre C,test,knee,expert,24,Naive concat,expert,22.886,true,1.11397574538596,-1.11397574538596
+P043,Centre A,test,knee,intermediate,15.5,Naive concat,intermediate,14.161,true,1.33858202103121,-1.33858202103121
+P153,Centre A,test,knee,expert,26,Naive concat,expert,28.655,true,2.65515746037585,2.65515746037585
+P080,Centre B,test,shoulder,novice,7,Naive concat,intermediate,6.82,false,0.179860039517586,-0.179860039517586
+P195,Centre A,test,knee,intermediate,21,Naive concat,intermediate,17.196,true,3.80394602843214,-3.80394602843214
+P013,Centre B,test,shoulder,expert,23.5,Naive concat,intermediate,26.167,false,2.66744741000481,2.66744741000481
+P131,Centre B,test,knee,novice,14.5,Naive concat,novice,14.098,true,0.401812017998818,-0.401812017998818
+P005,Centre A,test,shoulder,expert,24.5,Naive concat,intermediate,24.743,false,0.243010734527434,0.243010734527434
+P076,Centre A,test,knee,expert,25.5,Naive concat,intermediate,24.838,false,0.662228505394502,-0.662228505394502
+P127,Centre A,test,knee,novice,11.5,Naive concat,intermediate,8.862,false,2.63763046540652,-2.63763046540652
+P110,Centre C,test,knee,expert,24,Naive concat,expert,27.349,true,3.34891716575424,3.34891716575424
+P105,Centre C,test,knee,novice,7.5,Naive concat,novice,9.375,true,1.8749057912229,1.8749057912229
+P179,Centre C,test,knee,intermediate,17,Naive concat,novice,19.535,false,2.53548238113794,2.53548238113794
+P168,Centre C,test,shoulder,intermediate,22.5,Naive concat,intermediate,22.29,true,0.210288257078236,-0.210288257078236
+P139,Centre B,test,knee,intermediate,15.5,Naive concat,intermediate,13.96,true,1.5404225464595,-1.5404225464595
+P187,Centre B,test,shoulder,expert,24,Naive concat,expert,21.066,true,2.93424070880317,-2.93424070880317
+P088,Centre A,test,shoulder,novice,6.5,Naive concat,intermediate,5,false,1.5,-1.5
+P010,Centre C,test,shoulder,novice,12,Naive concat,intermediate,6.499,false,5.50110347097189,-5.50110347097189
+P033,Centre C,test,shoulder,novice,13.5,Naive concat,novice,16.112,true,2.61187885754297,2.61187885754297
+P166,Centre C,test,shoulder,intermediate,20,Naive concat,intermediate,24.161,true,4.16059279694219,4.16059279694219
+P001,Centre A,test,shoulder,intermediate,16,Naive concat,intermediate,21.289,true,5.2887234140983,5.2887234140983
+P016,Centre A,test,knee,intermediate,16.5,Naive concat,intermediate,16.541,true,0.0405297576217372,0.0405297576217372
+P070,Centre A,test,knee,novice,10,Naive concat,intermediate,14.063,false,4.06294692030038,4.06294692030038
+P064,Centre A,test,shoulder,intermediate,21.5,Naive concat,intermediate,24.34,true,2.84046372882484,2.84046372882484
+P077,Centre B,test,knee,intermediate,23,Naive concat,novice,22.545,false,0.4548506361654,-0.4548506361654
+P020,Centre C,test,knee,novice,10,Naive concat,novice,7.236,true,2.76420093747127,-2.76420093747127
+P116,Centre B,test,shoulder,intermediate,19.5,Naive concat,intermediate,18.277,true,1.22258544200447,-1.22258544200447
+P058,Centre C,test,knee,expert,24.5,Naive concat,expert,24.431,true,0.0686082502532486,-0.0686082502532486
+P011,Centre B,test,knee,expert,24.5,Naive concat,expert,24.63,true,0.130056970754115,0.130056970754115
+P125,Centre B,test,knee,expert,28,Naive concat,intermediate,28.603,false,0.602893780460334,0.602893780460334
+P021,Centre C,test,shoulder,intermediate,16.5,Naive concat,intermediate,14.228,true,2.27205823256387,-2.27205823256387
+P081,Centre A,test,shoulder,expert,24,Naive concat,expert,20.165,true,3.83523734811031,-3.83523734811031
+P095,Centre B,test,knee,intermediate,22,Naive concat,intermediate,26.817,true,4.8172548619265,4.8172548619265
+P164,Centre B,test,shoulder,expert,27,Naive concat,expert,25.624,true,1.37635991463587,-1.37635991463587
+P086,Centre A,test,shoulder,intermediate,16.5,Naive concat,intermediate,15.973,true,0.526930869062268,-0.526930869062268
+P137,Centre A,test,knee,intermediate,16.5,Naive concat,intermediate,13.841,true,2.65909585283225,-2.65909585283225
+P022,Centre A,test,knee,expert,25.5,Naive concat,intermediate,28.464,false,2.96437080942446,2.96437080942446
+P026,Centre A,test,shoulder,intermediate,21.5,Unmasked fusion,novice,23.853,false,2.35304519656628,2.35304519656628
+P129,Centre C,test,shoulder,expert,26,Unmasked fusion,intermediate,30,false,4,4
+P104,Centre A,test,shoulder,novice,13,Unmasked fusion,intermediate,12.041,false,0.958954931887565,-0.958954931887565
+P134,Centre C,test,knee,expert,24,Unmasked fusion,expert,19.818,true,4.1815477218305,-4.1815477218305
+P043,Centre A,test,knee,intermediate,15.5,Unmasked fusion,intermediate,11.83,true,3.6695686041099,-3.6695686041099
+P153,Centre A,test,knee,expert,26,Unmasked fusion,expert,26.647,true,0.647207491266748,0.647207491266748
+P080,Centre B,test,shoulder,novice,7,Unmasked fusion,novice,5.093,true,1.90689240759423,-1.90689240759423
+P195,Centre A,test,knee,intermediate,21,Unmasked fusion,expert,21.253,false,0.253302887117076,0.253302887117076
+P013,Centre B,test,shoulder,expert,23.5,Unmasked fusion,expert,18.836,true,4.66434293207653,-4.66434293207653
+P131,Centre B,test,knee,novice,14.5,Unmasked fusion,novice,17.669,true,3.16947462324564,3.16947462324564
+P005,Centre A,test,shoulder,expert,24.5,Unmasked fusion,intermediate,22.497,false,2.00282902640804,-2.00282902640804
+P076,Centre A,test,knee,expert,25.5,Unmasked fusion,intermediate,25.444,false,0.0562224234529829,-0.0562224234529829
+P127,Centre A,test,knee,novice,11.5,Unmasked fusion,novice,14.309,true,2.80859330527746,2.80859330527746
+P110,Centre C,test,knee,expert,24,Unmasked fusion,intermediate,24.516,false,0.51621373907653,0.51621373907653
+P105,Centre C,test,knee,novice,7.5,Unmasked fusion,novice,5.953,true,1.54665621448864,-1.54665621448864
+P179,Centre C,test,knee,intermediate,17,Unmasked fusion,intermediate,12.821,true,4.17931940062531,-4.17931940062531
+P168,Centre C,test,shoulder,intermediate,22.5,Unmasked fusion,intermediate,23.875,true,1.37471244145527,1.37471244145527
+P139,Centre B,test,knee,intermediate,15.5,Unmasked fusion,intermediate,14.719,true,0.780873807304269,-0.780873807304269
+P187,Centre B,test,shoulder,expert,24,Unmasked fusion,expert,22.464,true,1.53576969513021,-1.53576969513021
+P088,Centre A,test,shoulder,novice,6.5,Unmasked fusion,novice,5,true,1.5,-1.5
+P010,Centre C,test,shoulder,novice,12,Unmasked fusion,novice,14.892,true,2.89184631759023,2.89184631759023
+P033,Centre C,test,shoulder,novice,13.5,Unmasked fusion,novice,9.677,true,3.82299627683372,-3.82299627683372
+P166,Centre C,test,shoulder,intermediate,20,Unmasked fusion,expert,22.472,false,2.47211643487523,2.47211643487523
+P001,Centre A,test,shoulder,intermediate,16,Unmasked fusion,intermediate,15.373,true,0.626944833732539,-0.626944833732539
+P016,Centre A,test,knee,intermediate,16.5,Unmasked fusion,intermediate,14.928,true,1.5720462685657,-1.5720462685657
+P070,Centre A,test,knee,novice,10,Unmasked fusion,intermediate,5,false,5,-5
+P064,Centre A,test,shoulder,intermediate,21.5,Unmasked fusion,novice,24.346,false,2.8464029830679,2.8464029830679
+P077,Centre B,test,knee,intermediate,23,Unmasked fusion,intermediate,21.441,true,1.55884367733216,-1.55884367733216
+P020,Centre C,test,knee,novice,10,Unmasked fusion,novice,7.386,true,2.6135685704168,-2.6135685704168
+P116,Centre B,test,shoulder,intermediate,19.5,Unmasked fusion,intermediate,18.116,true,1.38444827114061,-1.38444827114061
+P058,Centre C,test,knee,expert,24.5,Unmasked fusion,intermediate,23.019,false,1.48121683657693,-1.48121683657693
+P011,Centre B,test,knee,expert,24.5,Unmasked fusion,intermediate,18.096,false,6.40361379847117,-6.40361379847117
+P125,Centre B,test,knee,expert,28,Unmasked fusion,expert,30,true,2,2
+P021,Centre C,test,shoulder,intermediate,16.5,Unmasked fusion,intermediate,18.88,true,2.38022679813812,2.38022679813812
+P081,Centre A,test,shoulder,expert,24,Unmasked fusion,expert,21.636,true,2.36386670081503,-2.36386670081503
+P095,Centre B,test,knee,intermediate,22,Unmasked fusion,novice,22.681,false,0.680854942994372,0.680854942994372
+P164,Centre B,test,shoulder,expert,27,Unmasked fusion,expert,25.479,true,1.5208873893773,-1.5208873893773
+P086,Centre A,test,shoulder,intermediate,16.5,Unmasked fusion,intermediate,17.141,true,0.640855420916264,0.640855420916264
+P137,Centre A,test,knee,intermediate,16.5,Unmasked fusion,novice,13.049,false,3.45146340614422,-3.45146340614422
+P022,Centre A,test,knee,expert,25.5,Unmasked fusion,expert,26.14,true,0.639633877207505,0.639633877207505

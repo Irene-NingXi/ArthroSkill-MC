@@ -17,19 +17,20 @@ Use a compatible PyTorch/torchvision pair. CUDA is optional for statistical rean
 ## Source-data analysis
 
 ```bash
-python scripts/analyze_predictions.py --xlsx /path/to/ArthroSkill-MC_Data_V5.xlsx --output outputs/source_data_analysis.json
+python scripts/validate_source_data.py --data data/source_data
+python scripts/analyze_predictions.py --data data/source_data --output outputs/source_data_analysis.json
 ```
 
-The command recomputes results from procedure predictions, original ratings and annotated clip predictions. Defaults are 20,000 procedure-bootstrap samples, 99,999 procedure-level swaps and analysis seed 20261020. Visibility annotation-agreement intervals use seed 20261021. Seven fixed-test comparisons and six visibility comparisons receive separate Holm adjustments. Training repeats remain aggregate summaries of the same partition.
+The [public English source-data package](data/source_data/README.md) contains 24 CSV tables covering all 22 source worksheets, including independent ratings, exact procedure partitions, procedure/clip predictions and recorded summary snapshots. Surgeon linkage IDs and the original workbook container are withheld. The command recomputes results directly from the public tables; a private workbook is not required. Defaults are 20,000 procedure-bootstrap samples, 99,999 procedure-level swaps and analysis seed 20261020. Visibility annotation-agreement intervals use seed 20261021. Seven fixed-test comparisons and six visibility comparisons receive separate Holm adjustments. Training repeats remain aggregate summaries of the same partition.
 
 See [RESULTS.md](RESULTS.md) for source-data results and [the protocol](docs/protocol.md) for definitions and reproducibility boundaries. Statistical reanalysis does not train a model.
 
 ## Prepare training data
 
-The source recordings are restricted under institutional ethics approvals. The workbook contains analysis tables rather than training videos.
+The source recordings are restricted under institutional ethics approvals. The public source tables contain ratings, partitions and recorded predictions rather than training videos.
 
 ```bash
-python scripts/prepare_metadata.py --xlsx /path/to/ArthroSkill-MC_Data_V5.xlsx --videos /path/to/videos --output metadata.csv
+python scripts/prepare_metadata.py --data data/source_data --videos /path/to/videos --output metadata.csv
 python scripts/extract_motion.py --metadata metadata.csv --weights /path/to/training_only_detector.pt --output processed
 ```
 
@@ -72,8 +73,8 @@ Tests cover masked attention, all-invalid fallback, gradients, probability aggre
 
 ## Data and code availability
 
-Reproducing numerical tables requires the source-data workbook. Independent end-to-end reproduction additionally requires authorised recordings, detector annotations and weights, the HeiChole adaptation checkpoint and matching fitted model checkpoints/configurations. No surgical recording or individual source-data table is distributed here.
+De-identified study source tables are publicly available under [data/source_data](data/source_data/README.md), with file checksums and a complete English data dictionary. They support statistical reanalysis of recorded results. Raw surgical recordings and identity mappings are not distributed. Independent end-to-end reproduction additionally requires authorised recordings, detector annotations and weights, the HeiChole adaptation checkpoint and matching fitted model checkpoints/configurations. Recorded SAIS score fields and older summary discrepancies are preserved with explicit interpretation notes.
 
 ## Author and licence
 
-Ning Xi. MIT licence; see [LICENSE](LICENSE). Third-party datasets, weights and implementations retain their respective terms.
+Ning Xi. Software uses the MIT licence; see [LICENSE](LICENSE). Source-data access and reuse are described in [data terms](data/source_data/TERMS.md). Third-party datasets, weights and implementations retain their respective terms.

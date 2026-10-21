@@ -1,0 +1,13 @@
+field,value,explanation
+n_procedures,196,Number of procedures
+n_raters,2,Number of independent raters
+grand_mean,19.3112,Grand mean of all independent pre-consensus total ratings
+ss_rows,16610.0306,k * sum((row_mean - grand_mean)^2)
+ss_columns,6.898,n * sum((column_mean - grand_mean)^2)
+ss_error,1615.102,SST - SSR - SSC
+degrees_of_freedom,195 / 1 / 195,n-1 / k-1 / (n-1)*(k-1)
+ms_rows,85.1796,SSR / df_rows
+ms_columns,6.898,SSC / df_columns
+ms_error,8.2826,SSE / df_error
+icc_a1,0.8229,(MSR-MSE)/(MSR+(k-1)*MSE+(k/n)*(MSC-MSE))
+source_note,,The source note reports 0.823 and cites Shrout and Fleiss (1979) and Koo and Li (2016).

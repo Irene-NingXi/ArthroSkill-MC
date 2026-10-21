@@ -1,0 +1,9 @@
+field,value,threshold,status
+Severity Weighted Kappa,0.937,>=0.6,Pass
+Type Agreement Rate,95.3%,>=80%,Pass
+Total Clips,1527,-,-
+Severity 0 (Good),910,-,-
+Severity 1 (Mild),411,-,-
+Severity 2 (Severe),206,-,-
+Clips with Disagreement,101,-,-
+Adjudicated Clips,0,-,-

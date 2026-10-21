@@ -1,0 +1,1093 @@
+{
+  "format": "arthroskill_mc_public_source_data_v1",
+  "missing_values": "Empty CSV cells represent missing/not-reported values; never imputed as zero.",
+  "tables": {
+    "procedure_predictions.csv": {
+      "role": "primary",
+      "source_worksheet_index": 3,
+      "rows": 1568,
+      "columns": [
+        {
+          "name": "video_id",
+          "type": "string",
+          "description": "Study procedure pseudonym. This is not a medical-record number or a released identity mapping."
+        },
+        {
+          "name": "hospital",
+          "type": "string",
+          "description": "Anonymised hospital category: Centre A, Centre B or Centre C. No site-identity key is distributed."
+        },
+        {
+          "name": "split",
+          "type": "string",
+          "description": "Fixed procedure partition: train, val or test."
+        },
+        {
+          "name": "surgery_type",
+          "type": "string",
+          "description": "Joint category: knee or shoulder."
+        },
+        {
+          "name": "true_label",
+          "type": "string",
+          "description": "Consensus grade: novice, intermediate or expert."
+        },
+        {
+          "name": "true_grs",
+          "type": "number",
+          "description": "Consensus total GRS, in native 6-30 points."
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "description": "Recorded model or ablation name. Complete in clip tables denotes ArthroSkill-MC."
+        },
+        {
+          "name": "pred_label",
+          "type": "string",
+          "description": "Recorded classifier grade; independent of the regression total."
+        },
+        {
+          "name": "pred_grs",
+          "type": "number",
+          "description": "Total-score prediction as recorded, typically at 0.001-point precision. SAIS values are retained for source audit only; SAIS regression is not a manuscript-supported comparator endpoint."
+        },
+        {
+          "name": "correct",
+          "type": "boolean",
+          "description": "Whether the recorded predicted grade equals the reference grade."
+        },
+        {
+          "name": "abs_error",
+          "type": "number",
+          "description": "Absolute GRS error as recorded. It may retain more precision than pred_grs; it is not overwritten from rounded predictions."
+        },
+        {
+          "name": "residual",
+          "type": "number",
+          "description": "Predicted minus reference GRS as recorded, potentially at greater precision than pred_grs."
+        }
+      ],
+      "primary_key": [
+        "video_id",
+        "model"
+      ],
+      "notes": "Recorded study outputs; not predictions from newly trained repository models. SAIS regression fields are retained as recorded for audit, although the manuscript comparator is classification only. Error fields may have greater precision than pred_grs."
+    },
+    "data_split.csv": {
+      "role": "primary",
+      "source_worksheet_index": 4,
+      "rows": 196,
+      "columns": [
+        {
+          "name": "video_id",
+          "type": "string",
+          "description": "Study procedure pseudonym. This is not a medical-record number or a released identity mapping."
+        },
+        {
+          "name": "hospital",
+          "type": "string",
+          "description": "Anonymised hospital category: Centre A, Centre B or Centre C. No site-identity key is distributed."
+        },
+        {
+          "name": "surgery_type",
+          "type": "string",
+          "description": "Joint category: knee or shoulder."
+        },
+        {
+          "name": "skill_level",
+          "type": "string",
+          "description": "Consensus grade: novice, intermediate or expert."
+        },
+        {
+          "name": "grs_score",
+          "type": "number",
+          "description": "Consensus total GRS, in native 6-30 points; mean of two independent totals."
+        },
+        {
+          "name": "dataset_split",
+          "type": "string",
+          "description": "Fixed procedure partition: train, val or test."
+        }
+      ],
+      "primary_key": [
+        "video_id"
+      ],
+      "notes": "Recorded study outputs; not predictions from newly trained repository models."
+    },
+    "visibility_annotations.csv": {
+      "role": "primary",
+      "source_worksheet_index": 10,
+      "rows": 1527,
+      "columns": [
+        {
+          "name": "video_id",
+          "type": "string",
+          "description": "Study procedure pseudonym. This is not a medical-record number or a released identity mapping."
+        },
+        {
+          "name": "clip_idx",
+          "type": "integer",
+          "description": "Zero-based annotated clip index within a procedure; not an original video frame number."
+        },
+        {
+          "name": "degradation_type",
+          "type": "string",
+          "description": "Recorded final degradation category: none, blood, blur, fog, out_of_view or overexposure."
+        },
+        {
+          "name": "severity",
+          "type": "integer",
+          "description": "Recorded severity tier: 0 good, 1 mild degradation, 2 severe degradation."
+        },
+        {
+          "name": "degraded_ratio",
+          "type": "number",
+          "description": "Recorded fraction labelled as degraded within the annotated clip; this is not a source-video prevalence estimate."
+        },
+        {
+          "name": "annotator_a_severity",
+          "type": "integer",
+          "description": "Independent severity from annotator A, coded 0/1/2."
+        },
+        {
+          "name": "annotator_a_type",
+          "type": "string",
+          "description": "Independent degradation type from annotator A."
+        },
+        {
+          "name": "annotator_b_severity",
+          "type": "integer",
+          "description": "Independent severity from annotator B, coded 0/1/2."
+        },
+        {
+          "name": "annotator_b_type",
+          "type": "string",
+          "description": "Independent degradation type from annotator B."
+        },
+        {
+          "name": "final_severity",
+          "type": "integer",
+          "description": "Released severity label used for primary visibility analyses; all released labels coincide with annotator A."
+        },
+        {
+          "name": "n_clips_total",
+          "type": "integer",
+          "description": "Number of quality-screened inference clips recorded for this procedure."
+        },
+        {
+          "name": "n_clips_annotated",
+          "type": "integer",
+          "description": "Number of clips selected for visibility annotation in this procedure."
+        },
+        {
+          "name": "sampling_ratio",
+          "type": "number",
+          "description": "Recorded annotated-clip count divided by the quality-screened inference-clip count."
+        }
+      ],
+      "primary_key": [
+        "video_id",
+        "clip_idx"
+      ],
+      "notes": "Recorded study outputs; not predictions from newly trained repository models."
+    },
+    "clip_predictions.csv": {
+      "role": "primary",
+      "source_worksheet_index": 15,
+      "rows": 4581,
+      "columns": [
+        {
+          "name": "video_id",
+          "type": "string",
+          "description": "Study procedure pseudonym. This is not a medical-record number or a released identity mapping."
+        },
+        {
+          "name": "clip_idx",
+          "type": "integer",
+          "description": "Zero-based annotated clip index within a procedure; not an original video frame number."
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "description": "Recorded model or ablation name. Complete in clip tables denotes ArthroSkill-MC."
+        },
+        {
+          "name": "true_label",
+          "type": "string",
+          "description": "Consensus grade: novice, intermediate or expert."
+        },
+        {
+          "name": "pred_label",
+          "type": "string",
+          "description": "Recorded classifier grade; independent of the regression total."
+        },
+        {
+          "name": "correct",
+          "type": "boolean",
+          "description": "Whether the recorded predicted grade equals the reference grade."
+        },
+        {
+          "name": "severity",
+          "type": "integer",
+          "description": "Recorded severity tier: 0 good, 1 mild degradation, 2 severe degradation."
+        },
+        {
+          "name": "degradation_type",
+          "type": "string",
+          "description": "Recorded final degradation category: none, blood, blur, fog, out_of_view or overexposure."
+        },
+        {
+          "name": "n_clips_total",
+          "type": "integer",
+          "description": "Number of quality-screened inference clips recorded for this procedure."
+        },
+        {
+          "name": "n_clips_annotated",
+          "type": "integer",
+          "description": "Number of clips selected for visibility annotation in this procedure."
+        },
+        {
+          "name": "sampling_ratio",
+          "type": "number",
+          "description": "Recorded annotated-clip count divided by the quality-screened inference-clip count."
+        }
+      ],
+      "primary_key": [
+        "video_id",
+        "clip_idx",
+        "model"
+      ],
+      "notes": "Recorded study outputs; not predictions from newly trained repository models."
+    },
+    "rater_scores.csv": {
+      "role": "primary",
+      "source_worksheet_index": 16,
+      "rows": 196,
+      "columns": [
+        {
+          "name": "video_id",
+          "type": "string",
+          "description": "Study procedure pseudonym. This is not a medical-record number or a released identity mapping."
+        },
+        {
+          "name": "rater_1_dimension_1",
+          "type": "integer",
+          "description": "Independent rater 1 score on GRS dimension 1, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_1_dimension_2",
+          "type": "integer",
+          "description": "Independent rater 1 score on GRS dimension 2, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_1_dimension_3",
+          "type": "integer",
+          "description": "Independent rater 1 score on GRS dimension 3, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_1_dimension_4",
+          "type": "integer",
+          "description": "Independent rater 1 score on GRS dimension 4, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_1_dimension_5",
+          "type": "integer",
+          "description": "Independent rater 1 score on GRS dimension 5, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_1_dimension_6",
+          "type": "integer",
+          "description": "Independent rater 1 score on GRS dimension 6, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_1_total",
+          "type": "integer",
+          "description": "Sum of the six independent dimension scores from rater 1, in 6-30 points."
+        },
+        {
+          "name": "rater_2_dimension_1",
+          "type": "integer",
+          "description": "Independent rater 2 score on GRS dimension 1, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_2_dimension_2",
+          "type": "integer",
+          "description": "Independent rater 2 score on GRS dimension 2, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_2_dimension_3",
+          "type": "integer",
+          "description": "Independent rater 2 score on GRS dimension 3, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_2_dimension_4",
+          "type": "integer",
+          "description": "Independent rater 2 score on GRS dimension 4, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_2_dimension_5",
+          "type": "integer",
+          "description": "Independent rater 2 score on GRS dimension 5, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_2_dimension_6",
+          "type": "integer",
+          "description": "Independent rater 2 score on GRS dimension 6, an integer from 1 to 5. Dimension definitions are in README.md."
+        },
+        {
+          "name": "rater_2_total",
+          "type": "integer",
+          "description": "Sum of the six independent dimension scores from rater 2, in 6-30 points."
+        },
+        {
+          "name": "rater_difference",
+          "type": "integer",
+          "description": "Signed rater 1 total minus rater 2 total. Review eligibility uses the absolute difference of at least 6."
+        },
+        {
+          "name": "consensus_grs",
+          "type": "number",
+          "description": "Mean of the two independent total ratings; native 6-30 points at 0.5-point granularity."
+        }
+      ],
+      "primary_key": [
+        "video_id"
+      ],
+      "notes": "Recorded study outputs; not predictions from newly trained repository models."
+    },
+    "loso_predictions.csv": {
+      "role": "primary",
+      "source_worksheet_index": 20,
+      "rows": 196,
+      "columns": [
+        {
+          "name": "video_id",
+          "type": "string",
+          "description": "Study procedure pseudonym. This is not a medical-record number or a released identity mapping."
+        },
+        {
+          "name": "hospital",
+          "type": "string",
+          "description": "Anonymised hospital category: Centre A, Centre B or Centre C. No site-identity key is distributed."
+        },
+        {
+          "name": "surgery_type",
+          "type": "string",
+          "description": "Joint category: knee or shoulder."
+        },
+        {
+          "name": "true_label",
+          "type": "string",
+          "description": "Consensus grade: novice, intermediate or expert."
+        },
+        {
+          "name": "true_grs",
+          "type": "number",
+          "description": "Consensus total GRS, in native 6-30 points."
+        },
+        {
+          "name": "pred_label",
+          "type": "string",
+          "description": "Recorded classifier grade; independent of the regression total."
+        },
+        {
+          "name": "pred_grs",
+          "type": "number",
+          "description": "Total-score prediction as recorded, typically at 0.001-point precision. SAIS values are retained for source audit only; SAIS regression is not a manuscript-supported comparator endpoint."
+        },
+        {
+          "name": "grade_distance",
+          "type": "integer",
+          "description": "Absolute ordinal difference between reference and predicted grade, with novice/intermediate/expert coded 0/1/2."
+        },
+        {
+          "name": "correct",
+          "type": "integer",
+          "description": "Whether the recorded predicted grade equals the reference grade."
+        }
+      ],
+      "primary_key": [
+        "video_id"
+      ],
+      "notes": "Recorded study outputs; not predictions from newly trained repository models."
+    },
+    "training_runs.csv": {
+      "role": "primary",
+      "source_worksheet_index": 9,
+      "rows": 6,
+      "columns": [
+        {
+          "name": "model",
+          "type": "string",
+          "description": "Recorded model or ablation name. Complete in clip tables denotes ArthroSkill-MC."
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "description": "Recorded training seed; 3407 is the designated main run, with repeats 3433 and 2025."
+        },
+        {
+          "name": "validation_accuracy",
+          "type": "number",
+          "description": "Recorded best validation procedure accuracy, as a fraction."
+        },
+        {
+          "name": "test_accuracy",
+          "type": "number",
+          "description": "Recorded test procedure accuracy, as a fraction."
+        },
+        {
+          "name": "mae",
+          "type": "number",
+          "description": "Recorded aggregate total-GRS mean absolute error in points; blank when not reported."
+        },
+        {
+          "name": "rmse",
+          "type": "number",
+          "description": "Recorded aggregate total-GRS root mean squared error in points; blank when not reported."
+        },
+        {
+          "name": "pearson_r",
+          "type": "number",
+          "description": "Recorded Pearson correlation of predicted and reference GRS; blank when not reported."
+        },
+        {
+          "name": "run_role",
+          "type": "string",
+          "description": "main for designated seed 3407; repeat for the two additional fitting runs."
+        }
+      ],
+      "primary_key": [
+        "model",
+        "seed"
+      ],
+      "notes": "Recorded study outputs; not predictions from newly trained repository models."
+    },
+    "exclusions.csv": {
+      "role": "primary",
+      "source_worksheet_index": 18,
+      "rows": 4,
+      "columns": [
+        {
+          "name": "video_id",
+          "type": "string",
+          "description": "Study procedure pseudonym. This is not a medical-record number or a released identity mapping."
+        },
+        {
+          "name": "acquisition_batch",
+          "type": "string",
+          "description": "Non-identifying acquisition-batch label retained from the exclusion log."
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "description": "English translation of the recorded exclusion reason."
+        },
+        {
+          "name": "retry_outcome",
+          "type": "string",
+          "description": "English translation of the recorded retry or inference outcome."
+        }
+      ],
+      "primary_key": [
+        "video_id"
+      ],
+      "notes": "English translation of four excluded-recording entries."
+    },
+    "recorded_summaries/model_metrics.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 5,
+      "rows": 24,
+      "columns": [
+        {
+          "name": "model",
+          "type": "string",
+          "description": "Recorded model or ablation name. Complete in clip tables denotes ArthroSkill-MC."
+        },
+        {
+          "name": "split",
+          "type": "string",
+          "description": "Fixed procedure partition: train, val or test."
+        },
+        {
+          "name": "n",
+          "type": "integer",
+          "description": "Recorded number of procedures."
+        },
+        {
+          "name": "accuracy",
+          "type": "number",
+          "description": "Recorded classification accuracy as a fraction."
+        },
+        {
+          "name": "mae",
+          "type": "number",
+          "description": "Recorded aggregate total-GRS mean absolute error in points; blank when not reported."
+        },
+        {
+          "name": "rmse",
+          "type": "number",
+          "description": "Recorded aggregate total-GRS root mean squared error in points; blank when not reported."
+        },
+        {
+          "name": "pearson_r",
+          "type": "number",
+          "description": "Recorded Pearson correlation of predicted and reference GRS; blank when not reported."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Original rounded aggregate metrics, including SAIS regression fields not reported as comparator endpoints in the manuscript."
+    },
+    "recorded_summaries/statistical_tests.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 6,
+      "rows": 7,
+      "columns": [
+        {
+          "name": "model",
+          "type": "string",
+          "description": "Recorded model or ablation name. Complete in clip tables denotes ArthroSkill-MC."
+        },
+        {
+          "name": "both_correct",
+          "type": "integer",
+          "description": "Paired procedures correctly classified by both complete model and comparator."
+        },
+        {
+          "name": "main_only",
+          "type": "integer",
+          "description": "Paired procedures correct only for the complete model."
+        },
+        {
+          "name": "base_only",
+          "type": "integer",
+          "description": "Paired procedures correct only for the comparator."
+        },
+        {
+          "name": "both_wrong",
+          "type": "integer",
+          "description": "Paired procedures incorrect for both models."
+        },
+        {
+          "name": "p_value_unadjusted",
+          "type": "number",
+          "description": "Recorded exact McNemar p value without seven-comparison Holm adjustment."
+        },
+        {
+          "name": "source_significant_unadjusted",
+          "type": "boolean",
+          "description": "Original Boolean significance flag using the unadjusted p value; not the manuscript family-wise conclusion."
+        },
+        {
+          "name": "source_significance_label",
+          "type": "string",
+          "description": "Original unadjusted significance label; not an adjusted inference."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Original significance flags use unadjusted p values. All seven comparisons exceed 0.05 after Holm adjustment."
+    },
+    "recorded_summaries/test_details.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 7,
+      "rows": 40,
+      "columns": [
+        {
+          "name": "video_id",
+          "type": "string",
+          "description": "Study procedure pseudonym. This is not a medical-record number or a released identity mapping."
+        },
+        {
+          "name": "hospital",
+          "type": "string",
+          "description": "Anonymised hospital category: Centre A, Centre B or Centre C. No site-identity key is distributed."
+        },
+        {
+          "name": "surgery_type",
+          "type": "string",
+          "description": "Joint category: knee or shoulder."
+        },
+        {
+          "name": "true_label",
+          "type": "string",
+          "description": "Consensus grade: novice, intermediate or expert."
+        },
+        {
+          "name": "true_grs",
+          "type": "number",
+          "description": "Consensus total GRS, in native 6-30 points."
+        },
+        {
+          "name": "pred_label",
+          "type": "string",
+          "description": "Recorded classifier grade; independent of the regression total."
+        },
+        {
+          "name": "pred_grs",
+          "type": "number",
+          "description": "Total-score prediction as recorded, typically at 0.001-point precision. SAIS values are retained for source audit only; SAIS regression is not a manuscript-supported comparator endpoint."
+        },
+        {
+          "name": "correct",
+          "type": "boolean",
+          "description": "Whether the recorded predicted grade equals the reference grade."
+        },
+        {
+          "name": "abs_error",
+          "type": "number",
+          "description": "Absolute GRS error as recorded. It may retain more precision than pred_grs; it is not overwritten from rounded predictions."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Recorded summary snapshot; underlying primary tables are preferred for inference."
+    },
+    "recorded_summaries/validation_details.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 8,
+      "rows": 39,
+      "columns": [
+        {
+          "name": "video_id",
+          "type": "string",
+          "description": "Study procedure pseudonym. This is not a medical-record number or a released identity mapping."
+        },
+        {
+          "name": "hospital",
+          "type": "string",
+          "description": "Anonymised hospital category: Centre A, Centre B or Centre C. No site-identity key is distributed."
+        },
+        {
+          "name": "surgery_type",
+          "type": "string",
+          "description": "Joint category: knee or shoulder."
+        },
+        {
+          "name": "true_label",
+          "type": "string",
+          "description": "Consensus grade: novice, intermediate or expert."
+        },
+        {
+          "name": "true_grs",
+          "type": "number",
+          "description": "Consensus total GRS, in native 6-30 points."
+        },
+        {
+          "name": "pred_label",
+          "type": "string",
+          "description": "Recorded classifier grade; independent of the regression total."
+        },
+        {
+          "name": "pred_grs",
+          "type": "number",
+          "description": "Total-score prediction as recorded, typically at 0.001-point precision. SAIS values are retained for source audit only; SAIS regression is not a manuscript-supported comparator endpoint."
+        },
+        {
+          "name": "correct",
+          "type": "boolean",
+          "description": "Whether the recorded predicted grade equals the reference grade."
+        },
+        {
+          "name": "abs_error",
+          "type": "number",
+          "description": "Absolute GRS error as recorded. It may retain more precision than pred_grs; it is not overwritten from rounded predictions."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Recorded summary snapshot; underlying primary tables are preferred for inference."
+    },
+    "recorded_summaries/visibility_tier_metrics.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 11,
+      "rows": 3,
+      "columns": [
+        {
+          "name": "severity",
+          "type": "string",
+          "description": "Recorded severity tier: 0 good, 1 mild degradation, 2 severe degradation."
+        },
+        {
+          "name": "accuracy_Complete",
+          "type": "number",
+          "description": "Recorded accuracy for Complete."
+        },
+        {
+          "name": "accuracy_Naive_concat",
+          "type": "number",
+          "description": "Recorded accuracy for Naive concat."
+        },
+        {
+          "name": "accuracy_Unmasked_fusion",
+          "type": "number",
+          "description": "Recorded accuracy for Unmasked fusion."
+        },
+        {
+          "name": "n_clips_Complete",
+          "type": "integer",
+          "description": "Recorded clip count for Complete."
+        },
+        {
+          "name": "n_clips_Naive_concat",
+          "type": "integer",
+          "description": "Recorded clip count for Naive concat."
+        },
+        {
+          "name": "n_clips_Unmasked_fusion",
+          "type": "integer",
+          "description": "Recorded clip count for Unmasked fusion."
+        },
+        {
+          "name": "p_vs_naive_as_recorded",
+          "type": "number",
+          "description": "Original visibility-summary p value; its calculation is not specified in that sheet and is not substituted for the procedure-cluster analysis."
+        },
+        {
+          "name": "p_vs_unmasked_as_recorded",
+          "type": "number",
+          "description": "Original visibility-summary p value; not substituted for the procedure-cluster analysis."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Original p values are retained without asserting their test method. Use procedure-cluster reanalysis for manuscript inference."
+    },
+    "recorded_summaries/degradation_counts.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 13,
+      "rows": 6,
+      "columns": [
+        {
+          "name": "degradation_type",
+          "type": "string",
+          "description": "Recorded final degradation category: none, blood, blur, fog, out_of_view or overexposure."
+        },
+        {
+          "name": "severity_0",
+          "type": "integer",
+          "description": "Recorded clip count in visibility severity 0."
+        },
+        {
+          "name": "severity_1",
+          "type": "integer",
+          "description": "Recorded clip count in visibility severity 1."
+        },
+        {
+          "name": "severity_2",
+          "type": "integer",
+          "description": "Recorded clip count in visibility severity 2."
+        },
+        {
+          "name": "n_clips_total",
+          "type": "integer",
+          "description": "Number of quality-screened inference clips recorded for this procedure."
+        },
+        {
+          "name": "percentage",
+          "type": "number",
+          "description": "Recorded percentage on the 0-100 scale, rather than a 0-1 fraction."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Recorded summary snapshot; underlying primary tables are preferred for inference."
+    },
+    "recorded_summaries/clip_summary.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 14,
+      "rows": 9,
+      "columns": [
+        {
+          "name": "severity",
+          "type": "integer",
+          "description": "Recorded severity tier: 0 good, 1 mild degradation, 2 severe degradation."
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "description": "Recorded model or ablation name. Complete in clip tables denotes ArthroSkill-MC."
+        },
+        {
+          "name": "n_correct",
+          "type": "integer",
+          "description": "Recorded count of correct classifications."
+        },
+        {
+          "name": "n_clips_total",
+          "type": "integer",
+          "description": "Number of quality-screened inference clips recorded for this procedure."
+        },
+        {
+          "name": "accuracy",
+          "type": "number",
+          "description": "Recorded classification accuracy as a fraction."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Recorded summary snapshot; underlying primary tables are preferred for inference."
+    },
+    "recorded_summaries/package_overview.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 1,
+      "rows": 26,
+      "columns": [
+        {
+          "name": "source_row",
+          "type": "integer",
+          "description": "One-based row number in the original worksheet."
+        },
+        {
+          "name": "field",
+          "type": "string",
+          "description": "English field or statistic label in a recorded summary."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Recorded value or English translation, as text when the source has mixed types."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Translated overview and public file crosswalk. These are source-workbook notes, not repository or publication dates."
+    },
+    "recorded_summaries/experiment_report.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 2,
+      "rows": 76,
+      "columns": [
+        {
+          "name": "source_row",
+          "type": "integer",
+          "description": "One-based row number in the original worksheet."
+        },
+        {
+          "name": "section",
+          "type": "string",
+          "description": "Recorded report section."
+        },
+        {
+          "name": "field",
+          "type": "string",
+          "description": "English field or statistic label in a recorded summary."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Recorded value or English translation, as text when the source has mixed types."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Unverified source report text. Its unadjusted significance claims, trend claim, approximately 48 million raw frames and approximately 99.5% filtering claim are not adopted by the current analysis. Administrative date/version/status are source fields only."
+    },
+    "recorded_summaries/training_seed_summary.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 9,
+      "rows": 2,
+      "columns": [
+        {
+          "name": "model",
+          "type": "string",
+          "description": "Recorded model or ablation name. Complete in clip tables denotes ArthroSkill-MC."
+        },
+        {
+          "name": "test_accuracy",
+          "type": "string",
+          "description": "Recorded test procedure accuracy, as a fraction."
+        },
+        {
+          "name": "mae",
+          "type": "string",
+          "description": "Recorded aggregate total-GRS mean absolute error in points; blank when not reported."
+        },
+        {
+          "name": "rmse",
+          "type": "string",
+          "description": "Recorded aggregate total-GRS root mean squared error in points; blank when not reported."
+        },
+        {
+          "name": "pearson_r",
+          "type": "string",
+          "description": "Recorded Pearson correlation of predicted and reference GRS; blank when not reported."
+        },
+        {
+          "name": "notes",
+          "type": "string",
+          "description": "English explanatory text or source note."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Original aggregate mean +/- sample-SD text; individual run rows are in training_runs.csv."
+    },
+    "recorded_summaries/annotation_agreement.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 12,
+      "rows": 8,
+      "columns": [
+        {
+          "name": "field",
+          "type": "string",
+          "description": "English field or statistic label in a recorded summary."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Recorded value or English translation, as text when the source has mixed types."
+        },
+        {
+          "name": "threshold",
+          "type": "string",
+          "description": "Threshold text recorded in the source summary; not a preregistered decision rule."
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Pass or missing status as recorded in the source summary."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Rounded source annotations summary. Current bootstrap intervals are computed from visibility_annotations.csv."
+    },
+    "recorded_summaries/icc_calculation.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 17,
+      "rows": 12,
+      "columns": [
+        {
+          "name": "field",
+          "type": "string",
+          "description": "English field or statistic label in a recorded summary."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Recorded value or English translation, as text when the source has mixed types."
+        },
+        {
+          "name": "explanation",
+          "type": "string",
+          "description": "English translation of the recorded definition or formula description."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Values retained as recorded; raw-score reanalysis gives ICC(A,1) approximately 0.822885."
+    },
+    "recorded_summaries/scoring_protocol.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 19,
+      "rows": 5,
+      "columns": [
+        {
+          "name": "field",
+          "type": "string",
+          "description": "English field or statistic label in a recorded summary."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Recorded value or English translation, as text when the source has mixed types."
+        }
+      ],
+      "primary_key": [],
+      "notes": "Translated protocol notes. The manuscript reports that review retained both independent ratings unchanged."
+    },
+    "recorded_summaries/loso_summary.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 21,
+      "rows": 5,
+      "columns": [
+        {
+          "name": "fold",
+          "type": "string",
+          "description": "LOSO held-out-hospital fold or pooled result."
+        },
+        {
+          "name": "hospital",
+          "type": "string",
+          "description": "Anonymised hospital category: Centre A, Centre B or Centre C. No site-identity key is distributed."
+        },
+        {
+          "name": "n",
+          "type": "integer",
+          "description": "Recorded number of procedures."
+        },
+        {
+          "name": "n_correct",
+          "type": "integer",
+          "description": "Recorded count of correct classifications."
+        },
+        {
+          "name": "accuracy_recorded",
+          "type": "string",
+          "description": "Original accuracy text or proportion, without recalculation."
+        },
+        {
+          "name": "pearson_r",
+          "type": "number",
+          "description": "Recorded Pearson correlation of predicted and reference GRS; blank when not reported."
+        },
+        {
+          "name": "mae",
+          "type": "number",
+          "description": "Recorded aggregate total-GRS mean absolute error in points; blank when not reported."
+        },
+        {
+          "name": "notes",
+          "type": "string",
+          "description": "English explanatory text or source note."
+        }
+      ],
+      "primary_key": [],
+      "notes": "The Centre B source MAE is recorded as 4.59, while the rounded per-procedure predictions yield about 4.60; preserve both with their provenance."
+    },
+    "recorded_summaries/loso_error_summary.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 21,
+      "rows": 4,
+      "columns": [
+        {
+          "name": "field",
+          "type": "string",
+          "description": "English field or statistic label in a recorded summary."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Recorded value or English translation, as text when the source has mixed types."
+        }
+      ],
+      "primary_key": [],
+      "notes": ""
+    },
+    "recorded_summaries/cohort_summary.csv": {
+      "role": "recorded_summary",
+      "source_worksheet_index": 22,
+      "rows": 23,
+      "columns": [
+        {
+          "name": "source_row",
+          "type": "integer",
+          "description": "One-based row number in the original worksheet."
+        },
+        {
+          "name": "field",
+          "type": "string",
+          "description": "English field or statistic label in a recorded summary."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Recorded value or English translation, as text when the source has mixed types."
+        },
+        {
+          "name": "additional_value",
+          "type": "string",
+          "description": "Additional recorded value identified by the field label and source row."
+        },
+        {
+          "name": "notes",
+          "type": "string",
+          "description": "English explanatory text or source note."
+        }
+      ],
+      "primary_key": [],
+      "notes": "The source overview records ICC 0.822; other source sheets and raw-score reanalysis support reporting 0.823. This snapshot is not silently corrected."
+    }
+  }
+}
