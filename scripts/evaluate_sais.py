@@ -1,10 +1,22 @@
-"""Guard against treating the legacy RGB proxy as the SAIS comparator.
+"""Evaluate the selected official SAIS checkpoint by averaging clip probabilities."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import argparse
+import json
+import torch
+from utils.sais_training import evaluate_checkpoint
 
-The manuscript comparison requires the official RGB-and-optical-flow recipe.
-See docs/protocol.md for matched partitions, selection and aggregation.
-"""
 
 if __name__ == '__main__':
-    raise SystemExit(
-        'The legacy RGB-only proxy is not the manuscript SAIS comparator. '
-        'Use the official RGB-and-optical-flow implementation; see docs/protocol.md.')
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--data', required=True)
+    p.add_argument('--checkpoint', required=True)
+    p.add_argument('--output', required=True)
+    p.add_argument('--sais-root')
+    p.add_argument('--split', choices=['train', 'val', 'test'], default='test')
+    p.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu')
+    a = p.parse_args()
+    result = evaluate_checkpoint(a.checkpoint, a.data, a.output, upstream_root=a.sais_root,
+                                 split=a.split, device=a.device)
+    print(json.dumps(result['metrics'], indent=2))

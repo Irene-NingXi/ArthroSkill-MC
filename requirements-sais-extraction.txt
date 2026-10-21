@@ -1,0 +1,5 @@
+# Separate optional dependencies for RAFT feature extraction.
+# SAIS upstream used PTLFlow 0.2.5; the adapter also handles the 0.4.2 IO API.
+ptlflow==0.4.2
+opencv-python>=4.8.0
+Pillow>=9.1.1

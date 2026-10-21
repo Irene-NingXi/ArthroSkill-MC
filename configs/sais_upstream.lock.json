@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/danikiyasseh/SAIS",
+  "commit": "3dd073492887fff99671df3bdb42cbc39066ab8c",
+  "source_sha256": {
+    "SAIS/scripts/prepare_model.py": "1a8f466668093b322110698a53c49a0a37cdf2cea05ed542af4ddcfc33a10dc3",
+    "SAIS/scripts/dino-main/vision_transformer.py": "b1f998d5f49ab43666b9fc6d007c5f6540c3ead2e8645e144f74045f63ff44d7",
+    "SAIS/scripts/prepare_miscellaneous.py": "fe5090d8413563a6e775feab8d634e08e3d287b9bee0757f338a604b6876ae5f",
+    "SAIS/scripts/dino-main/utils.py": "38e5e4390ae838d6d66532d50f9ecded8a9bfa9d686378f2cc7ebc46e315d079"
+  }
+}

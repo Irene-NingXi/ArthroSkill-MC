@@ -47,9 +47,20 @@ python scripts/train_video_baselines.py --config configs/config.yaml --data proc
 python scripts/train_loso.py --config configs/config.yaml --data processed_loso --output outputs/loso
 ```
 
-Ablation choices are `appearance_only`, `motion_only`, `naive_concat`, `unmasked` and `full`. Shared internal appearance branches must use the same adapted checkpoint. External Video Swin-T uses Kinetics-400 weights. The legacy RGB-only SAIS proxy is not the RGB-and-optical-flow comparator; its training/evaluation commands stop with an explicit explanation. Use the official SAIS code and recipe for that comparison.
+Ablation choices are `appearance_only`, `motion_only`, `naive_concat`, `unmasked` and `full`. Shared internal appearance branches must use the same adapted checkpoint. External Video Swin-T uses Kinetics-400 weights. The official RGB-and-flow SAIS adapter invokes the pinned external SAIS implementation and its learned-prototype pathway. See [SAIS integration](docs/sais.md) for setup, DINO/RAFT feature extraction, constant-learning-rate training and procedure-level evaluation.
 
 Validation selects the best checkpoint using procedure accuracy. Each procedure's clip softmax probabilities are averaged before argmax; continuous scores are averaged independently. Evaluation defaults to the test partition. All-invalid motion clips use the appearance residual pathway and never evaluate an all-masked softmax.
+
+## Official SAIS comparator
+
+```bash
+python scripts/setup_sais.py --destination external/SAIS
+python scripts/extract_sais_features.py --config configs/config.yaml --metadata metadata.csv --clips processed --output sais_features --dino-weights weights/dino_deitsmall16_pretrain.pth --raft-weights weights/raft_things.ckpt --device cuda
+python scripts/train_sais.py --config configs/config.yaml --data sais_features --output outputs/sais/seed3407 --seed 3407
+python scripts/evaluate_sais.py --data sais_features --checkpoint outputs/sais/seed3407/sais_best_model.pth --split test --output outputs/sais/seed3407/test
+```
+
+The [SAIS guide](docs/sais.md) specifies optional extraction dependencies, external licenses, clip/flow alignment, weight requirements and the differences between the released generic recipe and this study's matched optimisation settings. SAIS reports classification only.
 
 ## Validation
 
