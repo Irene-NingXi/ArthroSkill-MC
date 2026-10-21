@@ -8,3 +8,7 @@ outputs/
 *.pth
 *.xlsx
 metadata.csv
+external/
+weights/
+*.ckpt
+sais_features*/

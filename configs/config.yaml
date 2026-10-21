@@ -64,3 +64,11 @@ training:
 evaluation:
   metrics: ["accuracy", "pearson_r", "mae", "rmse", "icc", "confusion_matrix"]
   calibration_bins: 5
+
+sais:
+  upstream_root: "./external/SAIS"
+  modalities: "RGB-Flow"
+  feature_dim: 384
+  prototype_dim: 256
+  flow_step: 15  # Released Custom flow-pair spacing, within each shared 16-frame clip.
+  crop_fraction: 0.8
