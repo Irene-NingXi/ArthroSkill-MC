@@ -1,231 +1,68 @@
 # ArthroSkill-MC
 
-**Multi-centre, cross-joint interpretable skill assessment in arthroscopic surgery videos via occlusion-aware multimodal fusion**
+Occlusion-aware multimodal skill assessment across arthroscopic joints and hospitals.
 
-This repository contains the PyTorch reimplementation of the paper. The code is implemented in standard PyTorch (without hard dependency on MMAction2 specific APIs), with detailed comments mapping each module to the corresponding section in the paper.
+This repository provides a PyTorch implementation of a Video Swin-T appearance encoder, instrument-motion encoder, confidence-masked cross-attention and separate grade/GRS heads. It also provides procedure-level evaluation and source-data statistical reanalysis.
 
----
-
-## Project Structure
-
-```
-ArthroSkill-MC/
-├── configs/
-│   └── config.yaml          # Centralised hyperparameters
-├── data/
-│   ├── __init__.py
-│   └── dataset.py           # Custom Dataset for 16-frame clips
-├── models/
-│   ├── __init__.py
-│   ├── appearance_branch.py # Video Swin Transformer (Swin-T) -> 768-D
-│   ├── motion_branch.py     # YOLOv8+DeepSORT, 6 kinematic features, 1D-CNN+BiLSTM -> 256-D
-│   ├── fusion.py            # Occlusion-aware cross-modal attention (Q=appearance, K/V=motion)
-│   ├── heads.py             # Classification (3-class) + Regression (6-D GRS + total)
-│   ├── sais.py              # SAIS baseline (appearance-only, for comparison)
-│   ├── baselines.py          # 3D-ResNet-18 and Video-Swin-only baselines
-│   └── arthroskill.py       # Full model assembly + multi-task loss
-├── scripts/
-│   ├── train_sais.py        # SAIS baseline training
-│   ├── evaluate_sais.py     # SAIS evaluation with calibration analysis
-│   ├── train_loso.py        # Leave-one-site-out cross-validation
-│   ├── extract_motion.py    # YOLOv8 + DeepSORT feature extraction
-│   ├── run_ablation.py      # Five paper ablations
-│   ├── analyze_predictions.py # Recompute metrics from Excel archives
-│   └── train_video_baselines.py # Expanded video baseline training
-├── utils/
-│   ├── __init__.py
-│   ├── preprocessing.py     # Video clipping, brightness/blur filtering, per-video normalisation
-│   └── metrics.py           # Accuracy, Pearson r, MAE, RMSE, ICC(A,1), confusion matrix, calibration
-├── train.py                 # Training script (AdamW + Cosine Annealing)
-├── evaluate.py              # Evaluation script (all metrics from the paper)
-├── preprocess.py            # Data preprocessing entry point
-├── requirements.txt         # Dependencies
-└── README.md                # This file
-```
-
----
+The benchmark contains 196 knee and shoulder procedures from three hospitals. The fixed partition contains 117 training, 39 validation and 40 test procedures. Skill labels are novice, intermediate and expert. Six GRS dimensions range from 1 to 5; the total ranges from 6 to 30.
 
 ## Installation
 
 ```bash
-# 1. Create virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate  # macOS/Linux
-# or venv\Scripts\activate  # Windows
-
-# 2. Install dependencies
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
----
+Use a compatible PyTorch/torchvision pair. CUDA is optional for statistical reanalysis; training full-resolution video requires an appropriate GPU.
 
-## Quick Start
-
-### 1. Data Preprocessing
-
-Place your arthroscopic videos (`.mp4`/`.avi`/`.mov`) in `./videos`:
+## Source-data analysis
 
 ```bash
-python preprocess.py --input ./videos --output ./processed
+python scripts/analyze_predictions.py --xlsx /path/to/ArthroSkill-MC_Data_V5.xlsx --output outputs/source_data_analysis.json
 ```
 
-Preprocessing pipeline (corresponding to the paper Methods):
-- Decode at 25 fps, resize to 640 x 480
-- Filter out-of-body and turbid frames using brightness and Laplacian blur thresholds
-- Per-video intensity normalisation
-- Split into non-overlapping 16-frame clips, saved as `.pt`
+The command recomputes results from procedure predictions, original ratings and annotated clip predictions. Defaults are 20,000 procedure-bootstrap samples, 99,999 procedure-level swaps and analysis seed 20261020. Visibility annotation-agreement intervals use seed 20261021. Seven fixed-test comparisons and six visibility comparisons receive separate Holm adjustments. Training repeats remain aggregate summaries of the same partition.
 
-### 2. Prepare Labels
+See [RESULTS.md](RESULTS.md) for source-data results and [the protocol](docs/protocol.md) for definitions and reproducibility boundaries. Statistical reanalysis does not train a model.
 
-Each `.pt` file in `./processed/train/` and `./processed/val/` should contain:
+## Prepare training data
 
-```python
-{
-    "frames": tensor [3, 16, 480, 640],      # video clip
-    "motion": tensor [16, 6],                # pre-computed kinematic features (optional, placeholder acceptable during training)
-    "label_cls": int,                        # 0=novice, 1=intermediate, 2=expert
-    "label_reg": tensor [7]                  # [6 normalised GRS dimensions, normalised total score], range 0-1
-}
-```
-
-> **Note**: YOLOv8+DeepSORT feature extraction should be completed during preprocessing, or run separately to generate `motion` and `detection_conf`.
-
-### 3. Training
+The source recordings are restricted under institutional ethics approvals. The workbook contains analysis tables rather than training videos.
 
 ```bash
-python train.py --config configs/config.yaml --data ./processed --output ./outputs
+python scripts/prepare_metadata.py --xlsx /path/to/ArthroSkill-MC_Data_V5.xlsx --videos /path/to/videos --output metadata.csv
+python scripts/extract_motion.py --metadata metadata.csv --weights /path/to/training_only_detector.pt --output processed
 ```
 
-Training configuration (corresponding to the paper):
-- Optimiser: AdamW, lr=1e-4, weight_decay=0.05
-- Batch size: 4
-- Scheduler: Cosine Annealing + 5-epoch Warmup
-- Loss: L = L_cls + lambda * L_reg, lambda=1.0
-- Data augmentation: random crop, horizontal flip, colour jitter
+Metadata export preserves the supplied procedure partition and averages the two raters' six dimension scores. Motion extraction checks 25 fps input, screens brightness below 30 and Laplacian variance below 100, performs per-video intensity normalisation and writes non-overlapping 16-frame clips with original frame indices. Train the arthroscopy detector on the eligible training procedures before extraction; generic object-detection weights do not establish instrument-detection validity.
 
-### 4. Evaluation
+Set `model.appearance.checkpoint` in `configs/config.yaml` to a HeiChole-adapted backbone state dictionary. A null checkpoint uses Kinetics-400 initialisation and omits the surgical adaptation stage. Checkpoints from the earlier 2D backbone are incompatible with the 3D backbone and require retraining.
+
+## Training and evaluation
 
 ```bash
-python evaluate.py --config configs/config.yaml --data ./processed --checkpoint ./outputs/best_model.pth --output ./outputs
+python train.py --config configs/config.yaml --data processed --output outputs/main
+python evaluate.py --config configs/config.yaml --data processed --checkpoint outputs/main/best_model.pth --split test --output outputs/test
+python scripts/run_ablation.py --config configs/config.yaml --data processed --variant unmasked --output outputs/unmasked
+python scripts/train_video_baselines.py --config configs/config.yaml --data processed --model resnet3d --pretrained --output outputs/resnet3d
+python scripts/train_loso.py --config configs/config.yaml --data processed_loso --output outputs/loso
 ```
 
-Evaluation outputs (corresponding to the paper Results):
-- Classification accuracy
-- Pearson correlation coefficient r
-- MAE / RMSE
-- ICC(A,1) (two-way random-effects, absolute agreement, single rater)
-- Confusion matrix
-- Adjacent-grade vs cross-grade error rate
-- Expected Calibration Error (ECE)
+Ablation choices are `appearance_only`, `motion_only`, `naive_concat`, `unmasked` and `full`. Shared internal appearance branches must use the same adapted checkpoint. External Video Swin-T uses Kinetics-400 weights. The legacy RGB-only SAIS proxy is not the RGB-and-optical-flow comparator; its training/evaluation commands stop with an explicit explanation. Use the official SAIS code and recipe for that comparison.
 
-### 5. SAIS Baseline (Comparison)
+Validation selects the best checkpoint using procedure accuracy. Each procedure's clip softmax probabilities are averaged before argmax; continuous scores are averaged independently. Evaluation defaults to the test partition. All-invalid motion clips use the appearance residual pathway and never evaluate an all-masked softmax.
+
+## Validation
 
 ```bash
-python scripts/train_sais.py --config configs/config.yaml --data ./processed --output ./outputs/sais
-python scripts/evaluate_sais.py --config configs/config.yaml --data ./processed --checkpoint ./outputs/sais/sais_best_model.pth --output ./outputs/sais
+python -m unittest discover -s tests -v
 ```
 
-### 6. Expanded video baselines
+Tests cover masked attention, all-invalid fallback, gradients, probability aggregation, score units and the spatiotemporal backbone. They do not establish the reported trained-model performance.
 
-```bash
-python scripts/train_video_baselines.py --model resnet3d --config configs/config.yaml --data ./processed --output ./outputs/resnet3d
-python scripts/train_video_baselines.py --model swin --config configs/config.yaml --data ./processed --output ./outputs/swin_only
-```
+## Data and code availability
 
-`extract_motion.py` expects a CSV with `video_id,video_path,split,label_cls,label_reg` and optional `centre`/`hospital`; `label_reg` is seven comma-separated normalised GRS values.
+Reproducing numerical tables requires the source-data workbook. Independent end-to-end reproduction additionally requires authorised recordings, detector annotations and weights, the HeiChole adaptation checkpoint and matching fitted model checkpoints/configurations. No surgical recording or individual source-data table is distributed here.
 
-### 7. Ablations and Excel audit
+## Author and licence
 
-```bash
-python scripts/run_ablation.py --variant appearance_only --config configs/config.yaml --data ./processed --output ./outputs/ablation
-python scripts/analyze_predictions.py --xlsx /path/to/ArthroSkill-MC_V4.xlsx --output ./outputs/prediction_audit.json
-```
-
-Run the ablation command once for each of `appearance_only`, `motion_only`, `naive_concat`, `unmasked`, and `full`.
-
-### 8. Leave-One-Site-Out (LOSO)
-
-```bash
-python scripts/train_loso.py --config configs/config.yaml --data ./processed --output ./outputs/loso
-```
-
----
-
-## Paper-to-Code Mapping
-
-| Paper Module | Code File | Notes |
-|-------------|-----------|-------|
-| Appearance branch (Video Swin-T) | `models/appearance_branch.py` | Uses timm Swin as approximation; for deployment, replace with MMAction2 official Video Swin and load Kinetics-400 -> HeiChole pretrained weights |
-| Motion branch (YOLOv8 + DeepSORT) | `models/motion_branch.py` | `KinematicFeatureExtractor` implements 6 kinematic features; `MotionEncoder` implements 1D-CNN (k7,5,3) + BiLSTM (128) |
-| Occlusion-aware fusion | `models/fusion.py` | Cross-attention: Q=appearance, K/V=motion; `key_padding_mask` implements confidence<0.5 suppression |
-| Multi-task head | `models/heads.py` | Classification head (CE loss) + Regression head (Smooth L1) |
-| SAIS baseline | `models/sais.py` | Appearance-only temporal baseline; stride is configurable via `--stride` |
-| Training protocol | `train.py` | AdamW + Cosine Annealing; three-stage pretraining requires loading corresponding pretrained weights in config |
-| LOSO evaluation | `scripts/train_loso.py` | 3-fold leave-one-site-out cross-validation |
-| Evaluation | `evaluate.py` + `utils/metrics.py` | All metrics from the paper: accuracy, Pearson r, MAE, RMSE, ICC(A,1), confusion matrix, calibration analysis |
-
----
-
-## Key Hyperparameters
-
-All hyperparameters are centralised in `configs/config.yaml`:
-
-```yaml
-data:
-  clip_len: 16
-  img_size: [480, 640]
-  brightness_threshold: 30
-  blur_threshold: 100
-
-model:
-  appearance:
-    output_dim: 768
-  motion:
-    conf_threshold: 0.5
-    cnn_channels: [64, 128, 256]
-    cnn_kernels: [7, 5, 3]
-    lstm_hidden: 128
-    output_dim: 256
-  fusion:
-    num_heads: 8
-
-training:
-  batch_size: 4
-  learning_rate: 0.0001
-  num_epochs: 100
-  lambda_reg: 1.0
-```
-
----
-
-## Notes
-
-1. **GPU requirement**: Video Swin Transformer training requires substantial VRAM; at least 12 GB is recommended (e.g. RTX 3090). If VRAM is insufficient, reduce batch_size or use a smaller backbone.
-2. **Pretrained weights**: The paper uses three-stage transfer: Kinetics-400 -> HeiChole -> arthroscopy data. The skeleton code has reserved interfaces; please download corresponding pretrained weights and load them in `appearance_branch.py`.
-3. **Motion features**: `scripts/extract_motion.py` now runs YOLOv8 + DeepSORT, computes the six kinematic features, preserves per-frame detection confidence, and writes the `.pt` clip contract consumed by `data/dataset.py`.
-4. **Data privacy**: Surgical videos involve patient privacy. Please ensure ethics approval has been obtained and videos are de-identified before processing.
-
----
-
-## Citation
-
-```bibtex
-@article{xi2026arthroskill,
-  title={Multi-centre, cross-joint interpretable skill assessment in arthroscopic surgery videos via occlusion-aware multimodal fusion},
-  author={Xi, Ning and others},
-  journal={In preparation},
-  year={2026}
-}
-```
-
----
-
-## Author
-
-- Ning Xi (Universiti Kebangsaan Malaysia)
-
----
-
-## License
-
-MIT License
+Ning Xi. MIT licence; see [LICENSE](LICENSE). Third-party datasets, weights and implementations retain their respective terms.

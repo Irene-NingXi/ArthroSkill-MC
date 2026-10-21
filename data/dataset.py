@@ -6,7 +6,6 @@ and divided into non-overlapping 16-frame clips."
 import os
 import torch
 from torch.utils.data import Dataset
-import cv2
 import numpy as np
 import yaml
 from pathlib import Path
@@ -15,12 +14,12 @@ from pathlib import Path
 class ArthroscopyDataset(Dataset):
     """
     Arthroscopic surgery video dataset.
-    Input: preprocessed 16-frame clips (.pt or .npy)
+    Input: preprocessed 16-frame clips (.pt)
     Output: {
         'appearance': [C, T, H, W] video tensor,
-        'motion': [T, D] kinematic feature sequence (optional, placeholder if not pre-computed),
+        'motion': [T, D] kinematic feature sequence,
         'label_cls': int skill level (0=novice, 1=intermediate, 2=expert),
-        'label_reg': [7] 6 GRS dimensions + total score (normalised to 0-1),
+        'label_reg': [7] 6 GRS dimensions + total score (native GRS points),
         'centre': str site identifier ("A", "B", or "C") when present
     }
     """
@@ -65,14 +64,16 @@ class ArthroscopyDataset(Dataset):
         if appearance.dim() == 4 and appearance.shape[-1] == 3:
             appearance = appearance.permute(3, 0, 1, 2)
 
-        motion = data.get("motion", torch.zeros(self.clip_len, 6))
-        detection_conf = data.get("detection_conf", torch.ones(self.clip_len))
+        motion = data["motion"]
+        detection_conf = data["detection_conf"]
+        if data.get("score_units") != "grs_points":
+            raise ValueError("Clip requires score_units=grs_points; regenerate legacy normalised clips")
         label_cls = data["label_cls"]
         label_reg = data["label_reg"]
         centre = data.get("centre", None)
 
-        if self.transform and self.split == "train":
-            appearance = self._augment(appearance)
+        if self.split == "train":
+            appearance = self.transform(appearance) if self.transform else self._augment(appearance)
 
         return {
             "appearance": appearance.float(),
@@ -81,13 +82,28 @@ class ArthroscopyDataset(Dataset):
             "label_cls": torch.tensor(label_cls, dtype=torch.long),
             "label_reg": label_reg.float(),
             "clip_id": sample["clip_id"],
-            "centre": centre
+            "centre": centre,
+            "video_id": data["video_id"]
         }
 
     def _augment(self, x):
-        """Basic data augmentation: random horizontal flip."""
-        if torch.rand(1) > 0.5:
-            x = torch.flip(x, dims=[-1])
+        """Use one spatial crop, flip and colour transform for the full clip."""
+        import torch.nn.functional as F
+        cfg = self.cfg["training"].get("augmentation", {})
+        if cfg.get("random_crop", False):
+            h, w = x.shape[-2:]
+            scale = float(torch.empty(1).uniform_(0.8, 1.0))
+            ch, cw = max(1, int(h*scale)), max(1, int(w*scale))
+            top = int(torch.randint(h-ch+1, (1,)))
+            left = int(torch.randint(w-cw+1, (1,)))
+            x = F.interpolate(x[:, :, top:top+ch, left:left+cw].permute(1,0,2,3),
+                              size=(h,w), mode="bilinear", align_corners=False).permute(1,0,2,3)
+        if cfg.get("horizontal_flip", False) and torch.rand(1) > 0.5:
+            x = x.flip(-1)
+        strength = float(cfg.get("color_jitter", 0))
+        if strength:
+            gain = torch.empty(3,1,1,1).uniform_(1-strength, 1+strength)
+            x = x*gain + float(torch.empty(1).uniform_(-strength, strength))
         return x
 
 
@@ -106,5 +122,7 @@ def collate_fn(batch):
         "detection_conf": detection_conf,
         "label_cls": label_cls,
         "label_reg": label_reg,
-        "clip_ids": clip_ids
+        "clip_ids": clip_ids,
+        "video_ids": [b["video_id"] for b in batch],
+        "centres": [b["centre"] for b in batch]
     }

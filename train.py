@@ -1,9 +1,4 @@
-"""
-Training script.
-Corresponds to paper Methods: "Training was implemented in MMAction2... AdamW at a learning rate of 1e-4, 
-batch size 4, cosine-annealing schedule, and data augmentation"
-Note: This implementation uses standard PyTorch (no hard dependency on MMAction2 specific APIs).
-"""
+"""Train the dual-stream model with procedure-level validation selection."""
 import os
 import yaml
 import torch
@@ -20,6 +15,8 @@ from utils import SkillMetrics
 
 
 def set_seed(seed):
+    import random
+    random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
     np.random.seed(seed)
@@ -80,40 +77,8 @@ def train_epoch(model, dataloader, optimizer, device, epoch):
 
 @torch.no_grad()
 def validate(model, dataloader, device):
-    model.eval()
-    all_preds_cls = []
-    all_labels_cls = []
-    all_preds_reg = []
-    all_labels_reg = []
-    all_probs = []
-
-    for batch in tqdm(dataloader, desc="[Validate]"):
-        appearance = batch["appearance"].to(device)
-        motion = batch["motion"].to(device)
-        labels_cls = batch["label_cls"]
-        labels_reg = batch["label_reg"]
-
-        outputs = model(appearance, motion, batch.get("detection_conf", None).to(device) if batch.get("detection_conf") is not None else None)
-
-        probs = torch.softmax(outputs["cls_logits"], dim=-1)
-        preds_cls = torch.argmax(probs, dim=-1).cpu().numpy()
-        preds_total = outputs["total_score"].squeeze(-1).cpu().numpy()
-
-        all_preds_cls.extend(preds_cls)
-        all_labels_cls.extend(labels_cls.numpy())
-        all_preds_reg.extend(preds_total)
-        all_labels_reg.extend(labels_reg[:, 6].numpy())
-        all_probs.extend(probs.cpu().numpy())
-
-    metrics = SkillMetrics.compute_all(
-        np.array(all_labels_cls),
-        np.array(all_preds_cls),
-        np.array(all_labels_reg),
-        np.array(all_preds_reg),
-        np.array(all_probs)
-    )
-
-    return metrics
+    from utils.inference import predict_procedures
+    return predict_procedures(model, dataloader, device)["metrics"]
 
 
 def main(config_path, data_dir, output_dir):
@@ -160,7 +125,7 @@ def main(config_path, data_dir, output_dir):
         config["training"]["warmup_epochs"]
     )
 
-    best_acc = 0.0
+    best_acc = -1.0
     for epoch in range(1, config["training"]["num_epochs"] + 1):
         train_metrics = train_epoch(model, train_loader, optimizer, device, epoch)
         val_metrics = validate(model, val_loader, device)

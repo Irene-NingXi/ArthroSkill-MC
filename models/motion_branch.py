@@ -48,7 +48,7 @@ class KinematicFeatureExtractor:
         features.append(avg_vel)
 
         # 3. Motion smoothness (jerk)
-        jerk_smoothness = 0.0
+        jerk_magnitudes = []
         for inst_id, traj in trajectories.items():
             if len(traj) >= 4:
                 centers = [self._box_center(box) for box in traj]
@@ -62,8 +62,8 @@ class KinematicFeatureExtractor:
                 for j in range(1, len(accs)):
                     jerks.append(np.linalg.norm(accs[j] - accs[j-1]))
                 if jerks:
-                    jerk_smoothness += np.mean(jerks)
-        smoothness = 1.0 / (jerk_smoothness + self.epsilon)
+                    jerk_magnitudes.extend(jerks)
+        smoothness = 1.0 / (np.mean(jerk_magnitudes) + self.epsilon) if jerk_magnitudes else 0.0
         features.append(smoothness)
 
         # 4. Pause ratio
@@ -153,13 +153,15 @@ class MotionEncoder(nn.Module):
             nn.Dropout(dropout)
         )
 
-    def forward(self, x):
+    def forward(self, x, return_sequence=False):
         x = x.permute(0, 2, 1)
         x = self.cnn(x)
         x = x.permute(0, 2, 1)
         lstm_out, (h_n, c_n) = self.lstm(x)
-        h_forward = h_n[0]
-        h_backward = h_n[1]
+        if return_sequence:
+            return self.proj(lstm_out)
+        h_forward = h_n[-2]
+        h_backward = h_n[-1]
         h = torch.cat([h_forward, h_backward], dim=-1)
         out = self.proj(h)
         return out
@@ -176,11 +178,11 @@ class MotionBranch(nn.Module):
         self.conf_threshold = conf_threshold
         self.encoder = MotionEncoder(input_dim=input_dim, output_dim=output_dim, **encoder_kwargs)
 
-    def forward(self, motion_features, detection_conf=None):
+    def forward(self, motion_features, detection_conf=None, return_sequence=False):
         if detection_conf is not None:
             occlusion_mask = (detection_conf >= self.conf_threshold).float()
         else:
             occlusion_mask = torch.ones(motion_features.shape[0], motion_features.shape[1],
                                         device=motion_features.device)
-        motion_vec = self.encoder(motion_features)
+        motion_vec = self.encoder(motion_features, return_sequence=return_sequence)
         return motion_vec, occlusion_mask

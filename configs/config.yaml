@@ -1,5 +1,4 @@
-# ArthroSkill-MC 配置文件
-# 对应论文: Multi-centre, cross-joint interpretable skill assessment in arthroscopic surgery videos
+# ArthroSkill-MC configuration
 
 data:
   video_dir: "./videos"
@@ -20,6 +19,7 @@ model:
     backbone: "swin3d_t"
     output_dim: 768
     pretrained: true
+    checkpoint: null  # Set to the HeiChole-adapted backbone state dictionary.
   motion:
     detector: "yolov8n"
     conf_threshold: 0.5
@@ -50,10 +50,12 @@ training:
   scheduler: "cosine"
   warmup_epochs: 5
   lambda_reg: 1.0
-  label_smoothing: 0.1
+  label_smoothing: 0.0
   device: "auto"
   num_workers: 4
-  seed: 3407  # headline seed; replication runs used 42 and 2024
+  seed: 3407
+  repeat_seeds: [3407, 3433, 2025]
+  split_seed: 20241012
   augmentation:
     random_crop: true
     horizontal_flip: true

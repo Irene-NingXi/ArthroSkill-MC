@@ -21,7 +21,7 @@ class SkillMetrics:
     @staticmethod
     def pearson_r(y_true, y_pred):
         """Pearson correlation coefficient."""
-        if len(y_true) < 2:
+        if len(y_true) < 2 or np.std(y_true)==0 or np.std(y_pred)==0:
             return 0.0, 1.0
         r, p = pearsonr(y_true, y_pred)
         return r, p
@@ -37,59 +37,22 @@ class SkillMetrics:
         return np.sqrt(mean_squared_error(y_true, y_pred))
 
     @staticmethod
-    def icc_a1(data, confidence=0.95):
-        """
-        ICC(A,1) - Two-way random-effects, absolute agreement, single rater.
-        Following McGraw & Wong (1996) and Koo & Li (2016).
-
-        Args:
-            data: [n_subjects, n_raters] array of ratings.
-        Returns:
-            icc: ICC(A,1) value
-            ci_lower, ci_upper: confidence interval bounds
-        """
-        data = np.array(data, dtype=float)
-        n, k = data.shape
-
-        if n < 2 or k < 2:
-            return 0.0, 0.0, 0.0
-
-        grand_mean = np.mean(data)
-        row_means = np.mean(data, axis=1)
-        col_means = np.mean(data, axis=0)
-
-        # Mean Squares
-        SSR = k * np.sum((row_means - grand_mean) ** 2)
-        SSC = n * np.sum((col_means - grand_mean) ** 2)
-        SSE = np.sum((data - row_means[:, None] - col_means[None, :] + grand_mean) ** 2)
-
-        dfR = n - 1
-        dfC = k - 1
-        dfE = (n - 1) * (k - 1)
-
-        MSR = SSR / dfR
-        MSC = SSC / dfC
-        MSE = SSE / dfE
-
-        # ICC(A,1) absolute agreement
-        num = MSR - MSE
-        den = MSR + (k - 1) * MSE + k * (MSC - MSE) / n
-
-        if den <= 0:
-            return 0.0, 0.0, 0.0
-
-        icc = num / den
-
-        # Confidence interval via Fisher z-transformation approximation
-        # Simplified CI based on variance components
-        var_icc = (2 * (1 - icc) ** 2) / (n - 1)  # approximate
-        se = np.sqrt(var_icc)
-        z = stats.norm.ppf(1 - (1 - confidence) / 2)
-        z_icc = 0.5 * np.log((1 + icc) / (1 - icc)) if abs(icc) < 1 else 0
-        ci_lower = np.tanh(z_icc - z * se)
-        ci_upper = np.tanh(z_icc + z * se)
-
-        return float(icc), float(ci_lower), float(ci_upper)
+    def icc_a1(data, confidence=0.95, bootstrap=20000, seed=20261020):
+        """Absolute-agreement single-rater ICC with paired-procedure bootstrap."""
+        data=np.asarray(data,dtype=float)
+        if data.ndim!=2 or min(data.shape)<2 or not np.isfinite(data).all():
+            raise ValueError("Expected finite procedure-by-rater matrix")
+        def estimate(x):
+            n,k=x.shape;mean=x.mean();rows=x.mean(1);cols=x.mean(0)
+            msr=k*((rows-mean)**2).sum()/(n-1)
+            msc=n*((cols-mean)**2).sum()/(k-1)
+            mse=((x-rows[:,None]-cols[None,:]+mean)**2).sum()/((n-1)*(k-1))
+            denominator=msr+(k-1)*mse+k*(msc-mse)/n
+            return (msr-mse)/denominator if denominator else np.nan
+        rng=np.random.default_rng(seed)
+        samples=[estimate(data[ix]) for ix in rng.integers(len(data),size=(bootstrap,len(data)))]
+        ci=np.nanquantile(samples,[(1-confidence)/2,(1+confidence)/2])
+        return float(estimate(data)),float(ci[0]),float(ci[1])
 
     @staticmethod
     def confusion_matrix(y_true, y_pred, labels=None):
@@ -100,7 +63,7 @@ class SkillMetrics:
     def adjacent_grade_error_rate(y_true, y_pred):
         """
         Adjacent-grade vs cross-grade error analysis.
-        Paper key metric: errors should only occur between adjacent grades.
+        Report ordinal error distances without assuming their observed pattern.
         """
         errors = np.abs(y_true - y_pred)
         adjacent = np.sum(errors == 1)
@@ -118,7 +81,7 @@ class SkillMetrics:
     def calibration_error(y_true, y_prob, n_bins=5):
         """
         Expected Calibration Error (ECE).
-        Paper Fig. 4c: reliability diagram.
+        Confidence-bin expected calibration error.
         """
         bin_boundaries = np.linspace(0, 1, n_bins + 1)
         bin_lowers = bin_boundaries[:-1]

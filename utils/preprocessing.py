@@ -43,6 +43,9 @@ class VideoPreprocessor:
             return 0
 
         orig_fps = cap.get(cv2.CAP_PROP_FPS)
+        if abs(orig_fps-self.fps)>0.1:
+            cap.release()
+            raise ValueError(f"Expected {self.fps} fps, received {orig_fps}; resample the video explicitly")
         total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
         frames = []
@@ -89,6 +92,8 @@ class VideoPreprocessor:
             clip_name = f"{video_path.stem}_clip{num_clips:04d}.pt"
             torch.save({
                 "frames": clip_tensor,
+                "source_frame_indices": valid_indices[start:start + self.clip_len],
+                "video_id": video_path.stem,
                 "start_frame": valid_indices[start],
                 "end_frame": valid_indices[min(start + self.clip_len - 1, len(valid_indices)-1)]
             }, output_dir / clip_name)
