@@ -35,7 +35,8 @@ class ArthroSkillMC(nn.Module):
         # Appearance branch: Video Swin -> 768-D
         self.appearance_branch = AppearanceBranch(
             output_dim=cfg_model["appearance"]["output_dim"],
-            pretrained=cfg_model["appearance"].get("pretrained", True)
+            pretrained=cfg_model["appearance"].get("pretrained", True),
+            checkpoint=cfg_model["appearance"].get("checkpoint")
         )
 
         # Motion branch: YOLO+DeepSORT features -> 1D-CNN+BiLSTM -> 256-D
@@ -80,13 +81,7 @@ class ArthroSkillMC(nn.Module):
         app_feat = self.appearance_branch(appearance)  # [B, 768]
 
         # Motion branch
-        mot_feat, occ_mask = self.motion_branch(motion, detection_conf)  # [B, 256], [B, T]
-
-        # Re-extract motion sequence features (post-CNN, pre-LSTM) for fusion
-        mot_seq = motion.permute(0, 2, 1)  # [B, 6, T]
-        for layer in self.motion_branch.encoder.cnn:
-            mot_seq = layer(mot_seq)
-        mot_seq = mot_seq.permute(0, 2, 1)  # [B, T, 256]
+        mot_seq, occ_mask = self.motion_branch(motion, detection_conf, return_sequence=True)
 
         # Fusion
         fused_feat, attn_weights = self.fusion(app_feat, mot_seq, occ_mask)
@@ -112,7 +107,7 @@ class ArthroSkillMC(nn.Module):
         dim_targets = labels_reg[:, :6]
         total_target = labels_reg[:, 6:7]
 
-        dim_loss = nn.functional.smooth_l1_loss(outputs["dim_scores"], dim_targets)
+        dim_loss = nn.functional.smooth_l1_loss(outputs["dim_scores"], dim_targets, reduction="none").sum(dim=1).mean()
         total_loss = nn.functional.smooth_l1_loss(outputs["total_score"], total_target)
         reg_loss = dim_loss + total_loss
 

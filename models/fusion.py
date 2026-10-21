@@ -71,15 +71,18 @@ class OcclusionAwareFusion(nn.Module):
         if occlusion_mask is not None:
             key_padding_mask = (occlusion_mask == 0)  # [B, T], bool
 
-        # Cross-modal attention
-        attn_out, attn_weights = self.cross_attn(
-            query=q,
-            key=k,
-            value=v,
-            key_padding_mask=key_padding_mask,
-            need_weights=True,
-            average_attn_weights=True
-        )
+        # Exclude all-masked rows before softmax, including mixed batches.
+        usable = (torch.ones(B, dtype=torch.bool, device=q.device)
+                  if key_padding_mask is None else ~key_padding_mask.all(dim=1))
+        attn_out = torch.zeros_like(q)
+        attn_weights = q.new_zeros(B, 1, motion_feat.shape[1])
+        if usable.any():
+            valid_out, valid_weights = self.cross_attn(
+                query=q[usable], key=k[usable], value=v[usable],
+                key_padding_mask=None if key_padding_mask is None else key_padding_mask[usable],
+                need_weights=True, average_attn_weights=True)
+            attn_out[usable] = valid_out
+            attn_weights[usable] = valid_weights
 
         attn_out = attn_out.squeeze(1)  # [B, 256]
 

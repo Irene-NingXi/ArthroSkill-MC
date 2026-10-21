@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+processed*/
+videos/
+outputs/
+*.pt
+*.pth
+*.xlsx
+metadata.csv

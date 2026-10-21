@@ -67,8 +67,8 @@ class RegressionHead(nn.Module):
         Args:
             x: [B, 256] fused features
         Returns:
-            dim_scores: [B, 6] 6 GRS dimension predictions (0-1 normalised)
-            total_score: [B, 1] GRS total prediction (0-1 normalised)
+            dim_scores: [B, 6] 6 GRS dimension predictions (native GRS points)
+            total_score: [B, 1] GRS total prediction (native GRS points)
         """
         feat = self.shared(x)
 
@@ -79,9 +79,7 @@ class RegressionHead(nn.Module):
 
         total_score = self.total_regressor(feat)
 
-        # Sigmoid to 0-1 (assuming labels are normalised)
-        dim_scores = torch.sigmoid(dim_scores)
-        total_score = torch.sigmoid(total_score)
+        # Unbounded score predictions; labels use native GRS points.
 
         return dim_scores, total_score
 

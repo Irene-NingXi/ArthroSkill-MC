@@ -1,4 +1,4 @@
-"""SAIS-style appearance-only baseline used in the paper comparison.
+"""Legacy RGB-only temporal proxy; not the manuscript RGB/optical-flow SAIS comparator.
 
 The original SAIS implementation is not redistributed here.  This module keeps
 its reproducible interface while using the same 16-frame clips and optimisation
@@ -36,7 +36,7 @@ class SAISBaseline(nn.Module):
         self.cls = nn.Sequential(nn.LayerNorm(dim), nn.Linear(dim, hidden), nn.GELU(),
                                  nn.Dropout(dropout), nn.Linear(hidden, data_cfg["num_classes"]))
         self.reg = nn.Sequential(nn.LayerNorm(dim), nn.Linear(dim, hidden), nn.GELU(),
-                                 nn.Dropout(float(reg_cfg.get("dropout", dropout))), nn.Linear(hidden, 1), nn.Sigmoid())
+                                 nn.Dropout(float(reg_cfg.get("dropout", dropout))), nn.Linear(hidden, 1))
         self.lambda_reg = float(config["training"].get("lambda_reg", 1.0))
 
     def forward(self, appearance, motion=None, detection_conf=None):
