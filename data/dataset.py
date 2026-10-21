@@ -23,13 +23,16 @@ class ArthroscopyDataset(Dataset):
         'centre': str site identifier ("A", "B", or "C") when present
     }
     """
-    def __init__(self, data_dir, split="train", config_path="configs/config.yaml", transform=None):
+    def __init__(self, data_dir, split="train", config_path="configs/config.yaml", transform=None, config=None, augment=None):
         self.data_dir = Path(data_dir)
         self.split = split
         self.transform = transform
+        self.augment = split == 'train' if augment is None else augment
 
-        with open(config_path, "r", encoding="utf-8") as f:
-            self.cfg = yaml.safe_load(f)
+        if config is None:
+            with open(config_path, "r", encoding="utf-8") as f:
+                config = yaml.safe_load(f)
+        self.cfg = config
 
         self.clip_len = self.cfg["data"]["clip_len"]
         self.img_size = self.cfg["data"]["img_size"]
@@ -72,7 +75,7 @@ class ArthroscopyDataset(Dataset):
         label_reg = data["label_reg"]
         centre = data.get("centre", None)
 
-        if self.split == "train":
+        if self.augment:
             appearance = self.transform(appearance) if self.transform else self._augment(appearance)
 
         return {

@@ -13,6 +13,7 @@ import yaml
 from torch.utils.data import DataLoader
 from data import ArthroscopyDataset, collate_fn
 from models import ArthroSkillMC
+from data.protocol import require_adapted_backbone, validate_fixed_datasets
 from train import set_seed, train_epoch, validate, build_optimizer, build_scheduler
 from utils.inference import predict_procedures
 
@@ -33,11 +34,13 @@ def metadata(dataset):
 
 def main(a):
     cfg = yaml.safe_load(Path(a.config).read_text()); tr = cfg['training']
+    require_adapted_backbone(cfg)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     results=[]; seen=set()
     for held in ['A','B','C']:
         root=Path(a.data)/held
         datasets={s:ArthroscopyDataset(root,s,a.config) for s in ['train','val','test']}
+        validate_fixed_datasets(datasets, fixed_partition=False)
         # Held-out inference must never apply training augmentations.
         info={s:metadata(d) for s,d in datasets.items()}
         train_ids, val_ids, test_ids = (set(info[s]) for s in ['train','val','test'])

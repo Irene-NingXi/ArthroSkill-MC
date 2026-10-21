@@ -8,6 +8,25 @@ from torch.utils.data import DataLoader
 from models import ArthroSkillMC
 from data import ArthroscopyDataset, collate_fn
 from utils.inference import predict_procedures
+from data.protocol import validate_fixed_datasets
+
+
+def model_from_checkpoint(checkpoint, fallback_config):
+    """Recreate the fitted architecture without downloading initial weights."""
+    import copy
+    config = copy.deepcopy(checkpoint.get('config', fallback_config))
+    config['model']['appearance'].update(pretrained=False, checkpoint=None)
+    if 'variant' in checkpoint:
+        from scripts.run_ablation import AblationModel
+        model = AblationModel(config, checkpoint['variant'])
+    elif checkpoint.get('model_type') in ['resnet3d', 'swin']:
+        from models.baselines import ResNet3DBaseline, VideoSwinOnly
+        model = (ResNet3DBaseline(config, pretrained=False) if checkpoint['model_type'] == 'resnet3d'
+                 else VideoSwinOnly(config))
+    else:
+        model = ArthroSkillMC(config)
+    model.load_state_dict(checkpoint['model_state_dict'], strict=True)
+    return model, config
 
 
 def evaluate(model, dataloader, device, config=None):
@@ -16,16 +35,19 @@ def evaluate(model, dataloader, device, config=None):
 
 def main(config_path, data_dir, checkpoint_path, output_dir, split='test'):
     config = yaml.safe_load(Path(config_path).read_text())
-    config['model']['appearance'].update(pretrained=False, checkpoint=None)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    dataset = ArthroscopyDataset(data_dir, split=split, config_path=config_path)
+    # Selected local study checkpoints may contain legacy NumPy metric scalars.
+    checkpoint = torch.load(checkpoint_path, map_location='cpu', weights_only=False)
+    model, config = model_from_checkpoint(checkpoint, config)
+    model.to(device)
+    dataset = ArthroscopyDataset(data_dir, split=split, config=config, augment=False)
+    validate_fixed_datasets({split: dataset})
     loader = DataLoader(dataset, batch_size=config['training']['batch_size'],
                         shuffle=False, collate_fn=collate_fn)
-    model = ArthroSkillMC(config).to(device)
-    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
-    model.load_state_dict(checkpoint['model_state_dict'], strict=True)
     result = evaluate(model, loader, device)
     result['split'] = split
+    result['checkpoint_epoch'] = checkpoint.get('epoch')
+    result['model_type'] = checkpoint.get('variant', checkpoint.get('model_type', 'full'))
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     (out/'evaluation_results.json').write_text(json.dumps(result, indent=2))

@@ -36,7 +36,7 @@ python scripts/extract_motion.py --metadata metadata.csv --weights /path/to/trai
 
 Metadata export preserves the supplied procedure partition and averages the two raters' six dimension scores. Motion extraction checks 25 fps input, screens brightness below 30 and Laplacian variance below 100, performs per-video intensity normalisation and writes non-overlapping 16-frame clips with original frame indices. Train the arthroscopy detector on the eligible training procedures before extraction; generic object-detection weights do not establish instrument-detection validity.
 
-Set `model.appearance.checkpoint` in `configs/config.yaml` to a HeiChole-adapted backbone state dictionary. A null checkpoint uses Kinetics-400 initialisation and omits the surgical adaptation stage. Checkpoints from the earlier 2D backbone are incompatible with the 3D backbone and require retraining.
+Set `model.appearance.checkpoint` in `configs/config.yaml` to a HeiChole-adapted backbone state dictionary. Study training rejects a null or missing checkpoint, preventing silent omission of the surgical adaptation stage. Direct backbone construction can still use Kinetics-400 weights for separate experiments. Checkpoints from the earlier 2D backbone are incompatible with the 3D backbone and require retraining.
 
 ## Training and evaluation
 
@@ -45,6 +45,7 @@ python train.py --config configs/config.yaml --data processed --output outputs/m
 python evaluate.py --config configs/config.yaml --data processed --checkpoint outputs/main/best_model.pth --split test --output outputs/test
 python scripts/run_ablation.py --config configs/config.yaml --data processed --variant unmasked --output outputs/unmasked
 python scripts/train_video_baselines.py --config configs/config.yaml --data processed --model resnet3d --pretrained --output outputs/resnet3d
+python evaluate.py --data processed --checkpoint outputs/resnet3d/resnet3d_best.pth --split test --output outputs/resnet3d/test
 python scripts/train_loso.py --config configs/config.yaml --data processed_loso --output outputs/loso
 ```
 
@@ -69,7 +70,7 @@ The [SAIS guide](docs/sais.md) specifies optional extraction dependencies, exter
 python -m unittest discover -s tests -v
 ```
 
-Tests cover masked attention, all-invalid fallback, gradients, probability aggregation, score units and the spatiotemporal backbone. They do not establish the reported trained-model performance.
+Tests cover exact procedure assignments, checkpoint restoration, deterministic evaluation, masked attention, all-invalid fallback, gradients, probability aggregation, score units and the spatiotemporal backbone. They do not establish the reported trained-model performance.
 
 ## Data and code availability
 

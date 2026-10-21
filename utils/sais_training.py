@@ -61,9 +61,14 @@ def evaluate_sais(model, loader, device):
     rows = []
     for batch in loader:
         probs = forward_batch(model, batch, device)['cls_logits'].softmax(-1).cpu().tolist()
-        rows.extend(dict(video_id=video_id, true_cls=int(label), probabilities=prob)
-                    for video_id, label, prob in zip(batch['video_ids'], batch['label_cls'], probs))
-    return aggregate_sais(rows)
+        rows.extend(dict(video_id=video_id, clip_id=batch['clip_ids'][i],
+                         source_frame_indices=batch['source_frame_indices'][i],
+                         flow_frame_pairs=batch['flow_frame_pairs'][i],
+                         true_cls=int(batch['label_cls'][i]), probabilities=probs[i])
+                    for i, video_id in enumerate(batch['video_ids']))
+    result = aggregate_sais(rows)
+    result['per_clip'] = rows
+    return result
 
 
 def device_from_config(config):
@@ -82,6 +87,9 @@ def train_sais(config, data_dir, output_dir, upstream_root=None, seed=None, epoc
     config['training']['num_epochs'] = epochs
     if epochs < 1:
         raise ValueError('At least one training epoch is required')
+    out = Path(output_dir)
+    if out.exists() and any(out.iterdir()):
+        raise FileExistsError('Use an empty SAIS run directory to preserve selected checkpoints and seed provenance')
     random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
@@ -103,7 +111,7 @@ def train_sais(config, data_dir, output_dir, upstream_root=None, seed=None, epoc
     model = SAISBaseline(config, upstream_root=upstream_root).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=float(config['training']['learning_rate']),
                                   weight_decay=float(config['training']['weight_decay']))
-    out = Path(output_dir); out.mkdir(parents=True, exist_ok=True)
+    out.mkdir(parents=True, exist_ok=True)
     provenance = dict(sais_commit=lock['commit'], source_sha256=lock['source_sha256'],
                       feature_manifest_sha256=hashlib.sha256((Path(data_dir)/'manifest.json').read_bytes()).hexdigest(),
                       feature_provenance=manifest['provenance'], optimizer='AdamW',

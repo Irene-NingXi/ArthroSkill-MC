@@ -34,7 +34,7 @@ def load_manifest(root, require_study_counts=True):
         if label not in [0, 1, 2] or (video_id in labels and labels[video_id] != label):
             raise ValueError('Invalid or inconsistent procedure grade')
         indices = row['source_frame_indices']
-        if len(indices) != 16 or any(i < 0 for i in indices) or any(b <= a for a, b in zip(indices, indices[1:])):
+        if len(indices) != 16 or any(type(i) is not int or i < 0 for i in indices) or any(b <= a for a, b in zip(indices, indices[1:])):
             raise ValueError('Expected 16 strictly ordered source-frame indices')
         used = source_indices.setdefault(video_id, set())
         if used.intersection(indices):
@@ -43,6 +43,9 @@ def load_manifest(root, require_study_counts=True):
     counts = {s: sum(v == s for v in ownership.values()) for s in ['train', 'val', 'test']}
     if require_study_counts and counts != {'train': 117, 'val': 39, 'test': 40}:
         raise ValueError(f'Expected the fixed 117/39/40 procedure split, received {counts}')
+    if require_study_counts:
+        from .protocol import validate_assignments
+        validate_assignments(records)
     return manifest
 
 
@@ -87,7 +90,8 @@ class SAISFeatureDataset(Dataset):
         return dict(rgb_features=row['rgb_features'].float(),
                     flow_features=row['flow_features'].float(),
                     label_cls=int(row['label_cls']), video_id=row['video_id'],
-                    clip_id=Path(record['path']).stem)
+                    clip_id=Path(record['path']).stem,
+                    source_frame_indices=row['source_frame_indices'], flow_frame_pairs=pairs)
 
 
 def collate_sais(batch):
@@ -96,4 +100,6 @@ def collate_sais(batch):
                 rgb_lengths=torch.tensor([len(r['rgb_features']) for r in batch]),
                 flow_lengths=torch.tensor([len(r['flow_features']) for r in batch]),
                 label_cls=torch.tensor([r['label_cls'] for r in batch], dtype=torch.long),
-                video_ids=[r['video_id'] for r in batch], clip_ids=[r['clip_id'] for r in batch])
+                video_ids=[r['video_id'] for r in batch], clip_ids=[r['clip_id'] for r in batch],
+                source_frame_indices=[r['source_frame_indices'] for r in batch],
+                flow_frame_pairs=[r['flow_frame_pairs'] for r in batch])

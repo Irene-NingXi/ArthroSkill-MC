@@ -196,8 +196,17 @@ class OfficialSAISIntegrationTests(unittest.TestCase):
             self.assertEqual(report['best_epoch'], int(np.argmax(accuracies))+1)
             result = evaluate_checkpoint(root/'run'/'sais_best_model.pth', data, root/'test', upstream_root=self.upstream, require_study_counts=False)
             self.assertEqual(result['split'], 'test'); self.assertEqual(result['metrics']['n'], 1); self.assertNotIn('mae', result['metrics'])
+            self.assertEqual(len(result['per_clip']), 2)
+            self.assertEqual(result['per_clip'][0]['source_frame_indices'], list(range(16)))
+            self.assertEqual(result['per_clip'][0]['flow_frame_pairs'], [[0, 15]])
+            self.assertEqual(len(result['per_clip'][0]['probabilities']), 3)
             checkpoint = torch.load(root/'run'/'sais_best_model.pth', weights_only=True)
             self.assertIn('prototypes.0', checkpoint['model_state_dict']); self.assertEqual(checkpoint['provenance']['scheduler'], 'constant')
+            with self.assertRaisesRegex(FileExistsError, 'empty SAIS run directory'):
+                train_sais(config(), data, root/'run', upstream_root=self.upstream, epochs=1, require_study_counts=False)
+            with (data/'manifest.json').open('a') as stream: stream.write(' ')
+            with self.assertRaisesRegex(ValueError, 'differs from the selected training run'):
+                evaluate_checkpoint(root/'run'/'sais_best_model.pth', data, root/'test', upstream_root=self.upstream, require_study_counts=False)
 
 
 if __name__ == '__main__': unittest.main()

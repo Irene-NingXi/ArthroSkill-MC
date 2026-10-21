@@ -15,13 +15,22 @@ import numpy as np, torch, torch.nn as nn, yaml
 from torch.utils.data import DataLoader
 from data import ArthroscopyDataset, collate_fn
 from models import ArthroSkillMC
+from data.protocol import validate_fixed_datasets, require_adapted_backbone
 
 class AblationModel(nn.Module):
     def __init__(self, config, variant):
-        super().__init__(); self.variant=variant; self.base=ArthroSkillMC(config); dim=config['model']['motion']['output_dim']; app=config['model']['appearance']['output_dim']
+        super().__init__(); self.variant=variant
+        if variant not in ['appearance_only', 'motion_only', 'naive_concat', 'unmasked', 'full']:
+            raise ValueError('Unknown ablation variant')
+        if variant == 'motion_only':
+            import copy
+            config = copy.deepcopy(config)
+            config['model']['appearance'].update(pretrained=False, checkpoint=None)
+        self.base=ArthroSkillMC(config); dim=config['model']['motion']['output_dim']; app=config['model']['appearance']['output_dim']
         self.concat=nn.Sequential(nn.Linear(app+dim,dim),nn.LayerNorm(dim),nn.ReLU()) if variant=='naive_concat' else None
     def forward(self, appearance, motion, detection_conf=None):
-        b=self.base; af=b.appearance_branch(appearance)
+        b=self.base
+        af=b.appearance_branch(appearance) if self.variant != 'motion_only' else None
         seq,mask=b.motion_branch(motion,detection_conf,return_sequence=True)
         mf=seq.mean(dim=1)
         if self.variant=='appearance_only': fused=b.fusion.appearance_residual(af); attn=None
@@ -36,7 +45,11 @@ class AblationModel(nn.Module):
 
 def main(a):
     c=yaml.safe_load(Path(a.config).read_text()); random.seed(a.seed); np.random.seed(a.seed); torch.manual_seed(a.seed); dev=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    c['training']['seed'] = a.seed
+    c['training']['num_epochs'] = a.epochs
+    if a.variant != 'motion_only': require_adapted_backbone(c)
     tr=DataLoader(ArthroscopyDataset(a.data,'train',a.config),batch_size=c['training']['batch_size'],shuffle=True,collate_fn=collate_fn,num_workers=0); va=DataLoader(ArthroscopyDataset(a.data,'val',a.config),batch_size=c['training']['batch_size'],shuffle=False,collate_fn=collate_fn,num_workers=0)
+    validate_fixed_datasets({'train': tr.dataset, 'val': va.dataset})
     m=AblationModel(c,a.variant).to(dev); opt=torch.optim.AdamW(m.parameters(),lr=c['training']['learning_rate'],weight_decay=c['training']['weight_decay']); best=-1; rows=[]; out=Path(a.output); out.mkdir(parents=True,exist_ok=True)
     from train import build_scheduler
     scheduler=build_scheduler(opt,a.epochs,c["training"]["warmup_epochs"])
@@ -50,7 +63,7 @@ def main(a):
         scheduler.step()
         row={'epoch':ep,'accuracy':acc,'grs_mae':mae}; rows.append(row)
         print(f'{a.variant} epoch {ep}: accuracy={acc:.4f} mae={mae:.4f}')
-        if acc>best: best=acc; torch.save({'model_state_dict':m.state_dict(),'variant':a.variant,'config':c,'metrics':row},out/f'{a.variant}_best.pth')
+        if acc>best: best=acc; torch.save({'model_state_dict':m.state_dict(),'variant':a.variant,'config':c,'epoch':ep,'metrics':row},out/f'{a.variant}_best.pth')
     (out/f'{a.variant}_history.json').write_text(json.dumps(rows,indent=2),encoding='utf-8')
 if __name__=='__main__':
  p=argparse.ArgumentParser(); p.add_argument('--config',required=True); p.add_argument('--data',required=True); p.add_argument('--output',required=True); p.add_argument('--variant',choices=['appearance_only','motion_only','naive_concat','unmasked','full'],required=True); p.add_argument('--epochs',type=int,default=100); p.add_argument('--seed',type=int,default=3407); main(p.parse_args())
