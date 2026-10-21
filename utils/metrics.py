@@ -74,7 +74,7 @@ class SkillMetrics:
             "adjacent": int(adjacent),
             "cross_grade": int(cross_grade),
             "total_errors": int(total_errors),
-            "adjacent_ratio": adjacent / total_errors if total_errors > 0 else 0.0
+            "adjacent_ratio": float(adjacent / total_errors) if total_errors > 0 else 0.0
         }
 
     @staticmethod
@@ -115,15 +115,15 @@ class SkillMetrics:
             y_prob: [N, 3] softmax probabilities (optional, for calibration)
         """
         results = {
-            "accuracy": cls.accuracy(y_true_cls, y_pred_cls),
-            "pearson_r": cls.pearson_r(y_true_reg, y_pred_reg)[0],
-            "mae": cls.mae(y_true_reg, y_pred_reg),
-            "rmse": cls.rmse(y_true_reg, y_pred_reg),
+            "accuracy": float(cls.accuracy(y_true_cls, y_pred_cls)),
+            "pearson_r": float(cls.pearson_r(y_true_reg, y_pred_reg)[0]),
+            "mae": float(cls.mae(y_true_reg, y_pred_reg)),
+            "rmse": float(cls.rmse(y_true_reg, y_pred_reg)),
             "confusion_matrix": cls.confusion_matrix(y_true_cls, y_pred_cls, labels=[0,1,2]).tolist(),
             "error_structure": cls.adjacent_grade_error_rate(y_true_cls, y_pred_cls)
         }
 
         if y_prob is not None:
-            results["calibration_error"] = cls.calibration_error(y_true_cls, y_prob)
+            results["calibration_error"] = float(cls.calibration_error(y_true_cls, y_prob))
 
         return results

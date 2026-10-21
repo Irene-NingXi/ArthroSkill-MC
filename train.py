@@ -12,6 +12,7 @@ from pathlib import Path
 from models import ArthroSkillMC
 from data import ArthroscopyDataset, collate_fn
 from utils import SkillMetrics
+from data.protocol import validate_fixed_datasets, require_adapted_backbone
 
 
 def set_seed(seed):
@@ -86,7 +87,9 @@ def main(config_path, data_dir, output_dir):
         config = yaml.safe_load(f)
 
     set_seed(config["training"]["seed"])
-    device = torch.device("cuda" if torch.cuda.is_available() and config["training"]["device"] == "auto" else "cpu")
+    from utils.sais_training import device_from_config
+    device = device_from_config(config)
+    require_adapted_backbone(config)
     print(f"Device: {device}")
 
     output_dir = Path(output_dir)
@@ -94,6 +97,7 @@ def main(config_path, data_dir, output_dir):
 
     train_dataset = ArthroscopyDataset(data_dir, split="train", config_path=config_path)
     val_dataset = ArthroscopyDataset(data_dir, split="val", config_path=config_path)
+    validate_fixed_datasets({'train': train_dataset, 'val': val_dataset})
 
     train_loader = DataLoader(
         train_dataset,

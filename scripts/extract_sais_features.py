@@ -9,6 +9,7 @@ import json
 import torch
 import yaml
 from data.sais_dataset import FORMAT, load_manifest
+from data.protocol import validate_assignments
 from models.sais import LOCK_PATH
 from utils.sais_features import FrozenDINO, PTLFlowRAFT, encode_clip, sha256_file
 
@@ -34,6 +35,8 @@ def inventory(metadata_path, clips_root):
             by_video[video_id].append(dict(source_path=path, source_frame_indices=list(indices)))
     if any(not clips for clips in by_video.values()):
         raise ValueError('Every metadata procedure must have shared input clips')
+    validate_assignments([dict(video_id=r['video_id'], split=r['split'], label_cls=int(r['label_cls']))
+                          for r in metadata])
     return metadata, by_video
 
 
@@ -41,6 +44,8 @@ def generate_cache(config, metadata_path, clips_root, output, upstream_root, din
                    raft_weights, device='cpu', feature_batch_size=16):
     import cv2
     cfg = config['sais']; step = int(cfg['flow_step'])
+    if config['data']['clip_len'] != 16 or config['data']['img_size'] != [480, 640] or config['data']['fps'] != 25:
+        raise ValueError('The matched SAIS protocol requires 16 frames, 640 by 480 pixels and 25 fps')
     metadata, clips = inventory(metadata_path, clips_root)
     out = Path(output)
     if out.exists():
