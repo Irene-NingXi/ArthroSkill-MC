@@ -1,0 +1,7 @@
+model,seed,validation_accuracy,test_accuracy,mae,rmse,pearson_r,run_role
+ArthroSkill-MC,3407,0.8718,0.875,1.537,1.765,0.96,main
+ArthroSkill-MC,3433,0.8462,0.85,1.612,1.845,0.948,repeat
+ArthroSkill-MC,2025,0.8974,0.925,1.489,1.702,0.968,repeat
+SAIS,3407,0.6923,0.625,,,,main
+SAIS,3433,0.641,0.6,,,,repeat
+SAIS,2025,0.7179,0.675,,,,repeat

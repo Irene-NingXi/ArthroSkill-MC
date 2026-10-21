@@ -1,4 +1,8 @@
-# Clip data contract
+# Data and source tables
+
+Public English study tables are in [source_data](source_data/README.md). They contain de-identified ratings, partitions and recorded predictions, with a data dictionary, file checksums and source-summary caveats.
+
+## Clip data contract
 
 Store trusted local `.pt` clips under `processed/{train,val,test}/clips/`.
 
@@ -16,7 +20,7 @@ Store trusted local `.pt` clips under `processed/{train,val,test}/clips/`.
 
 Missing motion or confidence raises an error instead of inventing valid observations. Legacy normalised labels must be regenerated. Keep every procedure's clips in a single partition. For LOSO, use independently prepared site-held-out folds as described in [the protocol](../docs/protocol.md).
 
-The workbook provides ratings, predictions and assignments; it contains no raw videos. `prepare_metadata.py` exports labels and authoritative assignments locally without publishing source records.
+The workbook provides ratings, predictions and assignments; it contains no raw videos. `prepare_metadata.py` can build local training metadata from the public source tables or an authorised original workbook. It does not publish local recording paths.
 
 ## SAIS feature cache
 

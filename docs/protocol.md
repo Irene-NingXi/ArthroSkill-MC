@@ -32,7 +32,7 @@ Visibility includes 1,527 annotated clips from 40 test procedures. The analysis 
 
 Severe-minus-good contrasts average the within-procedure gain differences over the 39 procedures with both tiers. Two sign-flip tests form a separate Holm family. Annotator-B sensitivity repeats the visibility analysis with unchanged membership and predictions. Random-stream consumption may change Monte Carlo p values slightly between equivalent implementations; resampling units and multiplicity families must remain fixed.
 
-Full-cohort summaries contain fitted cases and are descriptive. Three training seeds reuse one fixed test partition; aggregate repeats cannot support case-level paired multi-seed tests. Statistical reanalysis of released predictions does not establish independently reproduced training performance.
+Full-cohort summaries contain fitted cases and are descriptive. Three training seeds reuse one fixed test partition; aggregate repeats cannot support case-level paired multi-seed tests. Statistical reanalysis of released predictions does not establish independently reproduced training performance. Public English source tables and recorded-summary caveats are documented in [the data package](../data/source_data/README.md).
 
 ## Comparator boundaries
 

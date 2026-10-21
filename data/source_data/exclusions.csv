@@ -1,0 +1,5 @@
+video_id,acquisition_batch,reason,retry_outcome
+P009,batch01,Encoding corruption prevented frame decoding with ffmpeg.,Two retries failed; no inference prediction was produced.
+P019,batch01,"Duration was 6.8 seconds, below the 10-second temporal-input eligibility threshold.",Valid temporal features could not be extracted; no prediction was produced.
+P047,batch01,File corruption with missing footage from the first half of the procedure.,Loading failed; no prediction was produced.
+P138,batch03,Frame rate did not meet the input specification.,Resampling did not resolve the mismatch; inference was abandoned.

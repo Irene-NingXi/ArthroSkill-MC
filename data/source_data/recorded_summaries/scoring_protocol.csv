@@ -1,0 +1,6 @@
+field,value
+rating_design,"Two arthroscopic surgeons at associate-chief level or above independently viewed each complete recording and rated six GRS dimensions from 1 to 5, blinded to each other's ratings."
+rater_background,Rater 1 had 15 years and rater 2 had 11 years of arthroscopy experience. The source note states that neither participated in model development or results analysis.
+consensus_rule,"Average the independent totals, retaining 0.5-point granularity. Differences of at least 6 total-score points trigger joint review and a decision to retain or revise the ratings."
+reliability,"Two-way random-effects, single-rater absolute-agreement ICC(A,1) = 0.823; the source note refers to the manuscript for the confidence interval and labels 0.75-0.90 as good agreement."
+procedures_requiring_review,32 / 196 (16.3%)

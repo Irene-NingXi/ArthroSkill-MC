@@ -1,0 +1,6 @@
+fold,hospital,n,n_correct,accuracy_recorded,pearson_r,mae,notes
+Fold 1,Centre A,90,56,62.2%,0.657,4.38,
+Fold 2,Centre B,56,37,66.1%,0.617,4.59,
+Fold 3,Centre C,50,33,66.0%,0.618,4.15,
+Pooled,All held-out hospitals,196,126,64.3%,0.634,4.38,
+Source note,,,,,,,"The source note attributes Pearson correlation and MAE to Python calculations and accuracy/error counts to formulas; these statements are retained as recorded, not independently asserted."

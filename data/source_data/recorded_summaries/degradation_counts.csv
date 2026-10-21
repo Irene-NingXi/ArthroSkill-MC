@@ -1,0 +1,7 @@
+degradation_type,severity_0,severity_1,severity_2,n_clips_total,percentage
+blood,0,93,55,148,9.7
+blur,0,98,32,130,8.5
+fog,0,74,67,141,9.2
+none,910,0,0,910,59.6
+out_of_view,0,87,34,121,7.9
+overexposure,0,59,18,77,5

@@ -1,0 +1,24 @@
+source_row,field,value,additional_value,notes
+2,Hospital composition,,,
+3,Centre A,90,45.92%,
+4,Centre B,56,28.57%,
+5,Centre C,50,25.51%,
+6,Joint composition,,,
+7,knee,104,53.06%,
+8,shoulder,92,46.94%,
+9,Skill-grade composition,,,
+10,novice,49,25.00%,
+11,intermediate,77,39.29%,
+12,expert,70,35.71%,
+13,Stratified random split; seed 20241012,,,
+14,train,117,59.69%,
+15,val,39,19.90%,
+16,test,40,20.41%,
+17,Performance on the updated split,Correct,Total,Accuracy
+18,ArthroSkill-MC test accuracy,35,40,87.50%
+19,ArthroSkill-MC full-cohort accuracy,162,196,82.65%
+20,SAIS test accuracy,25,40,62.50%
+21,SAIS full-cohort accuracy,144,196,73.47%
+22,Main-model test GRS Pearson correlation,0.96,,
+23,Main-model test GRS MAE / RMSE,1.537 / 1.765,,
+24,"Inter-rater ICC(A,1)",0.822,,

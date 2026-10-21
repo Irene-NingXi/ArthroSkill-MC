@@ -1,0 +1,8 @@
+model,both_correct,main_only,base_only,both_wrong,p_value_unadjusted,source_significant_unadjusted,source_significance_label,p_value_holm,source_significant_holm,source_significance_holm
+SAIS,22,13,3,2,0.021270751953125,true,Yes,0.12762451171875,false,No (NS)
+Video Swin-T,22,13,4,1,0.049041748046875,true,Yes,0.1961669921875,false,No (NS)
+3D-ResNet-18,22,13,2,3,0.00738525390625,true,Yes,0.05169677734375,false,No (NS)
+Appearance only,25,10,3,2,0.09228515625,false,No (NS),0.1961669921875,false,No (NS)
+Motion only,22,13,3,2,0.021270751953125,true,Yes,0.12762451171875,false,No (NS)
+Naive concat,24,11,3,2,0.057373046875,false,No (NS),0.1961669921875,false,No (NS)
+Unmasked fusion,22,13,4,1,0.049041748046875,true,Yes,0.1961669921875,false,No (NS)

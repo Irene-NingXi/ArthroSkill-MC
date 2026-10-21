@@ -1,0 +1,77 @@
+source_row,section,field,value
+3,EXPERIMENTAL SETUP,Dataset,ArthroSkill-MC
+4,EXPERIMENTAL SETUP,Total samples,196
+5,EXPERIMENTAL SETUP,Train,117 (59.7%)
+6,EXPERIMENTAL SETUP,Validation,39 (19.9%)
+7,EXPERIMENTAL SETUP,Test,40 (20.4%)
+8,EXPERIMENTAL SETUP,Split ratio,60/20/20
+9,EXPERIMENTAL SETUP,Stratification,Skill  x  Surgery
+10,EXPERIMENTAL SETUP,Random seed,20241012
+13,MAIN RESULTS (TEST SET),ArthroSkill-MC,87.5%
+14,MAIN RESULTS (TEST SET),SAIS baseline,62.5%
+15,MAIN RESULTS (TEST SET),Absolute improvement,25.0pp
+16,MAIN RESULTS (TEST SET),Relative improvement,40.0%
+17,MAIN RESULTS (TEST SET),McNemar p-value,0.0213
+18,MAIN RESULTS (TEST SET),Significance,Yes (p<0.05)
+21,GRS REGRESSION,MAE,1.54
+22,GRS REGRESSION,RMSE,1.77
+23,GRS REGRESSION,Pearson r,0.960
+26,PER-CLASS ACCURACY,Novice,90.0%
+27,PER-CLASS ACCURACY,Intermediate,87.5%
+28,PER-CLASS ACCURACY,Expert,85.7%
+31,ABLATION STUDY,Appearance only,70.0%
+32,ABLATION STUDY,Motion only,62.5%
+33,ABLATION STUDY,Naive concat,67.5%
+34,ABLATION STUDY,Unmasked fusion,65.0%
+37,EXTERNAL BASELINES,Video Swin-T,65.0%
+38,EXTERNAL BASELINES,3D-ResNet-18,60.0%
+41,STATISTICAL TESTS,vs SAIS,"b=13, c=3, p=0.021"
+42,STATISTICAL TESTS,vs Video Swin-T,"b=13, c=4, p=0.049"
+43,STATISTICAL TESTS,vs 3D-ResNet-18,"b=13, c=2, p=0.007"
+44,STATISTICAL TESTS,vs Appearance only,"b=10, c=3, p=0.092 (NS)"
+45,STATISTICAL TESTS,vs Motion only,"b=13, c=3, p=0.021"
+46,STATISTICAL TESTS,vs Naive concat,"b=11, c=3, p=0.057 (NS)"
+47,STATISTICAL TESTS,vs Unmasked fusion,"b=13, c=4, p=0.049"
+50,KEY FINDINGS,1 vs SAIS,"+25.0pp, p=0.021"
+51,KEY FINDINGS,2 Novice detection,90% vs 70% (SAIS) on novice detection
+52,KEY FINDINGS,3 Regression,"r=0.96, MAE=1.54"
+53,KEY FINDINGS,4 Ablation,Both branches help
+55,KEY FINDINGS,Date,2026-10-12
+56,KEY FINDINGS,Version,v6.0 (Visibility-stratified)
+57,KEY FINDINGS,Status,Under review
+60,VISIBILITY-STRATIFIED ANALYSIS,Total clips annotated,1527
+61,VISIBILITY-STRATIFIED ANALYSIS,Severity 0 (Good),910 (59.6%)
+62,VISIBILITY-STRATIFIED ANALYSIS,Severity 1 (Mild),411 (26.9%)
+63,VISIBILITY-STRATIFIED ANALYSIS,Severity 2 (Severe),206 (13.5%)
+64,VISIBILITY-STRATIFIED ANALYSIS,Annotation Kappa,0.937
+65,VISIBILITY-STRATIFIED ANALYSIS,Type Agreement,95.3%
+67,VISIBILITY-STRATIFIED ANALYSIS,Complete Model (Good),89.8%
+68,VISIBILITY-STRATIFIED ANALYSIS,Complete Model (Mild),88.3%
+69,VISIBILITY-STRATIFIED ANALYSIS,Complete Model (Severe),71.8%
+70,VISIBILITY-STRATIFIED ANALYSIS,Naive concat (Good),84.8%
+71,VISIBILITY-STRATIFIED ANALYSIS,Naive concat (Mild),73.5%
+72,VISIBILITY-STRATIFIED ANALYSIS,Naive concat (Severe),54.4%
+73,VISIBILITY-STRATIFIED ANALYSIS,Unmasked (Good),84.0%
+74,VISIBILITY-STRATIFIED ANALYSIS,Unmasked (Mild),72.8%
+75,VISIBILITY-STRATIFIED ANALYSIS,Unmasked (Severe),46.1%
+77,VISIBILITY-STRATIFIED ANALYSIS,Advantage vs Naive (Good),4.9pp
+78,VISIBILITY-STRATIFIED ANALYSIS,Advantage vs Naive (Mild),14.8pp
+79,VISIBILITY-STRATIFIED ANALYSIS,Advantage vs Naive (Severe),17.5pp
+80,VISIBILITY-STRATIFIED ANALYSIS,Advantage vs Unmasked (Good),5.8pp
+81,VISIBILITY-STRATIFIED ANALYSIS,Advantage vs Unmasked (Mild),15.6pp
+82,VISIBILITY-STRATIFIED ANALYSIS,Advantage vs Unmasked (Severe),25.7pp
+84,VISIBILITY-STRATIFIED ANALYSIS,Trend Test p-value,0.0000
+85,VISIBILITY-STRATIFIED ANALYSIS,Key Finding,Complete model advantage increases with degradation severity
+88,DATA CORRECTION,Original claim,"""approximately 48 million frames"""
+89,DATA CORRECTION,Correction reason,The original estimate resulted from misreading the backup directory; retained frames after quality control were counted from the clip directory.
+91,DATA CORRECTION,Frame count verification,
+92,DATA CORRECTION,Test set frames (40 videos),"46,160 frames (retained, 40 test videos)"
+93,DATA CORRECTION,Frames per video (avg),"1154 frames (retained, avg)"
+94,DATA CORRECTION,Estimated corpus frames (196 videos),"226,184 frames retained (196 videos, estimated from clip inventory)"
+96,DATA CORRECTION,Sampling clarification,
+97,DATA CORRECTION,Annotation coverage,Sampled clips from 40 test videos (not full coverage)
+98,DATA CORRECTION,Sampling method,"Uniform temporal sampling of ~40 clips per video, blind to image quality"
+100,DATA CORRECTION,Frame count clarification,
+101,DATA CORRECTION,Raw recording frames,approximately 48 million frames (25 fps source recordings)
+102,DATA CORRECTION,Retained clip frames (after QC),"46,160 frames (measured; 40 videos  x  1154 frames/video)"
+103,DATA CORRECTION,QC filtering rate,approximately 99.5% of raw frames filtered by QC
