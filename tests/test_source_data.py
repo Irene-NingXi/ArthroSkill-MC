@@ -21,7 +21,7 @@ class PublicSourceDataTests(unittest.TestCase):
         self.assertEqual(result['total_exported_records'], 8563)
         self.assertEqual(result['procedures'], 196)
         self.assertEqual(result['clip_predictions'], 4581)
-        self.assertEqual(result['source_workbook_sha256'], '67147246593aab0e6861f243a0f0ae37fc78aa831495ed210ef0c0211a688659')
+        self.assertEqual(result['source_workbook_sha256'], 'ae9516771048394df8acf2ee1dcba19cf0eaa335fbfc875e12a4c48da18a7c19')
 
     def test_linkage_removed_without_dropping_procedures(self):
         tables, _ = read_public_tables(DATA)

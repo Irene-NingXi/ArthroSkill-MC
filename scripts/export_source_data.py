@@ -1,4 +1,4 @@
-"""Export an English, values-only public package from the V5 source workbook.
+"""Export an English, values-only public package from the supplied study data workbook.
 
 The source workbook is read without modification. Study values are preserved;
 only an unnecessary surgeon-linkage field and workbook internals are withheld.
@@ -72,7 +72,7 @@ DESCRIPTIONS = {
 'true_label':'Consensus grade: novice, intermediate or expert.', 'true_grs':'Consensus total GRS, in native 6-30 points.',
 'model':'Recorded model or ablation name. Complete in clip tables denotes ArthroSkill-MC.',
 'pred_label':'Recorded classifier grade; independent of the regression total.',
-'pred_grs':'Total-score prediction as recorded, typically at 0.001-point precision. SAIS values are retained for source audit only; SAIS regression is not a manuscript-supported comparator endpoint.',
+'pred_grs':'Total-score prediction at the precision supplied by the source workbook. SAIS values are retained for source audit only; SAIS regression is not a manuscript-supported comparator endpoint.',
 'correct':'Whether the recorded predicted grade equals the reference grade.',
 'abs_error':'Absolute GRS error as recorded. It may retain more precision than pred_grs; it is not overwritten from rounded predictions.',
 'residual':'Predicted minus reference GRS as recorded, potentially at greater precision than pred_grs.',
@@ -112,6 +112,9 @@ DESCRIPTIONS = {
 'p_value_unadjusted':'Recorded exact McNemar p value without seven-comparison Holm adjustment.',
 'source_significant_unadjusted':'Original Boolean significance flag using the unadjusted p value; not the manuscript family-wise conclusion.',
 'source_significance_label':'Original unadjusted significance label; not an adjusted inference.',
+'p_value_holm':'Recorded two-sided exact McNemar p value after Holm correction across seven comparisons.',
+'source_significant_holm':'Recorded significance flag after Holm adjustment across seven comparisons.',
+'source_significance_holm':'Recorded interpretation after Holm adjustment across seven comparisons.',
 'both_correct':'Paired procedures correctly classified by both complete model and comparator.',
 'main_only':'Paired procedures correct only for the complete model.',
 'base_only':'Paired procedures correct only for the comparator.',
@@ -163,8 +166,8 @@ def dump_table(root, path, header, rows, registry, sheet, role, note='', key=Non
 
 
 def export(xlsx, output):
-    if sha256(xlsx)!='67147246593aab0e6861f243a0f0ae37fc78aa831495ed210ef0c0211a688659':
-        raise ValueError('Source workbook differs from the reviewed V5 release; review new data before publishing')
+    if sha256(xlsx)!='ae9516771048394df8acf2ee1dcba19cf0eaa335fbfc875e12a4c48da18a7c19':
+        raise ValueError('Source workbook differs from the approved data package; review new data before publishing')
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
     for path in output.rglob('*.csv'):
         raise FileExistsError(f'Refusing to mix data releases in {output}; use an empty output directory')
@@ -172,7 +175,7 @@ def export(xlsx, output):
     for name,rows in tables.items():
         header=list(rows[0]); index=TABLES[name][0] if name in TABLES else 8
         note='Recorded study outputs; not predictions from newly trained repository models.'
-        if name=='procedure_predictions':note+=' SAIS regression fields are retained as recorded for audit, although the manuscript comparator is classification only. Error fields may have greater precision than pred_grs.'
+        if name=='procedure_predictions':note+=' SAIS regression fields are retained as recorded for audit, although the manuscript comparator is classification only. Source prediction and error precision is preserved without rounding.'
         keys={'procedure_predictions':['video_id','model'],'data_split':['video_id'],
               'rater_scores':['video_id'],'loso_predictions':['video_id'],
               'visibility_annotations':['video_id','clip_idx'],'clip_predictions':['video_id','clip_idx','model'],
@@ -182,8 +185,12 @@ def export(xlsx, output):
     def archive(path,index,start=1,header=None,notes='Recorded summary snapshot; underlying primary tables are preferred for inference.'):
         rows=list(wb.worksheets[index].values)
         return dump_table(output,'recorded_summaries/'+path,header or list(rows[start-1]),[list(r) for r in rows[start:] if r and r[0] not in [None,'']],registry,index,'recorded_summary',notes)
-    archive('model_metrics.csv',4,notes='Original rounded aggregate metrics, including SAIS regression fields not reported as comparator endpoints in the manuscript.')
-    archive('statistical_tests.csv',5,header=['model','both_correct','main_only','base_only','both_wrong','p_value_unadjusted','source_significant_unadjusted','source_significance_label'],notes='Original significance flags use unadjusted p values. All seven comparisons exceed 0.05 after Holm adjustment.')
+    archive('model_metrics.csv',4,notes='Source rounded aggregate metrics, including SAIS regression fields not reported as comparator endpoints in the manuscript. The source overview, experiment report and seed summary retain main-run Pearson r = 0.960, whereas the procedure predictions and Model Metrics sheet support approximately 0.957387 on the test partition. Primary prediction reanalysis takes precedence.')
+    statistical_rows=list(wb.worksheets[5].values)
+    statistical_header=['model','both_correct','main_only','base_only','both_wrong','p_value_unadjusted','source_significant_unadjusted','source_significance_label','p_value_holm','source_significant_holm','source_significance_holm']
+    statistical_records=[list(r) for r in statistical_rows[1:] if r[0] in {r['model'] for r in tables['procedure_predictions']}]
+    statistical_note=' '.join(str(r[0]) for r in statistical_rows[1:] if r[0] and str(r[0]).startswith('Note:'))
+    dump_table(output,'recorded_summaries/statistical_tests.csv',statistical_header,statistical_records,registry,5,'recorded_summary',statistical_note,['model'])
     archive('test_details.csv',6);archive('validation_details.csv',7)
     archive('visibility_tier_metrics.csv',10,header=['severity','accuracy_Complete','accuracy_Naive_concat','accuracy_Unmasked_fusion','n_clips_Complete','n_clips_Naive_concat','n_clips_Unmasked_fusion','p_vs_naive_as_recorded','p_vs_unmasked_as_recorded'],notes='Original p values are retained without asserting their test method. Use procedure-cluster reanalysis for manuscript inference.')
     archive('degradation_counts.csv',12,header=['degradation_type','severity_0','severity_1','severity_2','n_clips_total','percentage'])
@@ -195,7 +202,10 @@ def export(xlsx, output):
     for i,r in enumerate(rows[1:],2):
         if not r[0]: continue
         if r[1] in ['',None] and str(r[0]).isupper():section=r[0];continue
-        report.append([i,section,r[0],r[1]])
+        value=r[1]
+        if i==89 and isinstance(value,str) and not value.isascii():
+            value='The original estimate resulted from misreading the backup directory; retained frames after quality control were counted from the clip directory.'
+        report.append([i,section,r[0],value])
     dump_table(output,'recorded_summaries/experiment_report.csv',['source_row','section','field','value'],report,registry,1,'recorded_summary','Unverified source report text. Its unadjusted significance claims, trend claim, approximately 48 million raw frames and approximately 99.5% filtering claim are not adopted by the current analysis. Administrative date/version/status are source fields only.')
     rows=list(wb.worksheets[8].values)
     seed_summary=[[r[0],r[3],None if r[4]=='-' else r[4],None if r[5]=='-' else r[5],None if r[6]=='-' else r[6],'Classification only' if r[0]=='SAIS' else ''] for r in rows[9:11]]
@@ -230,14 +240,14 @@ def export(xlsx, output):
         target=output/name
         if source.is_file() and source.resolve()!=target.resolve():shutil.copyfile(source,target)
         if target.is_file():files.append(dict(path=name,sha256=sha256(target),role='documentation'))
-    manifest=dict(title='ArthroSkill-MC public source data',release_version='v5-public-1',
+    manifest=dict(title='ArthroSkill-MC public source data',release_version='package-20261027-1',
                   description='De-identified ratings, partitions and recorded procedure/clip predictions for statistical reanalysis.',
                   maintainer='Ning Xi',related_code='https://github.com/Irene-NingXi/ArthroSkill-MC',doi=None,
                   keywords=['arthroscopy','surgical skill assessment','GRS','visibility','multi-centre'],
                   source_workbook_sha256=sha256(xlsx),
-                  source_workbook_version_label='V5 filename; the internal experiment report records v6.0 (Visibility-stratified).',
+                  source_workbook_version_label='ArthroSkill-MC_Data_Package.xlsx; the internal experiment report records v6.0 (Visibility-stratified).',
                   format='arthroskill_mc_public_source_data_v1',encoding='UTF-8',csv_line_ending='LF',
-                  release_date='2026-10-21',data_reuse_terms='See TERMS.md; no new data-specific open licence assigned',files=files,
+                  release_date='2026-10-27',data_reuse_terms='See TERMS.md; no new data-specific open licence assigned',files=files,
                   source_worksheet_count=22,covered_source_worksheets=sorted({s['source_worksheet_index'] for s in registry.values()}),
                   withheld=['surgeon_id linkage column','Original workbook container, properties, formatting and any non-tabular internals','Raw recordings and any identity or hospital-name linkage key'],
                   transformations=['English table and field names','English translation of narrative notes','CSV Boolean encoding true/false','Blank cells for not-reported training-run metrics originally marked with a dash','Removal of surgeon linkage IDs; procedure pseudonyms retained for joins','Recorded summaries kept separate from primary observations; no numerical source value corrected'])
