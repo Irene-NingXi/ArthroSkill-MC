@@ -129,7 +129,7 @@ De-identified study source tables are publicly available under [data/source_data
 
 ## Versioned release and citation
 
-The paper snapshot is identified by code tag [`v1.0-paper`](https://github.com/Irene-NingXi/ArthroSkill-MC/releases/tag/v1.0-paper) and public-data release identifier **`v5-public-1`**. The [release mapping](docs/release.md) records the current data checksum, manuscript checksum, archive contents and Zenodo DOI status. Use the tag when citing a stable snapshot; `main` can continue to evolve. Citation metadata is provided in [CITATION.cff](CITATION.cff).
+The paper snapshot is identified by code tag [`v1.0-paper`](https://github.com/Irene-NingXi/ArthroSkill-MC/releases/tag/v1.0-paper) and public-data release identifier **`v5-public-1`**. The [release mapping](docs/release.md) records the current data checksum, manuscript checksum, archive contents and Zenodo DOI status. Use the tag when citing a stable snapshot; `main` can continue to evolve. The archived `v1.0-paper` snapshot has version DOI [10.5281/zenodo.23692599](https://doi.org/10.5281/zenodo.23692599). Citation metadata is provided in [CITATION.cff](CITATION.cff).
 
 ## Author and licence
 

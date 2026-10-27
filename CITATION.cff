@@ -6,6 +6,7 @@ authors:
   - family-names: Xi
     given-names: Ning
 version: 1.0-paper
+doi: 10.5281/zenodo.23692599
 date-released: '2026-10-27'
 repository-code: 'https://github.com/Irene-NingXi/ArthroSkill-MC'
 url: 'https://github.com/Irene-NingXi/ArthroSkill-MC/releases/tag/v1.0-paper'
@@ -15,7 +16,7 @@ abstract: >-
   arthroscopy benchmark. Includes the pinned official RGB-and-optical-flow
   SAIS integration. Software uses MIT; data reuse is governed by
   data/source_data/TERMS.md. Source recordings and fitted study weights are
-  not included. A DOI must be added only after an archive assigns it.
+  not included.
 keywords:
   - arthroscopy
   - surgical-skill-assessment

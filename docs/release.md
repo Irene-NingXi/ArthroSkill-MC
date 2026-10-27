@@ -12,7 +12,8 @@ The `v1.0-paper` GitHub release identifies one code-and-data snapshot. Its tag r
 | Recomputed statistical reference | `docs/source_data_summary.json` |
 | Python and dependency profile | `.python-version` and `requirements-lock.txt` |
 | Citation metadata | `CITATION.cff` |
-| Zenodo DOI | Not assigned; no DOI is asserted until Zenodo creates a record |
+| Zenodo version DOI | [10.5281/zenodo.23692599](https://doi.org/10.5281/zenodo.23692599) |
+| Zenodo concept DOI (all versions) | [10.5281/zenodo.23692598](https://doi.org/10.5281/zenodo.23692598) |
 
 The release packages only files tracked at its tag. It includes current public CSV tables and reproducibility code. Restricted recordings, the private workbook container, the manuscript document itself, fitted study weights, external SAIS source and generated synthetic checkpoints are excluded. The data and manuscript checksums establish which supplied inputs correspond to the release; they do not publish those private files.
 
@@ -20,15 +21,14 @@ The source-data values are recorded predictions, not results of a new full visio
 
 ## Zenodo archiving
 
-Zenodo archiving requires the repository owner's Zenodo account and GitHub integration. The public GitHub release alone does not mint a DOI. The current DOI status remains unassigned until an actual record and resolving DOI are verified.
+Zenodo archiving requires the repository owner's Zenodo account and GitHub integration. The public GitHub release alone does not mint a DOI. The `v1.0-paper` record is published at [Zenodo record 23692599](https://zenodo.org/records/23692599), linked to commit `92d3286e77987d042b16a7a3739af40910e0ddd5`. The version DOI identifies this exact snapshot; the concept DOI identifies the version family. The DOI was assigned after the immutable GitHub release was published. Its original attached manifest therefore records the DOI as unassigned at release time; the frozen tag and assets remain unchanged.
 
-To complete the archive through the [official GitHub-Zenodo integration](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content):
+For future versions, use the [official GitHub-Zenodo integration](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content):
 
-1. Sign in to Zenodo and connect the intended GitHub account.
-2. Enable archiving specifically for `Irene-NingXi/ArthroSkill-MC`.
-3. Archive the `v1.0-paper` release, or use Zenodo's release-import action for an existing release.
-4. Confirm the record contains this tag's snapshot and the checksums above.
-5. Review the record's creator list, title, version and separate code/data reuse terms before publication.
-6. Add only the DOI actually assigned by Zenodo to citation metadata in a subsequent commit. Preserve the immutable paper tag.
+1. Keep automatic archiving enabled for `Irene-NingXi/ArthroSkill-MC`.
+2. Prepare and validate the next version before creating its GitHub release.
+3. Wait for Zenodo to process the new release, then verify its version DOI and archived files.
+4. Review the creator list, title, version and separate code/data reuse terms.
+5. Add the assigned DOI to citation metadata without changing previously published immutable tags or assets.
 
 Software is MIT-licensed. Public source-data access and reuse follow `data/source_data/TERMS.md`; this archive does not assign a new CC BY or CC0 data licence. Third-party SAIS code and weights retain their own terms and are not included. An archive licence must not silently relicense participant data or third-party material.
