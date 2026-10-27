@@ -6,11 +6,79 @@ This repository provides a PyTorch implementation of a Video Swin-T appearance e
 
 The benchmark contains 196 knee and shoulder procedures from three hospitals. The fixed partition contains 117 training, 39 validation and 40 test procedures. Skill labels are novice, intermediate and expert. Six GRS dimensions range from 1 to 5; the total ranges from 6 to 30.
 
-## Installation
+## Method and principal results
+
+The method achieves 87.5% accuracy on the fixed 40-procedure test partition, while leave-one-site-out evaluation yields 64.3%, highlighting the remaining cross-site generalisation gap.
+
+```mermaid
+flowchart LR
+    V["16-frame arthroscopic clip"] --> A["3D Video Swin-T appearance"]
+    V --> D["YOLOv8 and DeepSORT trajectories"]
+    D --> K["Six kinematic descriptors"]
+    K --> M["CNN and bidirectional LSTM"]
+    A -->|queries| F["Cross-modal attention"]
+    M -->|keys and values| F
+    D --> C["Detection confidence mask"]
+    C -->|confidence at least 0.5| F
+    A --> R["Appearance residual and all-invalid fallback"]
+    F --> H["Fused representation"]
+    R --> H
+    H --> G["Grade softmax probabilities"]
+    H --> S["Six GRS dimensions and separate total"]
+    G --> P["Mean probabilities per procedure, then argmax"]
+    S --> T["Mean predicted total per procedure"]
+```
+
+| Evaluation protocol | Procedures | Correct | Accuracy, Wilson 95% CI | GRS MAE | Pearson r |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Fixed test partition | 40 | 35 | 87.5% (73.9-94.5%) | 1.537 | 0.957 |
+| Three-fold LOSO, pooled | 196 | 126 | 64.3% (57.4-70.7%) | 4.380 | 0.634 |
+
+These values are recomputed from the **current public procedure predictions**, identified by the workbook checksum in [the manifest](data/source_data/manifest.json). The fixed test is small, and none of the seven paired main-model comparisons is below 0.05 after Holm adjustment. LOSO uses a separate fitting protocol; pooled procedures and folds are not independent training replications. See [RESULTS.md](RESULTS.md) for paired tests, visibility analyses and limitations.
+
+## Five-minute CPU Quickstart
+
+After installing the locked environment below, one command validates all public tables, performs the complete statistical reanalysis and checks every analysis field against the committed reference:
 
 ```bash
-python -m pip install -r requirements.txt
+python scripts/quickstart.py --output outputs/quickstart
 ```
+
+No GPU, private workbook, clinical video or fitted study model is required. The full run took 95.2 seconds on an Apple M1 CPU with 8 GB shared memory; the five-minute scope excludes package downloads and installation.
+
+| Generated file | Purpose |
+| --- | --- |
+| `outputs/quickstart/validation.json` | Integrity and joins for 24 CSV tables, 196 procedures and 1,527 annotated clips |
+| `outputs/quickstart/analysis.json` | Full 20,000-bootstrap / 99,999-swap statistical reanalysis |
+| `outputs/quickstart/verification.json` | Numerical comparison with the current committed reference, source checksum and elapsed time |
+| `outputs/quickstart/environment.json` | Python, package, platform and CUDA/GPU availability records |
+
+Check for `passed: true`, fixed-test `correct: 35`, `n: 40`, `mae: 1.537`, `pearson_r: 0.9573869018`, and pooled LOSO `correct: 126`, `n: 196`, `mae: 4.3803979592`. Floating-point roundoff is allowed; changed numerical results cause failure. Use a new empty output directory for each run.
+
+For an optional synthetic official SAIS training/evaluation cycle:
+
+```bash
+python scripts/setup_sais.py --destination external/SAIS
+python scripts/smoke_test.py --sais-root external/SAIS --output outputs/smoke
+```
+
+This generates random paired RGB/flow feature fixtures, a selected checkpoint in `outputs/smoke/training`, procedure predictions in `outputs/smoke/evaluation/sais_evaluation.json`, and `outputs/smoke/smoke_report.json`. The measured two-epoch fitting/checkpoint/evaluation cycle took 10.8 seconds. It tests executable software behaviour and does not measure study performance or validate video feature extraction.
+
+## Installation
+
+For the tested public-data/model-validation profile, use Python **3.12.14**:
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+# Linux only: select CPU wheels before installing the full lock file.
+python -m pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu
+# Linux and macOS:
+python -m pip install -r requirements-lock.txt
+python -m pip check
+```
+
+The broad `requirements.txt` remains available for development and raw-video workflows. [Environment details](docs/environment.md) distinguish validated CPU versions, the manuscript's RTX 3090 inference benchmark and unverified historical CUDA/training-time fields. [CI](https://github.com/Irene-NingXi/ArthroSkill-MC/actions/workflows/reproducibility.yml) installs a fresh pinned CPU environment, tests the pinned official SAIS model, recomputes current-source statistics and runs the synthetic fitting/evaluation cycle.
 
 Use a compatible PyTorch/torchvision pair. CUDA is optional for statistical reanalysis; training full-resolution video requires an appropriate GPU.
 
@@ -75,6 +143,10 @@ Tests cover exact procedure assignments, checkpoint restoration, deterministic e
 ## Data and code availability
 
 De-identified study source tables are publicly available under [data/source_data](data/source_data/README.md), with file checksums and a complete English data dictionary. They support statistical reanalysis of recorded results. Raw surgical recordings and identity mappings are not distributed. Independent end-to-end reproduction additionally requires authorised recordings, detector annotations and weights, the HeiChole adaptation checkpoint and matching fitted model checkpoints/configurations. Recorded SAIS score fields and older summary discrepancies are preserved with explicit interpretation notes.
+
+## Versioned release and citation
+
+The paper snapshot is identified by code tag [`v1.0-paper`](https://github.com/Irene-NingXi/ArthroSkill-MC/releases/tag/v1.0-paper) and public-data release identifier **`v5-public-1`**. The [release mapping](docs/release.md) records the current data checksum, manuscript checksum, archive contents and Zenodo DOI status. Use the tag when citing a stable snapshot; `main` can continue to evolve. Citation metadata is provided in [CITATION.cff](CITATION.cff).
 
 ## Author and licence
 

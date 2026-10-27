@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Cite the versioned software release and its accompanying source-data package. Software and data have separate reuse terms."
+type: software
+title: "ArthroSkill-MC: occlusion-aware multimodal skill assessment in arthroscopy"
+authors:
+  - family-names: Xi
+    given-names: Ning
+version: 1.0-paper
+date-released: '2026-10-27'
+repository-code: 'https://github.com/Irene-NingXi/ArthroSkill-MC'
+url: 'https://github.com/Irene-NingXi/ArthroSkill-MC/releases/tag/v1.0-paper'
+abstract: >-
+  PyTorch implementation, current de-identified source tables, procedure-level
+  evaluation and statistical reanalysis for a 196-procedure, three-centre
+  arthroscopy benchmark. Includes the pinned official RGB-and-optical-flow
+  SAIS integration. Software uses MIT; data reuse is governed by
+  data/source_data/TERMS.md. Source recordings and fitted study weights are
+  not included. A DOI must be added only after an archive assigns it.
+keywords:
+  - arthroscopy
+  - surgical-skill-assessment
+  - multimodal-learning
+  - optical-flow
+  - reproducibility
