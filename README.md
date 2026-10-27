@@ -10,24 +10,7 @@ The benchmark contains 196 knee and shoulder procedures from three hospitals. Th
 
 The method achieves 87.5% accuracy on the fixed 40-procedure test partition, while leave-one-site-out evaluation yields 64.3%, highlighting the remaining cross-site generalisation gap.
 
-```mermaid
-flowchart LR
-    V["16-frame arthroscopic clip"] --> A["3D Video Swin-T appearance"]
-    V --> D["YOLOv8 and DeepSORT trajectories"]
-    D --> K["Six kinematic descriptors"]
-    K --> M["CNN and bidirectional LSTM"]
-    A -->|queries| F["Cross-modal attention"]
-    M -->|keys and values| F
-    D --> C["Detection confidence mask"]
-    C -->|confidence at least 0.5| F
-    A --> R["Appearance residual and all-invalid fallback"]
-    F --> H["Fused representation"]
-    R --> H
-    H --> G["Grade softmax probabilities"]
-    H --> S["Six GRS dimensions and separate total"]
-    G --> P["Mean probabilities per procedure, then argmax"]
-    S --> T["Mean predicted total per procedure"]
-```
+![ArthroSkill-MC method overview](docs/method-overview.svg)
 
 | Evaluation protocol | Procedures | Correct | Accuracy, Wilson 95% CI | GRS MAE | Pearson r |
 | --- | ---: | ---: | ---: | ---: | ---: |
