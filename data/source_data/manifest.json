@@ -1,6 +1,6 @@
 {
   "title": "ArthroSkill-MC public source data",
-  "release_version": "package-20261027-1",
+  "release_version": "v5-public-1",
   "description": "De-identified ratings, partitions and recorded procedure/clip predictions for statistical reanalysis.",
   "maintainer": "Ning Xi",
   "related_code": "https://github.com/Irene-NingXi/ArthroSkill-MC",
@@ -171,7 +171,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "29df579ac74cdd186eeb89b04920a7c3063f6f63af2c32641bc482391bae84f6",
+      "sha256": "ed19cb88e4f2d486d28984a264b32acf3558f9fde8fe7372ad9e6c6f801cbdc5",
       "role": "documentation"
     },
     {

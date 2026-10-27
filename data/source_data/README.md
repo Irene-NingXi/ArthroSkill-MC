@@ -2,7 +2,7 @@
 
 This package provides the publicly shareable, de-identified source tables from the supplied study data workbook. It supports reanalysis of ratings, fixed-split predictions, visibility annotations, aggregate training repeats and leave-one-site-out predictions. It does not contain surgical recordings or fitted checkpoints.
 
-Release identifier: `package-20261027-1`. The [manifest](manifest.json) records the original workbook checksum, exported row counts and file checksums. The [data dictionary](data_dictionary.json) defines every exported column, its type and source worksheet ordinal. All 22 original worksheets are represented through primary data or clearly labelled recorded summaries.
+Release identifier: `v5-public-1`. The [manifest](manifest.json) records the original workbook checksum, exported row counts and file checksums. The [data dictionary](data_dictionary.json) defines every exported column, its type and source worksheet ordinal. All 22 original worksheets are represented through primary data or clearly labelled recorded summaries.
 
 ## Primary data
 

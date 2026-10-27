@@ -240,7 +240,7 @@ def export(xlsx, output):
         target=output/name
         if source.is_file() and source.resolve()!=target.resolve():shutil.copyfile(source,target)
         if target.is_file():files.append(dict(path=name,sha256=sha256(target),role='documentation'))
-    manifest=dict(title='ArthroSkill-MC public source data',release_version='package-20261027-1',
+    manifest=dict(title='ArthroSkill-MC public source data',release_version='v5-public-1',
                   description='De-identified ratings, partitions and recorded procedure/clip predictions for statistical reanalysis.',
                   maintainer='Ning Xi',related_code='https://github.com/Irene-NingXi/ArthroSkill-MC',doi=None,
                   keywords=['arthroscopy','surgical skill assessment','GRS','visibility','multi-centre'],

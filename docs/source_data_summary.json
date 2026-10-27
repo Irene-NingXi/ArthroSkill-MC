@@ -1474,7 +1474,7 @@
     "openpyxl": "3.1.5"
   },
   "public_source_data": {
-    "release_version": "package-20261027-1",
-    "manifest_sha256": "a9d2776bbe73c8e0f33d5eb3939cde452380036d93e00d2b7b220dba04119886"
+    "release_version": "v5-public-1",
+    "manifest_sha256": "b2883a55b1306c2652fa0ceacf51dafcb5244f0c564174be4299f5289ae9fb77"
   }
 }
